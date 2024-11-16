@@ -228,3 +228,43 @@
     transform: rotate(0deg);
   }
 }
+
+/* New stylings after default ones added here! */
+
+.catchphrase {
+  color: #0d0d0d; /* HEADER TEXT COLOR */
+  font-size: 3.5rem;
+  font-weight: bold;
+  font-family: 'Arial', sans-serif;
+}
+
+.catchphrase span {
+  display: block; /* Ensures each word/phrase is on a new line */
+  margin-bottom: 0.5rem; /* Adjust spacing between lines as needed */
+}
+
+.headerSection {
+  height: 100vh;
+  background-color: #a6ff72;
+}
+
+.leftContent {
+  margin-left: 4rem;
+}
+
+.customButton {
+  background-color: #0033ff;
+  border-color: #0033ff;
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  padding: 0.75rem 1.5rem;
+}
+
+.buttonGroup {
+  margin-left: 4rem;
+}
+
+.customButtonSmallText {
+  font-size: 1rem; /* Small font size */
+}

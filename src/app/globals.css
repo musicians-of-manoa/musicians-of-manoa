@@ -12,3 +12,57 @@ body {
   display: flex;
   flex-direction: column;
 }
+
+/* New Stuff Added after defaults */
+
+/* Footer Styles */
+.footer {
+  background-color: #121214; /* Background color */
+  color: #f2f5f8;              /* Text color */
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.footer a {
+  color: #f2f5f8;              /* Link text color */
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: #ffffff;              /* Hover effect for links */
+  text-decoration: underline;
+}
+
+/* Navbar Styles */
+.navbar {
+  background-color: #121214; /* Background color */
+  color: #f2f5f8;           /* Text color */
+}
+
+.navbar .navbar-brand {
+  color: #f2f5f8;           /* Brand text color */
+  font-size: 1.5rem;        /* Optional: Adjust font size */
+  font-weight: normal;        /* Optional: Adjust font weight */
+}
+
+.navbar-brand:hover {
+  color: #ffffff;           /* Hover effect for brand */
+}
+
+.navbar .nav-link {
+  color: #f2f5f8;           /* Link text color */
+}
+
+.navbar .nav-link:hover {
+  color: #ffffff;           /* Hover effect for links */
+}
+
+.navbar .nav-dropdown a {
+  color: #f2f5f8;           /* Dropdown link text color */
+  text-decoration: none;
+}
+
+.navbar .nav-dropdown a:hover {
+  color: #ffffff;           /* Hover effect for dropdown links */
+}
+
