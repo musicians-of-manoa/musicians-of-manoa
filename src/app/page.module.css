@@ -250,7 +250,7 @@
   margin-top: 1rem;   /* Space between the main catchphrase and this text */
   color: #0d0d0d;     /* Light green text (adjust as needed) */
   line-height: 1.5;   /* Improve readability */
-  padding-left: 4rem; /* Match the padding of the catchphrase */
+  padding-left: 4rem; /* ALIGNS SUBCATCHPHRASE TO CATCHPHRASE */
 }
 
 /* Outer container with padding */

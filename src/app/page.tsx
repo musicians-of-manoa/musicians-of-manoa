@@ -1,8 +1,8 @@
 'use client';
 
 import React from 'react';
-import Link from 'next/link';
-import { Container, Row, Col, Button, Carousel, Card } from 'react-bootstrap';
+import { Container, Row, Col, Button, Carousel } from 'react-bootstrap';
+import Image from 'next/image';
 import styles from './page.module.css';
 
 /** The Home page. */
@@ -54,17 +54,21 @@ const Home = () => (
           <Col xs={12} md={6} className="p-0">
             <Carousel controls={false} indicators={false} interval={3000} fade>
               <Carousel.Item>
-                <img
-                  className="d-block w-100"
+                <Image
                   src="/musicianBackMatch-1.png"
                   alt="Musician 1"
+                  layout="responsive" // Ensures the image scales while maintaining its aspect ratio
+                  width={1920} // Actual width of the image
+                  height={1080} // Actual height of the image
                 />
               </Carousel.Item>
               <Carousel.Item>
-                <img
-                  className="d-block w-100"
-                  src="/musicianBackMatch-2.png"
+                <Image
+                  src="/musicianBackMatch-1.png"
                   alt="Musician 1"
+                  layout="responsive" // Ensures the image scales while maintaining its aspect ratio
+                  width={1920} // Actual width of the image
+                  height={1080} // Actual height of the image
                 />
               </Carousel.Item>
             </Carousel>
