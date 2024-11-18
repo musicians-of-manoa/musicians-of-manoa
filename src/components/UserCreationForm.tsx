@@ -212,11 +212,21 @@ const UserCreationComponent = () => {
                 </Button>
               </Col>
             </Row>
+            <Row>
+              <Button
+                variant="primary"
+                size="lg"
+                className="d-grid gap-2"
+                type="button"
+              >
+                Select Musical Tastes
+              </Button>
+            </Row>
           </Card.Body>
           <Card.Footer className="text-center">
             <Button type="button" variant="secondary" onClick={() => reset()}>
               Cancel
-            </Button>{' '}
+            </Button>
             <Button type="submit" variant="primary">
               Submit
             </Button>
