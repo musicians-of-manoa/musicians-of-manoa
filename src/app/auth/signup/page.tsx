@@ -38,6 +38,12 @@ const SignUp = () => {
       .required('Confirm Password is required')
       .oneOf([Yup.ref('password'), ''], 'Confirm Password does not match'),
     musicalGoals: Yup.string(),
+    instruments: Yup.array().of(
+      Yup.object().shape({
+        name: Yup.string().optional(),
+      }),
+    ),
+    experienceLevel: Yup.array().of(Yup.string().optional()),
   });
 
   const {
