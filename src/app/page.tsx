@@ -1,4 +1,4 @@
-import { Button, Col, Container, Image, Row } from 'react-bootstrap';
+import { Col, Container, Image, Row } from 'react-bootstrap';
 
 /** The Home page. */
 const Home = () => (
@@ -12,9 +12,6 @@ const Home = () => (
         <Col xs={8} className="d-flex flex-column justify-content-center">
           <h1>Welcome to this template</h1>
           <p>Now get to work and modify this app!</p>
-          <Button variant="primary" href="/userCreation">
-            Create User Account
-          </Button>
         </Col>
       </Row>
     </Container>
