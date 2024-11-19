@@ -77,10 +77,10 @@ const SignUp = () => {
                 <Form onSubmit={handleSubmit(onSubmit)}>
                   <Row>
                     <Col>
-                      <Form.Group className="form-group">
-                        <Form.Label>First Name</Form.Label>
+                      <Form.Group className="form-group py-2">
                         <input
                           type="text"
+                          placeholder="First Name"
                           {...register('firstName')}
                           className={`form-control ${errors.firstName ? 'is-invalid' : ''}`}
                         />
@@ -90,10 +90,10 @@ const SignUp = () => {
                       </Form.Group>
                     </Col>
                     <Col>
-                      <Form.Group className="form-group">
-                        <Form.Label>Last Name</Form.Label>
+                      <Form.Group className="form-group py-2">
                         <input
                           type="text"
+                          placeholder="Last Name"
                           {...register('lastName')}
                           className={`form-control ${errors.lastName ? 'is-invalid' : ''}`}
                         />
@@ -103,10 +103,10 @@ const SignUp = () => {
                       </Form.Group>
                     </Col>
                   </Row>
-                  <Form.Group className="form-group">
-                    <Form.Label>Username</Form.Label>
+                  <Form.Group className="form-group py-2">
                     <input
                       type="text"
+                      placeholder="Username (max 20 characters)"
                       {...register('userName')}
                       className={`form-control ${errors.userName ? 'is-invalid' : ''}`}
                     />
@@ -114,10 +114,10 @@ const SignUp = () => {
                       {errors.userName?.message}
                     </div>
                   </Form.Group>
-                  <Form.Group className="form-group">
-                    <Form.Label>Email</Form.Label>
+                  <Form.Group className="form-group py-2">
                     <input
                       type="text"
+                      placeholder="Email Address"
                       {...register('email')}
                       className={`form-control ${errors.email ? 'is-invalid' : ''}`}
                     />
@@ -125,11 +125,10 @@ const SignUp = () => {
                       {errors.email?.message}
                     </div>
                   </Form.Group>
-
-                  <Form.Group className="form-group">
-                    <Form.Label>Password</Form.Label>
+                  <Form.Group className="form-group py-2">
                     <input
                       type="password"
+                      placeholder="Password (min 6 characters, max 40 characters)"
                       {...register('password')}
                       className={`form-control ${errors.password ? 'is-invalid' : ''}`}
                     />
@@ -137,10 +136,10 @@ const SignUp = () => {
                       {errors.password?.message}
                     </div>
                   </Form.Group>
-                  <Form.Group className="form-group">
-                    <Form.Label>Confirm Password</Form.Label>
+                  <Form.Group className="form-group py-2">
                     <input
                       type="password"
+                      placeholder="Confirm Password"
                       {...register('confirmPassword')}
                       className={`form-control ${errors.confirmPassword ? 'is-invalid' : ''}`}
                     />
@@ -148,15 +147,15 @@ const SignUp = () => {
                       {errors.confirmPassword?.message}
                     </div>
                   </Form.Group>
-                  <Form.Group className="form-group">
-                    <Form.Label>Musical Goals</Form.Label>
+                  <Form.Group className="form-group py-2">
                     <textarea
+                      placeholder="What are your musical goals?"
                       {...register('musicalGoals')}
                       className="form-control"
                       rows={3}
                     />
                   </Form.Group>
-                  <Form.Group className="form-group py-3">
+                  <Form.Group className="form-group py-2">
                     <Row>
                       <Col>
                         {fields.map((field, index) => (
@@ -207,7 +206,7 @@ const SignUp = () => {
                       </Col>
                     </Row>
                   </Form.Group>
-                  <Form.Group className="form-group">
+                  <Form.Group className="form-group py-2">
                     <Button
                       variant="primary"
                       size="lg"
@@ -217,7 +216,7 @@ const SignUp = () => {
                       Select Musical Tastes
                     </Button>
                   </Form.Group>
-                  <Form.Group className="form-group py-3">
+                  <Form.Group className="form-group py-2">
                     <Row>
                       <Col>
                         <Button type="submit" className="btn btn-primary">
@@ -228,7 +227,7 @@ const SignUp = () => {
                         <Button
                           type="button"
                           onClick={() => reset()}
-                          className="btn btn-warning float-right"
+                          className="btn btn-warning float-right mt-2"
                         >
                           Reset
                         </Button>
