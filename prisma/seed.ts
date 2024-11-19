@@ -1,4 +1,4 @@
-import { PrismaClient, Role, Condition } from '@prisma/client';
+import { PrismaClient, Role, Experience } from '@prisma/client';
 import { hash } from 'bcrypt';
 import * as config from '../config/settings.development.json';
 
@@ -24,6 +24,26 @@ async function main() {
     });
     // console.log(`  Created user: ${user.email} with role: ${user.role}`);
   });
+
+  // Seed JamInformation
+  config.defaultJamInformation.forEach(async (jam) => {
+    console.log(`  Adding JamInformation: ${jam.organizer}`);
+    await prisma.jamInformation.upsert({
+      where: { id: jam.id },
+      update: {},
+      create: {
+        organizer: jam.organizer,
+        genre: jam.genre,
+        location: jam.location,
+        date: new Date(jam.date),
+        instruments: jam.instruments,
+        experience: jam.experience as Experience,
+        description: jam.description,
+      },
+    });
+  });
+
+  /**
   config.defaultData.forEach(async (data, index) => {
     let condition: Condition = 'good';
     if (data.condition === 'poor') {
@@ -45,6 +65,7 @@ async function main() {
       },
     });
   });
+  */
 }
 main()
   .then(() => prisma.$disconnect())

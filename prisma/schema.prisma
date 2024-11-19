@@ -54,3 +54,10 @@ model Stuff {
   quantity   Int
   condition  String
 }
+
+enum Condition {
+  good
+  fair
+  poor
+  excellent
+}

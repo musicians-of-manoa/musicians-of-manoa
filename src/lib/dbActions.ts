@@ -14,7 +14,7 @@ export async function addJamInformation(jamInfo: {
   organizer: string;
   genre: string;
   location: string;
-  date: Date; // ISO 8601 formatted string
+  date: Date; // Includes date & time
   instruments: string;
   experience: Experience;
   description: string;

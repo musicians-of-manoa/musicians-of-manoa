@@ -9,5 +9,28 @@
     { "name": "Bicycle", "quantity": 2, "owner": "john@foo.com", "condition": "poor" },
     { "name": "Banana", "quantity": 2, "owner": "admin@foo.com", "condition": "good" },
     { "name": "Boogie Board", "quantity": 2, "owner": "admin@foo.com", "condition": "excellent" }
+  ],
+
+  "defaultJamInformation": [
+    {
+      "id": 1,
+      "organizer": "Local Music Club",
+      "genre": "Jazz",
+      "location": "Community Center",
+      "date": "2024-12-01T18:00:00Z",
+      "instruments": "Saxophone, Piano, Bass",
+      "experience": "beginner",
+      "description": "A casual jam session for jazz enthusiasts."
+    },
+    {
+      "id": 2,
+      "organizer": "University Band",
+      "genre": "Classical",
+      "location": "Concert Hall",
+      "date": "2024-11-25T19:30:00Z",
+      "instruments": "Violin, Cello, Flute",
+      "experience": "professional",
+      "description": "An advanced jam session for classical musicians."
+    }
   ]
 }
