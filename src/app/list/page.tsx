@@ -1,33 +1,35 @@
-import { getServerSession } from 'next-auth';
+/** import { getServerSession } from 'next-auth';
 import { Col, Container, Row, Table } from 'react-bootstrap';
 import { prisma } from '@/lib/prisma';
 import StuffItem from '@/components/StuffItem';
 import { loggedInProtectedPage } from '@/lib/page-protection';
 import authOptions from '@/lib/authOptions';
+import { Stuff } from '@prisma/client'; */
 
 /** Render a list of stuff for the logged in user. */
+/**
 const ListPage = async () => {
   // Protect the page, only logged in users can access it.
   const session = await getServerSession(authOptions);
   loggedInProtectedPage(
     session as {
       user: { email: string; id: string; randomKey: string };
-      // eslint-disable-next-line @typescript-eslint/comma-dangle
     } | null,
   );
   const owner = (session && session.user && session.user.email) || '';
-  const stuff = await prisma.stuff.findMany({
+  const stuff: Stuff[] = await prisma.stuff.findMany({
     where: {
       owner,
     },
   });
-  // console.log(stuff);
+
   return (
     <main>
-      <Container id="list" fluid className="py-3">
+      <Container id="list" className="py-3">
         <Row>
           <Col>
-            <h1>Stuff</h1>
+            <h1><strong>Jon Doe</strong></h1>
+            <h5>Jon Doe</h5>
             <Table striped bordered hover>
               <thead>
                 <tr>
@@ -51,3 +53,4 @@ const ListPage = async () => {
 };
 
 export default ListPage;
+*/

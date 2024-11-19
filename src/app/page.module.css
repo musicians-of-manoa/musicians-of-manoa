@@ -228,3 +228,124 @@
     transform: rotate(0deg);
   }
 }
+
+/* New stylings after default ones added here! */
+
+.catchphrase {
+  color: #0d0d0d; /* HEADER TEXT COLOR */
+  font-size: 3.5rem;
+  font-weight: bold;
+  font-family: 'Arial', sans-serif;
+}
+
+.catchphrase span {
+  display: block; /* Ensures each word/phrase is on a new line */
+  margin-bottom: 0.5rem; /* Adjust spacing between lines as needed */
+}
+
+/* Sub-catchphrase styles */
+.subCatchphrase {
+  font-size: 1.25rem; /* Smaller than the main catchphrase */
+  font-weight: 300;   /* Regular weight */
+  margin-top: 1rem;   /* Space between the main catchphrase and this text */
+  color: #0d0d0d;     /* Light green text (adjust as needed) */
+  line-height: 1.5;   /* Improve readability */
+  padding-left: 4rem; /* ALIGNS SUBCATCHPHRASE TO CATCHPHRASE */
+}
+
+/* Outer container with padding */
+.sectionHolder {
+  padding: 0 3rem; /* Adds space on the left and right sides */
+}
+
+/* Inner container to control alignment */
+.sectionInner {
+  max-width: 1200px; /* Limit width of content to center it */
+  margin: 0 auto;    /* Center the section within the viewport */
+  display: flex;     /* Ensure horizontal layout of the Row */
+}
+
+/* Image Section */
+.imageSection img {
+  max-width: 100%; /* Prevent images from exceeding their container */
+  height: auto;    /* Maintain aspect ratio */
+}
+
+.leftContent {
+  margin-left: 4rem;
+}
+
+.customButton {
+  background-color: #0033ff;
+  border-color: #0033ff;
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  padding: 0.75rem 1.5rem;
+}
+
+.buttonGroup {
+  margin-left: 4rem;
+}
+
+.customButtonSmallText {
+  font-size: 1rem; /* Small font size */
+}
+
+/* Top Section */
+.topSection {
+  background-color: #a6ff72; /* Green background for the top section */
+}
+
+/* Bottom Section */
+.bottomSection {
+  background-color: #ffffff; /* White background for the bottom section */
+  color: #000000;            /* Optional: Text color for contrast */
+}
+
+/* Discover Button Styles */
+.discoverButton {
+  display: block;
+  position: relative;
+  width: 200px; /* Fixed width */
+  height: 200px; /* Fixed height (square) */
+  margin: 0 auto; /* Center the button horizontally */
+  background-size: cover; /* Ensure the image covers the entire button */
+  background-position: center; /* Center the image */
+  border-radius: 10px; /* Optional: Rounded corners */
+  overflow: hidden;
+  text-decoration: none; /* Remove underline */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Example images for each musician type */
+.discoverButton[href*="singers"] {
+  background-image: url('/singersDiscover.jpg'); /* Replace with actual image path */
+}
+
+.discoverButton[href*="guitarists"] {
+  background-image: url('/guitaristsDiscover.jpg'); /* Replace with actual image path */
+}
+
+.discoverButton[href*="producers"] {
+  background-image: url('/producersDiscover.jpg'); /* Replace with actual image path */
+}
+
+/* Text overlay */
+.discoverText {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff; /* White text */
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Shadow for readability */
+}
+
+/* Hover effect */
+.discoverButton:hover {
+  transform: scale(1.05); /* Slight zoom effect */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
