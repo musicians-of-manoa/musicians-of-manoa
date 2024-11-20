@@ -9,7 +9,7 @@ const JamSearchCard: React.FC = () => (
       <Col md={6} className="py-4" style={{ fontFamily: 'Arial' }}>
         <Card
           style={{ backgroundColor: '#ECDFCC', height: '100%' }}
-          className="d-flex flex-column justify-content-between"
+          className="hover-card d-flex flex-column justify-content-between"
         >
           <Card.Img
             variant="top"
@@ -37,7 +37,7 @@ const JamSearchCard: React.FC = () => (
       <Col md={6} className="py-4" style={{ fontFamily: 'Arial' }}>
         <Card
           style={{ backgroundColor: '#ECDFCC', height: '100%' }}
-          className="d-flex flex-column justify-content-between"
+          className="hover-card d-flex flex-column justify-content-between"
         >
           <Card.Img
             variant="top"
