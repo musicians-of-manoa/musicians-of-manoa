@@ -1,26 +1,21 @@
-import { Col, Container, Row } from 'react-bootstrap';
-import SearchBar from '@/components/SearchBar';
-import JamInfoCard from '@/components/JamInfoCard';
+import { Col, Container, Row, Image } from 'react-bootstrap';
 
 /** Render a list of stuff for the logged in user. */
-const JamSearchPage = async () => (
+const SearchPage = async () => (
   <main>
-    <Container id="jam-search" className="d-flex justify-content-center py-3">
+    <Container id="search" className="d-flex justify-content-center py-3">
       <Row>
         <Col>
-          <Col className="text-center py-4" style={{ fontFamily: 'Arial' }}>
-            <h2><strong>Search Jams</strong></h2>
-          </Col>
-          <SearchBar />
+          <h1><strong>Search for... </strong></h1>
+
+          {/* Jam Search Button */}
+          <a href="search/jam-search" className="hover-card">
+            <Image src="/images/jams-search-photo.jpg" width={500} height={500} style={{ objectFit: 'cover' }} />
+          </a>
         </Col>
       </Row>
-    </Container>
-    <Container>
-      <Col>
-        <JamInfoCard />
-      </Col>
     </Container>
   </main>
 );
 
-export default JamSearchPage;
+export default SearchPage;
