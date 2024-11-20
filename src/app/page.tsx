@@ -64,7 +64,7 @@ const Home = () => (
               </Carousel.Item>
               <Carousel.Item>
                 <Image
-                  src="/musicianBackMatch-1.png"
+                  src="/musicianBackMatch-2.png"
                   alt="Musician 1"
                   layout="responsive" // Ensures the image scales while maintaining its aspect ratio
                   width={1920} // Actual width of the image

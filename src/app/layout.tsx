@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Footer from '@/components/Footer';
+/** import Footer from '@/components/Footer'; */
 import NavBar from '@/components/Navbar';
 import Providers from './providers';
 
@@ -25,7 +25,6 @@ export default function RootLayout({
         <Providers>
           <NavBar />
           {children}
-          <Footer />
         </Providers>
       </body>
     </html>

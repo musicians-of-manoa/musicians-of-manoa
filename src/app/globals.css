@@ -1,3 +1,9 @@
+:root {
+  --nat-navbar-bg-rgb: 0, 0, 139;
+  --nat-navbar-text-color: white;
+  --nat-navbar-highlight-text: var(--bs-gray-500);
+}
+
 html,
 body {
   --bs-light-rgb: 236, 236, 236;
@@ -8,7 +14,13 @@ body {
   display: flex; /* Flexbox for vertical layout */
   flex-direction: column;
 }
-
+body .navbar {
+  --bs-navbar-active-color: var(--nat-navbar-highlight-text);
+  --bs-navbar-brand-color: var(--nat-navbar-text-color);
+  --bs-navbar-brand-hover-color: var(--nat-navbar-highlight-text);
+  --bs-navbar-color: var(--nat-navbar-text-color);
+  --bs-navbar-hover-color: var(--nat-navbar-highlight-text);
+}
 .wrapper {
   box-sizing: border-box;
   min-height: 100%;
@@ -74,4 +86,5 @@ main {
 .navbar .nav-dropdown a:hover {
   color: #ffffff;           /* Hover effect for dropdown links */
 }
+
 

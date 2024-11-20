@@ -1,8 +1,9 @@
-// Footer.tsx
-import { Container, Col } from 'react-bootstrap';
+/** import { Col, Container } from 'react-bootstrap'; */
 
-const Footer = () => (
-  <footer className="footer">
+/** The Footer appears at the bottom of every page. Rendered by the App Layout component. */
+
+/** const Footer = () => (
+  <footer className="mt-auto py-3 bg-light">
     <Container>
       <Col className="text-center">
         Department of Information and Computer Sciences
@@ -19,4 +20,4 @@ const Footer = () => (
   </footer>
 );
 
-export default Footer;
+export default Footer; */

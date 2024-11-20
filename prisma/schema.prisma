@@ -29,17 +29,35 @@ model User {
   role     Role   @default(USER)
 }
 
-enum Condition {
-  excellent
-  good
-  fair
-  poor
+enum Experience {
+  novice
+  beginner
+  intermediate
+  professional
+}
+
+model JamInformation {
+  id               Int       @id @default(autoincrement())
+  organizer        String
+  genre            String
+  location         String
+  date             DateTime
+  instruments      String
+  experience       Experience
+  description      String
 }
 
 model Stuff {
-  id        Int       @id @default(autoincrement())
-  name      String
-  quantity  Int
-  condition Condition
-  owner     String
+  id         String   @id @default(uuid())
+  owner      String
+  name       String
+  quantity   Int
+  condition  String
+}
+
+enum Condition {
+  good
+  fair
+  poor
+  excellent
 }
