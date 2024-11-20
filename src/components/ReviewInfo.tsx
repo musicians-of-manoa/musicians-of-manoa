@@ -18,21 +18,21 @@ const reviews: Review[] = [
     author: 'Josh Pat',
     date: '2024-11-20',
     rating: 4,
-    content: 'Great service, highly recommend!',
+    content: 'Great experience, highly recommended!',
   },
   {
     id: 2,
     author: 'Suzan Gail',
     date: '2024-11-18',
     rating: 5,
-    content: 'Amazing experience! Easy to use',
+    content: 'Amazing experience! The jam was super fun',
   },
   {
     id: 3,
     author: 'Arthur Harry',
     date: ' 2023-5-03',
     rating: 3,
-    content: 'I got a bit lost while navigating but was able to use it still regardless',
+    content: 'I got a bit lost while trying to sigh up but overall not too bad',
   },
   {
     id: 4,
@@ -84,7 +84,7 @@ const ReviewPage = () => {
           marginBottom: '20px',
         }}
       >
-        <h2 style={{ margin: 0, textAlign: 'left', flexGrow: 1 }}>Review Information</h2>
+        <h2 style={{ margin: 0, textAlign: 'left', flexGrow: 1 }}>Reviews for: John Doe</h2>
         <button
           type="button"
           style={{
