@@ -55,6 +55,7 @@ const NavBar: React.FC = () => {
                  </Nav.Link>,
               ]
             : ''}
+
             {currentUser && role === 'ADMIN' ? (
               <Nav.Link id="admin-stuff-nav" href="/admin" key="admin" active={pathName === '/admin'}>
                 Admin

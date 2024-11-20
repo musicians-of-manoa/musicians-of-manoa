@@ -14,6 +14,7 @@
   "defaultJamInformation": [
     {
       "id": 1,
+      "name": "Music Club",
       "organizer": "Local Music Club",
       "genre": "Jazz",
       "location": "Community Center",
@@ -24,6 +25,7 @@
     },
     {
       "id": 2,
+      "name": "Camp Rock",
       "organizer": "University Band",
       "genre": "Classical",
       "location": "Concert Hall",
