@@ -17,7 +17,6 @@ const MusicalTastesPage = () => {
     'R&B',
   ];
 
-  // State to store selected tastes
   const [selectedTastes, setSelectedTastes] = useState<string[]>([]);
 
   // Handle checkbox change using explicit logic
