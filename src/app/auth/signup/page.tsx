@@ -244,7 +244,7 @@ const SignUp = () => {
                     <h5>Your Selected Musical Tastes:</h5>
                     <ul>
                       {musicalTastes.map((taste) => (
-                        <li key={taste}>{taste}</li>
+                        <ul key={taste}>{taste}</ul>
                       ))}
                     </ul>
                   </div>
