@@ -14,7 +14,7 @@ const EditJamInfoForm: React.FC = () => (
             placeholder="Search..."
             style={{ width: '1200px', height: '50px', marginRight: '10px' }}
           />
-          <Search style={{ paddingTop:'10px' }}/>
+          <Search style={{ paddingTop: '10px' }} />
         </Form.Group>
       </Form>
     </Col>

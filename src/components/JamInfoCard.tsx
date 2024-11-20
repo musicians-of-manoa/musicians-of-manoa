@@ -15,8 +15,8 @@ const JamSearchCard: React.FC = () => (
             variant="top"
             src="/images/jams-search-photo.jpg"
             style={{
-              height: '200px',  // Adjust the height as needed
-              objectFit: 'cover', // Ensures the image covers the area without distorting
+              height: '200px',
+              objectFit: 'cover',
             }}
           />
           <Card.Body className="d-flex flex-column justify-content-between">
@@ -43,8 +43,8 @@ const JamSearchCard: React.FC = () => (
             variant="top"
             src="/images/concert.jpg"
             style={{
-              height: '200px',  // Same height as the other image to make them equal
-              objectFit: 'cover', // Ensures the image covers the area without distorting
+              height: '200px',
+              objectFit: 'cover',
             }}
           />
           <Card.Body className="d-flex flex-column justify-content-between">
