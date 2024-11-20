@@ -18,8 +18,6 @@ type SignUpForm = {
   musicalGoals?: string;
   instruments: { name: string }[];
   experienceLevel: string[];
-  // selectMusicalTastes: string[];
-  // acceptTerms: boolean;
 };
 
 /** The sign up page. */
@@ -38,13 +36,17 @@ const SignUp = () => {
     confirmPassword: Yup.string()
       .required('Confirm Password is required')
       .oneOf([Yup.ref('password'), ''], 'Confirm Password does not match'),
-    musicalGoals: Yup.string(),
-    instruments: Yup.array().of(
-      Yup.object().shape({
-        name: Yup.string().optional(),
-      }),
-    ),
-    experienceLevel: Yup.array().of(Yup.string().optional()),
+    musicalGoals: Yup.string().optional(),
+    instruments: Yup.array()
+      .of(
+        Yup.object().shape({
+          name: Yup.string().required('Instrument is required'),
+        }),
+      )
+      .required('At least one instrument must be added'),
+    experienceLevel: Yup.array()
+      .of(Yup.string().required('Experience level is required'))
+      .required('Experience level is required'),
   });
 
   const {
@@ -56,9 +58,16 @@ const SignUp = () => {
   } = useForm<SignUpForm>({
     resolver: yupResolver(validationSchema),
     defaultValues: {
+      firstName: '',
+      lastName: '',
+      userName: '',
+      email: '',
+      password: '',
+      confirmPassword: '',
+      musicalGoals: '',
       instruments: [{ name: '' }],
       experienceLevel: [''],
-    },
+    } as SignUpForm,
   });
 
   const { fields, append, remove } = useFieldArray<SignUpForm, 'instruments'>({
