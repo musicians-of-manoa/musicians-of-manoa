@@ -63,19 +63,26 @@ const FeedList: React.FC = () => {
       <h2 className="mb-4">Upcoming Jams</h2>
       <Row>
         {jams.map((jam) => (
-          <Col xs={12} md={6} lg={4} key={jam.id} className="mb-4">
-            <Card>
-              <Card.Body>
-                <Card.Title>
+          <Col xs={12} key={jam.id} className="mb-4">
+            <Card className="flex-row">
+              {/* Left Section: Metadata */}
+              <Card.Body className="d-flex flex-column align-items-start" style={{ maxWidth: '200px' }}>
+                <strong>
                   {jam.genre}
                   {' '}
                   Jam
-                </Card.Title>
-                <Card.Subtitle className="mb-2 text-muted">
-                  Organized by
-                  {' '}
-                  {jam.organizer}
-                </Card.Subtitle>
+                </strong>
+                <small className="text-muted">
+                  Date:
+                  {jam.date.toLocaleDateString()}
+                </small>
+                <Badge bg="info" className="mt-2">
+                  {jam.experience.charAt(0).toUpperCase() + jam.experience.slice(1)}
+                </Badge>
+              </Card.Body>
+
+              {/* Right Section: Content */}
+              <Card.Body>
                 <Card.Text>
                   <strong>Location:</strong>
                   {' '}
@@ -85,26 +92,13 @@ const FeedList: React.FC = () => {
                   {' '}
                   {jam.instruments}
                   <br />
-                  <strong>Experience Level:</strong>
-                  {' '}
-                  <Badge bg="info" text="dark">
-                    {jam.experience.charAt(0).toUpperCase() + jam.experience.slice(1)}
-                  </Badge>
-                  <br />
                   {jam.description}
                 </Card.Text>
-              </Card.Body>
-              <Card.Footer>
                 <small className="text-muted">
-                  Jam Date:
-                  {' '}
-                  {jam.date.toLocaleDateString()}
-                  {' '}
-                  at
-                  {' '}
-                  {jam.date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                  Organized by
+                  {jam.organizer}
                 </small>
-              </Card.Footer>
+              </Card.Body>
             </Card>
           </Col>
         ))}
