@@ -1,11 +1,14 @@
 /* eslint-disable react/jsx-indent, @typescript-eslint/indent */
+/* Josh : View Edit Profile has no link, will link to the User Profile Page (to be implemented later?) */
 
 'use client';
 
 import { useSession } from 'next-auth/react';
 import { usePathname } from 'next/navigation';
 import { Container, Nav, Navbar, NavDropdown, Image } from 'react-bootstrap';
-import { BoxArrowRight, Lock, PersonFill, PersonPlusFill, MusicNoteBeamed, Search } from 'react-bootstrap-icons';
+import { BoxArrowRight, Lock, Person, PersonFill,
+         PersonPlusFill, Search, MusicNoteBeamed,
+         CardList } from 'react-bootstrap-icons';
 
 const NavBar: React.FC = () => {
   const { data: session } = useSession();
@@ -26,23 +29,32 @@ const NavBar: React.FC = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto justify-content-start">
-            {currentUser
-              ? [
-                  <Nav.Link
-                    id="create-jam-nav"
-                    href="/jam-information"
-                    key="create-jam"
-                    active={pathName === '/jam-information'}
-                  >
-                    Create a Jam
-                    <MusicNoteBeamed className="ms-2" />
-                  </Nav.Link>,
-                  <Nav.Link id="search-nav" href="/search" key="search" active={pathName === '/search'}>
-                    Search
-                    <Search className="ms-2" />
-                  </Nav.Link>,
-                ]
-              : ''}
+          {currentUser
+            ? [
+                <Nav.Link
+                  id="feed-nav"
+                  href="/feed"
+                  key="feed"
+                  active={pathName === '/feed'}
+                >
+                  Feed
+                  <CardList className="ms-2" />
+                </Nav.Link>,
+                <Nav.Link
+                  id="create-jam-nav"
+                  href="/jam-information"
+                  key="create-jam"
+                  active={pathName === '/jam-information'}
+                >
+                  Create a Jam
+                  <MusicNoteBeamed className="ms-2" />
+                </Nav.Link>,
+                 <Nav.Link id="search-nav" href="/search" key="search" active={pathName === '/search'}>
+                 Search
+                 <Search className="ms-2" />
+                 </Nav.Link>,
+              ]
+            : ''}
             {currentUser && role === 'ADMIN' ? (
               <Nav.Link id="admin-stuff-nav" href="/admin" key="admin" active={pathName === '/admin'}>
                 Admin
@@ -54,6 +66,10 @@ const NavBar: React.FC = () => {
           <Nav>
             {session ? (
               <NavDropdown id="login-dropdown" title={currentUser}>
+                <NavDropdown.Item id="login-dropdown-view-profile" href="/profile">
+                 <Person />
+                  View/Edit Profile
+                </NavDropdown.Item>
                 <NavDropdown.Item id="login-dropdown-sign-out" href="/api/auth/signout">
                   <BoxArrowRight />
                   Sign Out
