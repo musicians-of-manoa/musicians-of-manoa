@@ -6,7 +6,8 @@
 import { useSession } from 'next-auth/react';
 import { usePathname } from 'next/navigation';
 import { Container, Nav, Navbar, NavDropdown, Image } from 'react-bootstrap';
-import { BoxArrowRight, Lock, Person, PersonFill, PersonPlusFill } from 'react-bootstrap-icons';
+import { BoxArrowRight, Lock, Person, PersonFill,
+         PersonPlusFill, Search, MusicNoteBeamed } from 'react-bootstrap-icons';
 
 const NavBar: React.FC = () => {
   const { data: session } = useSession();
@@ -44,7 +45,12 @@ const NavBar: React.FC = () => {
                   active={pathName === '/jam-information'}
                 >
                   Create a Jam
+                  <MusicNoteBeamed className="ms-2" />
                 </Nav.Link>,
+                 <Nav.Link id="search-nav" href="/search" key="search" active={pathName === '/search'}>
+                 Search
+                 <Search className="ms-2" />
+                 </Nav.Link>,
               ]
             : ''}
             {currentUser && role === 'ADMIN' ? (
