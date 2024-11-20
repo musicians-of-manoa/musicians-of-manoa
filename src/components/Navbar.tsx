@@ -7,7 +7,8 @@ import { useSession } from 'next-auth/react';
 import { usePathname } from 'next/navigation';
 import { Container, Nav, Navbar, NavDropdown, Image } from 'react-bootstrap';
 import { BoxArrowRight, Lock, Person, PersonFill,
-         PersonPlusFill, Search, MusicNoteBeamed } from 'react-bootstrap-icons';
+         PersonPlusFill, Search, MusicNoteBeamed,
+         CardList } from 'react-bootstrap-icons';
 
 const NavBar: React.FC = () => {
   const { data: session } = useSession();
@@ -37,6 +38,7 @@ const NavBar: React.FC = () => {
                   active={pathName === '/feed'}
                 >
                   Feed
+                  <CardList className="ms-2" />
                 </Nav.Link>,
                 <Nav.Link
                   id="create-jam-nav"
