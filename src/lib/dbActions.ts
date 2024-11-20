@@ -44,25 +44,43 @@ export async function addJamInformation(jamInfo: {
 }
 
 /**
- * Edits an existing stuff in the database.
- * @param stuff, an object with the following properties: id, name, quantity, owner, condition.
+ * Edits an existing jam information entry in the database.
+ * @param editJamInfo, an object containing the required fields fields: organizer, genre,
+ * location, date, instruments, experience, and description.
  */
-/**
-export async function editStuff(stuff: Stuff) {
-  // console.log(`editStuff data: ${JSON.stringify(stuff, null, 2)}`);
-  await prisma.stuff.update({
-    where: { id: stuff.id },
+export async function editJamInformation(jamInfo: {
+  id: number;
+  organizer: string;
+  genre: string;
+  location: string;
+  date: Date; // Includes date & time
+  instruments: string;
+  experience: Experience;
+  description: string;
+}) {
+  // Ensure the `date` field is converted to a JavaScript Date object
+  const parsedDate = new Date(jamInfo.date);
+
+  if (Number.isNaN(parsedDate.getTime())) {
+    throw new Error('Invalid date format.');
+  }
+
+  // Update the database
+  await prisma.jamInformation.update({
+    where: { id: jamInfo.id },
     data: {
-      name: stuff.name,
-      quantity: stuff.quantity,
-      owner: stuff.owner,
-      condition: stuff.condition,
+      organizer: jamInfo.organizer,
+      genre: jamInfo.genre,
+      location: jamInfo.location,
+      date: parsedDate,
+      instruments: jamInfo.instruments,
+      experience: jamInfo.experience,
+      description: jamInfo.description,
     },
   });
   // After updating, redirect to the list page
-  redirect('/list');
+  redirect('/jam-information');
 }
-*/
 
 /**
  * Deletes an existing stuff from the database.
