@@ -1,11 +1,12 @@
 /* eslint-disable react/jsx-indent, @typescript-eslint/indent */
+/* Josh : View Edit Profile has no link, will link to the User Profile Page (to be implemented later?) */
 
 'use client';
 
 import { useSession } from 'next-auth/react';
 import { usePathname } from 'next/navigation';
-import { Container, Nav, Navbar, NavDropdown, Image } from 'react-bootstrap';
-import { BoxArrowRight, Lock, PersonFill, PersonPlusFill } from 'react-bootstrap-icons';
+import { Container, Nav, Navbar, NavDropdown, Image, NavLink } from 'react-bootstrap';
+import { BoxArrowRight, Lock, Person, PersonFill, PersonPlusFill } from 'react-bootstrap-icons';
 
 const NavBar: React.FC = () => {
   const { data: session } = useSession();
@@ -26,21 +27,26 @@ const NavBar: React.FC = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto justify-content-start">
-            {currentUser
-              ? [
-                  <Nav.Link
-                    id="create-jam-nav"
-                    href="/jam-information"
-                    key="create-jam"
-                    active={pathName === '/jam-information'}
-                  >
-                    Create a Jam
-                  </Nav.Link>,
-                  <Nav.Link id="list-stuff-nav" href="/list" key="list" active={pathName === '/list'}>
-                    List Stuff
-                  </Nav.Link>,
-                ]
-              : ''}
+          {currentUser
+            ? [
+                <Nav.Link
+                  id="feed-nav"
+                  href="/feed"
+                  key="feed"
+                  active={pathName === '/feed'}
+                >
+                  Feed
+                </Nav.Link>,
+                <Nav.Link
+                  id="create-jam-nav"
+                  href="/jam-information"
+                  key="create-jam"
+                  active={pathName === '/jam-information'}
+                >
+                  Create a Jam
+                </Nav.Link>,
+              ]
+            : ''}
             {currentUser && role === 'ADMIN' ? (
               <Nav.Link id="admin-stuff-nav" href="/admin" key="admin" active={pathName === '/admin'}>
                 Admin
@@ -52,6 +58,10 @@ const NavBar: React.FC = () => {
           <Nav>
             {session ? (
               <NavDropdown id="login-dropdown" title={currentUser}>
+                <NavDropdown.Item id="login-dropdown-view-profile" href="/profile">
+                 <Person />
+                  View/Edit Profile
+                </NavDropdown.Item>
                 <NavDropdown.Item id="login-dropdown-sign-out" href="/api/auth/signout">
                   <BoxArrowRight />
                   Sign Out
