@@ -10,7 +10,7 @@ const SearchPage: React.FC = () => (
     </Col>
     <Row>
       <Col md={6}>
-        <a href="search/jam-search" className="hover-card" style={{ textDecoration: 'none' }}>
+        <a href="search/profile-search" className="hover-card" style={{ textDecoration: 'none' }}>
           <Card className="text-white hover-card">
             <div
               style={{
