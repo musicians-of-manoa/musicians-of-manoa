@@ -4,7 +4,7 @@ import React from 'react';
 import { Container, Col, Form } from 'react-bootstrap';
 import { Search } from 'react-bootstrap-icons';
 
-const EditJamInfoForm: React.FC = () => (
+const SearchBar: React.FC = () => (
   <Container style={{ backgroundColor: '#ECDFCC' }} className="rounded">
     <Col className="text-center py-4" style={{ fontFamily: 'Arial' }}>
       <Form>
@@ -22,4 +22,4 @@ const EditJamInfoForm: React.FC = () => (
   </Container>
 );
 
-export default EditJamInfoForm;
+export default SearchBar;

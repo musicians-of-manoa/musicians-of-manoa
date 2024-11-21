@@ -1,9 +1,11 @@
-import { Col, Container, Row, Image } from 'react-bootstrap';
+import { Col, Container, Row } from 'react-bootstrap';
+import SearchBar from '@/components/SearchBar';
+import JamInfoCard from '@/components/JamInfoCard';
 
 /** Render a list of stuff for the logged in user. */
-const SearchPage = async () => (
+const JamSearchPage = async () => (
   <main>
-    <Container id="search" className="d-flex justify-content-center py-3">
+    <Container id="jam-search" className="d-flex justify-content-center py-3">
       <Row>
         <Col>
           <h1><strong>Search for... </strong></h1>
@@ -15,7 +17,12 @@ const SearchPage = async () => (
         </Col>
       </Row>
     </Container>
+    <Container>
+      <Col>
+        <JamInfoCard />
+      </Col>
+    </Container>
   </main>
 );
 
-export default SearchPage;
+export default JamSearchPage;
