@@ -54,8 +54,16 @@ const NavBar: React.FC = () => {
                     <Search className="ms-2" />
                   </Nav.Link>,
                   <Nav.Link
+                    id="list-stuff-nav"
+                    href="/list"
+                    key="list"
+                    active={pathName === '/list'}
+                  >
+                    List Stuff
+                  </Nav.Link>,
+                  <Nav.Link
                     id="jam-list-nav"
-                    href="/jam-list"
+                    href=""
                     key="jam-list"
                     active={pathName === '/jam-list'}
                   >
