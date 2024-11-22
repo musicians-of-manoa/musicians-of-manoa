@@ -1,19 +1,13 @@
-import { Col, Container, Row, Image } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
+import SearchPage from '@/components/SearchPage';
 
 /** Render a list of stuff for the logged in user. */
-const SearchPage = async () => (
+const Search = async () => (
   <main>
     <Container id="search" className="d-flex justify-content-center py-3">
-      <Row>
-        <Col>
-          <h1><strong>Search Page</strong></h1>
-
-          {/* Jam Search Button */}
-          <Image src="/public/images/jams-search-photo.jpg" height={200} />
-        </Col>
-      </Row>
+      <SearchPage />
     </Container>
   </main>
 );
 
-export default SearchPage;
+export default Search;

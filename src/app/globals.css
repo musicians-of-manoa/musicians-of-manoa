@@ -111,6 +111,14 @@ main {
   top: -8px; /* Position the top line */
 }
 
-.custom-toggler .navbar-toggler-icon::after {
-  top: 8px; /* Position the bottom line */
+/*Jam Info Cards */
+.hover-card {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.hover-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }

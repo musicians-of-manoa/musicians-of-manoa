@@ -1,4 +1,5 @@
 /* eslint-disable react/jsx-indent, @typescript-eslint/indent */
+/* Josh : View Edit Profile has no link, will link to the User Profile Page (to be implemented later?) */
 
 'use client';
 
@@ -8,10 +9,12 @@ import { Container, Nav, Navbar, NavDropdown, Image } from 'react-bootstrap';
 import {
   BoxArrowRight,
   Lock,
+  Person,
   PersonFill,
   PersonPlusFill,
-  MusicNoteBeamed,
   Search,
+  MusicNoteBeamed,
+  CardList,
 } from 'react-bootstrap-icons';
 
 const NavBar: React.FC = () => {
@@ -39,6 +42,15 @@ const NavBar: React.FC = () => {
             {currentUser
               ? [
                   <Nav.Link
+                    id="feed-nav"
+                    href="/feed"
+                    key="feed"
+                    active={pathName === '/feed'}
+                  >
+                    Feed
+                    <CardList className="ms-2" />
+                  </Nav.Link>,
+                  <Nav.Link
                     id="create-jam-nav"
                     href="/jam-information"
                     key="create-jam"
@@ -55,22 +67,6 @@ const NavBar: React.FC = () => {
                   >
                     Search
                     <Search className="ms-2" />
-                  </Nav.Link>,
-                  <Nav.Link
-                    id="list-stuff-nav"
-                    href="/list"
-                    key="list"
-                    active={pathName === '/list'}
-                  >
-                    List Stuff
-                  </Nav.Link>,
-                  <Nav.Link
-                    id="jam-list-nav"
-                    href=""
-                    key="jam-list"
-                    active={pathName === '/jam-list'}
-                  >
-                    Jam List
                   </Nav.Link>,
                 ]
               : ''}
@@ -90,6 +86,13 @@ const NavBar: React.FC = () => {
           <Nav>
             {session ? (
               <NavDropdown id="login-dropdown" title={currentUser}>
+                <NavDropdown.Item
+                  id="login-dropdown-view-profile"
+                  href="/profile"
+                >
+                  <Person />
+                  View/Edit Profile
+                </NavDropdown.Item>
                 <NavDropdown.Item
                   id="login-dropdown-sign-out"
                   href="/api/auth/signout"
