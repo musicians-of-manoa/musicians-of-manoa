@@ -111,6 +111,10 @@ main {
   top: -8px; /* Position the top line */
 }
 
+.custom-toggler .navbar-toggler-icon::after {
+  top: 8px; /* Adjust top position for the last line */
+}
+
 /*Jam Info Cards */
 .hover-card {
   transition:
