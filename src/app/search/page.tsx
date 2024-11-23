@@ -1,16 +1,13 @@
-import { Col, Container, Row } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
+import SearchPage from '@/components/SearchPage';
 
 /** Render a list of stuff for the logged in user. */
-const ListPage = async () => (
+const Search = async () => (
   <main>
     <Container id="search" className="d-flex justify-content-center py-3">
-      <Row>
-        <Col>
-          <h1><strong>Search Page</strong></h1>
-        </Col>
-      </Row>
+      <SearchPage />
     </Container>
   </main>
 );
 
-export default ListPage;
+export default Search;
