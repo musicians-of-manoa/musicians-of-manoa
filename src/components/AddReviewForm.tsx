@@ -1,7 +1,7 @@
 'use client';
 
 import { useSession } from 'next-auth/react';
-import { Form, Button, Card } from 'react-bootstrap';
+import { Form, Button, Card, Col, Row } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import swal from 'sweetalert';
@@ -9,9 +9,9 @@ import { redirect } from 'next/navigation';
 import { addReview } from '@/lib/dbActions';
 import LoadingSpinner from '@/components/LoadingSpinner';
 import { AddReviewSchema } from '@/lib/validationSchemas';
-import ReactStars from 'react-rating-stars-component';
+// import ReactStars from 'react-rating-stars-component';
 import { User } from '@prisma/client';
-import React, { useState } from 'react';
+import React from 'react';
 
 const onSubmit = async (data: {
   rating: number;
@@ -26,7 +26,6 @@ const onSubmit = async (data: {
 
 const AddReviewForm = ({ user }: { user: User }) => {
   const { status } = useSession();
-  const [rating, setRating] = useState<number>(0);
   const {
     register,
     handleSubmit,
@@ -48,10 +47,11 @@ const AddReviewForm = ({ user }: { user: User }) => {
       <Card.Body>
         <Form
           onSubmit={handleSubmit((data) =>
-            onSubmit({ ...data, rating, userId: user.id }),
+            onSubmit({ ...data, userId: user.id }),
           )}
         >
           {/* Rating Stars */}
+          {/*
           <Form.Group>
             <Form.Label>Rating</Form.Label>
             <ReactStars
@@ -61,7 +61,7 @@ const AddReviewForm = ({ user }: { user: User }) => {
               size={24}
               activeColor="#ffd700"
             />
-          </Form.Group>
+          </Form.Group> */}
 
           {/* Description Input */}
           <Form.Group className="mt-3">

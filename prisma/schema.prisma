@@ -68,5 +68,5 @@ model Review {
   rating      Int
   comment     String
   userId      Int
-  User        User         @relation(fields: [userId], references: [id])
+  user        User   @relation(fields: [userId], references: [id])
 }
