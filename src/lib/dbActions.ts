@@ -126,3 +126,14 @@ export async function changePassword(credentials: { email: string; password: str
     },
   });
 }
+
+export async function addReview(review: { rating: number; comment: string; userId: number }) {
+  await prisma.review.create({
+    data: {
+      rating: review.rating,
+      comment: review.comment,
+      userId: review.userId,
+    },
+  });
+  redirect('/profile');
+}

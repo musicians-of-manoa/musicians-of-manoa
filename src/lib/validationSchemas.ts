@@ -36,3 +36,9 @@ export const EditStuffSchema = Yup.object({
   condition: Yup.string().oneOf(['excellent', 'good', 'fair', 'poor']).required(),
   owner: Yup.string().required(),
 });
+
+export const AddReviewSchema = Yup.object({
+  rating: Yup.number().min(1).max(5).required(),
+  comment: Yup.string().required(),
+  userId: Yup.number().required(),
+});

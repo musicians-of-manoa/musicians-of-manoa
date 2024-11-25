@@ -15,6 +15,7 @@ import {
   Search,
   MusicNoteBeamed,
   CardList,
+  Collection,
 } from 'react-bootstrap-icons';
 
 const NavBar: React.FC = () => {
@@ -58,6 +59,15 @@ const NavBar: React.FC = () => {
                   >
                     Create a Jam
                     <MusicNoteBeamed className="ms-2" />
+                  </Nav.Link>,
+                  <Nav.Link
+                    id="jam-list-nav"
+                    href="/jam-list"
+                    key="jam-list"
+                    active={pathName === '/jam-list'}
+                  >
+                    Jam List
+                    <Collection className="ms-2" />
                   </Nav.Link>,
                   <Nav.Link
                     id="search-nav"

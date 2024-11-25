@@ -21,15 +21,24 @@ const ProfileInfoCard: React.FC = () => (
           />
           <Card.Body className="d-flex flex-column justify-content-between">
             <div>
-              <Card.Title><strong>PROFILE NAME</strong></Card.Title>
-              <p><strong>Username | Instruments & Experience Level</strong></p>
-              <p><strong>Musical Goals</strong></p>
-              <p><strong>Musical Tastes</strong></p>
+              <Card.Title>
+                <strong>PROFILE NAME</strong>
+              </Card.Title>
+              <p>
+                <strong>Username | Instruments & Experience Level</strong>
+              </p>
+              <p>
+                <strong>Musical Goals</strong>
+              </p>
+              <p>
+                <strong>Musical Tastes</strong>
+              </p>
               <hr />
             </div>
             <Card.Text>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-              labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
               nisi ut aliquip ex ea commodo consequat.
             </Card.Text>
             <Button variant="primary">View Profile</Button>
@@ -52,15 +61,24 @@ const ProfileInfoCard: React.FC = () => (
           />
           <Card.Body className="d-flex flex-column justify-content-between">
             <div>
-              <Card.Title><strong>PROFILE NAME</strong></Card.Title>
-              <p><strong>Username | Instruments & Experience Level</strong></p>
-              <p><strong>Musical Goals</strong></p>
-              <p><strong>Musical Tastes</strong></p>
+              <Card.Title>
+                <strong>PROFILE NAME</strong>
+              </Card.Title>
+              <p>
+                <strong>Username | Instruments & Experience Level</strong>
+              </p>
+              <p>
+                <strong>Musical Goals</strong>
+              </p>
+              <p>
+                <strong>Musical Tastes</strong>
+              </p>
               <hr />
             </div>
             <Card.Text>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-              labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
               nisi ut aliquip ex ea commodo consequat.
             </Card.Text>
             <Button variant="primary">View Profile</Button>
@@ -82,15 +100,24 @@ const ProfileInfoCard: React.FC = () => (
           />
           <Card.Body className="d-flex flex-column justify-content-between">
             <div>
-              <Card.Title><strong>PROFILE NAME</strong></Card.Title>
-              <p><strong>Username | Instruments & Experience Level</strong></p>
-              <p><strong>Musical Goals</strong></p>
-              <p><strong>Musical Tastes</strong></p>
+              <Card.Title>
+                <strong>PROFILE NAME</strong>
+              </Card.Title>
+              <p>
+                <strong>Username | Instruments & Experience Level</strong>
+              </p>
+              <p>
+                <strong>Musical Goals</strong>
+              </p>
+              <p>
+                <strong>Musical Tastes</strong>
+              </p>
               <hr />
             </div>
             <Card.Text>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-              labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
               nisi ut aliquip ex ea commodo consequat.
             </Card.Text>
             <Button variant="primary">View Profile</Button>
@@ -112,15 +139,24 @@ const ProfileInfoCard: React.FC = () => (
           />
           <Card.Body className="d-flex flex-column justify-content-between">
             <div>
-              <Card.Title><strong>PROFILE NAME</strong></Card.Title>
-              <p><strong>Username | Instruments & Experience Level</strong></p>
-              <p><strong>Musical Goals</strong></p>
-              <p><strong>Musical Tastes</strong></p>
+              <Card.Title>
+                <strong>PROFILE NAME</strong>
+              </Card.Title>
+              <p>
+                <strong>Username | Instruments & Experience Level</strong>
+              </p>
+              <p>
+                <strong>Musical Goals</strong>
+              </p>
+              <p>
+                <strong>Musical Tastes</strong>
+              </p>
               <hr />
             </div>
             <Card.Text>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-              labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
               nisi ut aliquip ex ea commodo consequat.
             </Card.Text>
             <Button variant="primary">View Profile</Button>
