@@ -51,6 +51,7 @@ async function main() {
       update: {},
       create: {
         goal: musicalGoal.goal,
+        isEditing: musicalGoal.isEditing,
       },
     });
   });

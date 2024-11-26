@@ -37,10 +37,10 @@
   ],
 
   "defaultMusicalGoals": [
-    { "id": 1, "goal": "Gain experience playing in different genres" },
-    { "id": 2, "goal": "Socialize with other musicians" },
-    { "id": 3, "goal": "Learn to play a new instrument" },
-    { "id": 4, "goal": "Form a band that regularly performs" },
-    { "id": 5, "goal": "Improve sight-reading skills" }
+    { "id": 1, "goal": "Gain experience playing in different genres", "isEditing": 0 },
+    { "id": 2, "goal": "Socialize with other musicians", "isEditing": 0 },
+    { "id": 3, "goal": "Learn to play a new instrument", "isEditing": 0 },
+    { "id": 4, "goal": "Form a band that regularly performs", "isEditing": 0 },
+    { "id": 5, "goal": "Improve sight-reading skills", "isEditing": 0 }
   ]
 }
