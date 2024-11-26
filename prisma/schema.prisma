@@ -61,3 +61,9 @@ enum Condition {
   poor
   excellent
 }
+
+model Goals {
+  id        Int     @id @default(autoincrement())
+  goal      String
+  isEditing Int     @default(0)
+}

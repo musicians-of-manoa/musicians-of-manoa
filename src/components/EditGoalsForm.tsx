@@ -1,31 +1,37 @@
 'use client';
 
-import { useState } from 'react';
 import { Container, Col, Row, Table, Button, FormControl } from 'react-bootstrap';
+// import { yupResolver } from '@hookform/resolvers/yup';
+import { Goals } from '@prisma/client';
+// import { EditGoalSchema, AddGoalSchema } from '@/lib/validationSchemas';
+import { editGoal, createGoal, getGoals } from '@/lib/dbActions';
+import { useEffect, useState } from 'react';
 
 const EditGoalsForm = () => {
-  const [goals, setGoals] = useState([
-    { id: 1, text: 'Goal 1', isEditing: false },
-    { id: 2, text: 'Goal 2', isEditing: false },
-    { id: 3, text: 'Goal 3', isEditing: false },
-    { id: 4, text: 'Goal 4', isEditing: false },
-  ]);
+  const [goals, setGoals] = useState<Goals[]>([]);
 
-  const addGoal = () => {
-    const newGoal = { id: goals.length + 1, text: `Goal ${goals.length + 1}`, isEditing: false };
-    setGoals([...goals, newGoal]);
+  useEffect(() => {
+    const fetchGoals = async () => {
+      const existingGoals = await getGoals();
+      setGoals(existingGoals);
+    };
+
+    fetchGoals();
+  }, []);
+
+  const addGoal = async (goal: Omit<Goals, 'id'>) => {
+    const newId = goals.length > 0 ? Math.max(...goals.map(g => g.id)) + 1 : 1;
+    const newGoal = { ...goal, id: newId };
+    await createGoal(newGoal);
   };
 
-  const removeGoal = (id: number) => {
-    setGoals(goals.filter(goal => goal.id !== id));
+  const enableEdit = async (goal: Goals) => {
+    const updatedGoal = { ...goal, isEditing: 1 };
+    await editGoal(updatedGoal);
   };
 
-  const editGoal = (id: number) => {
-    setGoals(goals.map(goal => (goal.id === id ? { ...goal, isEditing: true } : goal)));
-  };
-
-  const saveGoal = (id: number, newText: string) => {
-    setGoals(goals.map(goal => (goal.id === id ? { ...goal, text: newText, isEditing: false } : goal)));
+  const saveGoal = async (goal: Goals) => {
+    await editGoal(goal);
   };
 
   return (
@@ -48,26 +54,31 @@ const EditGoalsForm = () => {
                       {goal.isEditing ? (
                         <FormControl
                           type="text"
-                          defaultValue={goal.text}
-                          onBlur={(e) => saveGoal(goal.id, e.target.value)}
+                          defaultValue={goal.goal}
+                          onBlur={(e) => saveGoal({ ...goal, goal: e.target.value })}
                         />
                       ) : (
-                        goal.text
+                        goal.goal
                       )}
                     </td>
                     <td>
                       {goal.isEditing ? (
-                        <Button variant="success" className="me-2" onClick={() => saveGoal(goal.id, goal.text)}>
+                        <Button variant="success" className="me-2" onClick={() => saveGoal(goal)}>
                           Save
                         </Button>
                       ) : (
-                        <Button variant="primary" className="me-2" onClick={() => editGoal(goal.id)}>Edit</Button>
+                        <Button variant="primary" className="me-2" onClick={() => enableEdit(goal)}>Edit</Button>
                       )}
-                      <Button variant="danger" onClick={() => removeGoal(goal.id)}>Remove</Button>
                     </td>
                   </tr>
                 ))}
-                <Button variant="primary" onClick={addGoal} className="mt-2">Add Goal</Button>
+                <Button
+                  variant="primary"
+                  onClick={() => addGoal({ goal: '', isEditing: 1 })}
+                  className="mt-2"
+                >
+                  Add Goal
+                </Button>
               </tbody>
             </Table>
           </Container>
