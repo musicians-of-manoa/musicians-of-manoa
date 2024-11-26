@@ -34,5 +34,13 @@
       "experience": "professional",
       "description": "An advanced jam session for classical musicians."
     }
+  ],
+
+  "defaultMusicalGoals": [
+    { "id": 1, "goal": "Gain experience playing in different genres" },
+    { "id": 2, "goal": "Socialize with other musicians" },
+    { "id": 3, "goal": "Learn to play a new instrument" },
+    { "id": 4, "goal": "Form a band that regularly performs" },
+    { "id": 5, "goal": "Improve sight-reading skills" }
   ]
 }
