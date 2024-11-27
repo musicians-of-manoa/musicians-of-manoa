@@ -5,6 +5,7 @@ import { Container, Row, Col, Card, Badge } from 'react-bootstrap';
 
 interface Jam {
   id: number;
+  name: string;
   organizer: string;
   genre: string;
   location: string;
@@ -22,6 +23,7 @@ const FeedList: React.FC = () => {
     const mockJams: Jam[] = [
       {
         id: 1,
+        name: 'Mayjah Rayjah',
         organizer: 'user1@example.com',
         genre: 'Reggae',
         location: 'Honolulu Community Center',
@@ -32,6 +34,7 @@ const FeedList: React.FC = () => {
       },
       {
         id: 2,
+        name: 'I Love Blink-182',
         organizer: 'user2@example.com',
         genre: 'Punk Rock',
         location: 'Warehouse',
@@ -42,6 +45,7 @@ const FeedList: React.FC = () => {
       },
       {
         id: 3,
+        name: 'Rave Night',
         organizer: 'user3@example.com',
         genre: 'Electronic',
         location: 'Republik',
@@ -68,9 +72,8 @@ const FeedList: React.FC = () => {
               {/* Left Section: Metadata */}
               <Card.Body className="d-flex flex-column align-items-start" style={{ maxWidth: '200px' }}>
                 <strong>
-                  {jam.genre}
+                  {jam.name}
                   {' '}
-                  Jam
                 </strong>
                 <small className="text-muted">
                   Date:
@@ -91,6 +94,10 @@ const FeedList: React.FC = () => {
                   <strong>Instruments:</strong>
                   {' '}
                   {jam.instruments}
+                  <br />
+                  <strong>Genre:</strong>
+                  {' '}
+                  {jam.genre}
                   <br />
                   {jam.description}
                 </Card.Text>
