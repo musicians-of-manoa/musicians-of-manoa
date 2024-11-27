@@ -33,7 +33,7 @@ const Home = () => (
             <section className={`${styles.buttonGroup} mt-4`}>
               <Button
                 as="a"
-                href="/find-musicians"
+                href="/search/profile-search"
                 className={`${styles.customButton} ${styles.customButtonSmallText} me-3`}
                 size="lg"
               >
@@ -41,7 +41,7 @@ const Home = () => (
               </Button>
               <Button
                 as="a"
-                href="/find-jams"
+                href="/search/jam-search"
                 className={`${styles.customButton} ${styles.customButtonSmallText}`}
                 size="lg"
               >

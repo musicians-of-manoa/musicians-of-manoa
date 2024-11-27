@@ -1,5 +1,5 @@
 import { getServerSession } from 'next-auth';
-import { Col, Container, Row, Table } from 'react-bootstrap';
+import { Button, Col, Container, Row, Table } from 'react-bootstrap';
 import StuffItemAdmin from '@/components/StuffItemAdmin';
 import { prisma } from '@/lib/prisma';
 import { adminProtectedPage } from '@/lib/page-protection';
@@ -20,15 +20,18 @@ const AdminPage = async () => {
       <Container id="list" fluid className="py-3">
         <Row>
           <Col>
-            <h1>List Stuff Admin</h1>
+            <h1>List Jams Admin</h1>
             <Table striped bordered hover>
               <thead>
                 <tr>
                   <th>Name</th>
-                  <th>Quantity</th>
-                  <th>Condition</th>
-                  <th>Owner</th>
-                  <th>Actions</th>
+                  <th>Organizer</th>
+                  <th>Genre</th>
+                  <th>Location</th>
+                  <th>Date & Time</th>
+                  <th>Instruments</th>
+                  <th>Experience Level</th>
+                  <th>Description</th>
                 </tr>
               </thead>
               <tbody>
@@ -47,6 +50,7 @@ const AdminPage = async () => {
                 <tr>
                   <th>Email</th>
                   <th>Role</th>
+                  <th>Edit User</th>
                 </tr>
               </thead>
               <tbody>
@@ -54,6 +58,15 @@ const AdminPage = async () => {
                   <tr key={user.id}>
                     <td>{user.email}</td>
                     <td>{user.role}</td>
+                    <td>
+                      <Button
+                        as="a"
+                        href="/find-musicians"
+                        size="sm"
+                      >
+                        Edit
+                      </Button>
+                    </td>
                   </tr>
                 ))}
               </tbody>
