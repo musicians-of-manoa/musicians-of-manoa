@@ -47,21 +47,6 @@ model JamInformation {
   description      String
 }
 
-model Stuff {
-  id         String   @id @default(uuid())
-  owner      String
-  name       String
-  quantity   Int
-  condition  String
-}
-
-enum Condition {
-  good
-  fair
-  poor
-  excellent
-}
-
 model Goals {
   id        Int     @id @default(autoincrement())
   goal      String

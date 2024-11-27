@@ -78,6 +78,7 @@ const NavBar: React.FC = () => {
                 active={pathName === '/admin'}
               >
                 Admin
+                <Person className="ms-2" />
               </Nav.Link>
             ) : (
               ''
