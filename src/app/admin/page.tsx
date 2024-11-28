@@ -1,11 +1,8 @@
-// app/admin/page.tsx
-
 import { getServerSession } from 'next-auth';
 import { Button, Col, Container, Row, Table } from 'react-bootstrap';
 import { prisma } from '@/lib/prisma';
 import { adminProtectedPage } from '@/lib/page-protection';
 import authOptions from '@/lib/authOptions';
-import Link from 'next/link';
 
 const AdminPage = async () => {
   // Protect the admin page
