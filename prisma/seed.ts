@@ -47,6 +47,40 @@ async function main() {
     });
   }); */
 
+  // Seed Musical Goals
+  config.defaultMusicalGoals.forEach(async (musicalGoal) => {
+    console.log(`  Adding Musical Goals: ${musicalGoal.goal}`);
+    await prisma.goals.upsert({
+      where: { id: musicalGoal.id },
+      update: {},
+      create: {
+        goal: musicalGoal.goal,
+        isEditing: musicalGoal.isEditing,
+      },
+    });
+  });
+
+  // Seed Profile
+  config.defaultProfiles.forEach(async (profile) => {
+    console.log(`  Adding Profile: ${profile.username}`);
+    await prisma.profile.upsert({
+      where: { id: profile.id },
+      update: {},
+      create: {
+        username: profile.username,
+        firstName: profile.firstName,
+        lastName: profile.lastName,
+        image: profile.image,
+        rating: profile.rating,
+        musicalGoals: profile.musicalGoals,
+        musicalTastes: profile.musicalTastes,
+        instruments: profile.instruments,
+        experience: profile.experience as Experience,
+        description: profile.description,
+      },
+    });
+  });
+
   /**
   config.defaultData.forEach(async (data, index) => {
     let condition: Condition = 'good';

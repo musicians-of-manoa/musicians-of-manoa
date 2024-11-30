@@ -20,6 +20,16 @@ export const AddJamInfoSchema = Yup.object({
   description: Yup.string().required(),
 });
 
+export const AddGoalSchema = Yup.object({
+  goal: Yup.string().required(),
+  isEditing: Yup.number().required(),
+});
+
+export const EditGoalSchema = Yup.object({
+  goal: Yup.string().required(),
+  isEditing: Yup.number().required(),
+});
+
 export const EditStuffSchema = Yup.object({
   id: Yup.number().required(),
   name: Yup.string().required(),
@@ -33,3 +43,18 @@ export const AddReviewSchema = Yup.object({
   comment: Yup.string().required(),
   userId: Yup.number().required(),
 });
+
+// Provide Sample Data for Profile Page
+export interface Profile {
+  id: number;
+  username: string;
+  firstName: string;
+  lastName: string;
+  image: string;
+  rating: number;
+  musicalGoals: string;
+  musicalTastes: string;
+  instruments: string;
+  experience: string;
+  description: string;
+}
