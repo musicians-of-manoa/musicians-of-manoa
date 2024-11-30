@@ -52,3 +52,18 @@ export const AddReviewSchema = Yup.object({
   comment: Yup.string().required(),
   userId: Yup.number().required(),
 });
+
+// Provide Sample Data for Profile Page
+export interface Profile {
+  id: number;
+  username: string;
+  firstName: string;
+  lastName: string;
+  image: string;
+  rating: number;
+  musicalGoals: string;
+  musicalTastes: string;
+  instruments: string;
+  experience: string;
+  description: string;
+}

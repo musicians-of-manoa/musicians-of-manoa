@@ -30,10 +30,43 @@
   ],
 
   "defaultMusicalGoals": [
-    { "id": 1, "goal": "Gain experience playing in different genres", "isEditing": 0 },
+    {
+      "id": 1,
+      "goal": "Gain experience playing in different genres",
+      "isEditing": 0
+    },
     { "id": 2, "goal": "Socialize with other musicians", "isEditing": 0 },
     { "id": 3, "goal": "Learn to play a new instrument", "isEditing": 0 },
     { "id": 4, "goal": "Form a band that regularly performs", "isEditing": 0 },
     { "id": 5, "goal": "Improve sight-reading skills", "isEditing": 0 }
+  ],
+
+  "defaultProfiles": [
+    {
+      "id": 1,
+      "firstName": "John",
+      "lastName": "Doe",
+      "image": "/images/jams-search-photo.jpg",
+      "username": "johndoe",
+      "rating": 4.5,
+      "musicalGoals": "Gain experience playing in different genres",
+      "musicalTastes": "Jazz, Classical",
+      "instruments": "Saxophone, Piano",
+      "experience": "beginner",
+      "description": "I'm a beginner saxophonist looking to gain experience playing in different genres."
+    },
+    {
+      "id": 2,
+      "firstName": "Jane",
+      "lastName": "Smith",
+      "image": "...",
+      "username": "janesmith",
+      "rating": 4.0,
+      "musicalGoals": "Socialize with other musicians",
+      "musicalTastes": "Rock, Pop",
+      "instruments": "Guitar, Drums",
+      "experience": "intermediate",
+      "description": "I'm an intermediate guitarist looking to socialize with other musicians."
+    }
   ]
 }

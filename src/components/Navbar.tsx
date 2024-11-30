@@ -89,7 +89,7 @@ const NavBar: React.FC = () => {
               <NavDropdown id="login-dropdown" title={currentUser}>
                 <NavDropdown.Item
                   id="login-dropdown-view-profile"
-                  href="/profile"
+                  href="/auth/profile"
                 >
                   <Person />
                   View/Edit Profile

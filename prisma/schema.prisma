@@ -52,3 +52,17 @@ model Goals {
   goal      String
   isEditing Int     @default(0)
 }
+
+model Profile {
+  id Int @id @default(autoincrement())
+  firstName String
+  lastName String
+  username String
+  image String
+  rating Int
+  musicalGoals String
+  musicalTastes String
+  instruments String
+  experience Experience
+  description String
+}

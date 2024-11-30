@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { Container, Col, Card, Button, Row } from 'react-bootstrap';
+import RatingStars from '@/components/RatingStars'; // import the RatingStars component. Dahyun
 
 const ProfileInfoCard: React.FC = () => (
   <Container>
@@ -41,7 +42,14 @@ const ProfileInfoCard: React.FC = () => (
               enim ad minim veniam, quis nostrud exercitation ullamco laboris
               nisi ut aliquip ex ea commodo consequat.
             </Card.Text>
-            <Button variant="primary">View Profile</Button>
+            {/* Add the RatingStars component here. Dahyun */}
+            <strong>Reviews:</strong>
+            <div className="d-flex justify-content-center mb-2">
+              <RatingStars value={3.5} size={24} isHalf />
+            </div>
+            <Button href="/profile-detail" variant="primary">
+              View Profile
+            </Button>
           </Card.Body>
         </Card>
       </Col>
@@ -81,6 +89,11 @@ const ProfileInfoCard: React.FC = () => (
               enim ad minim veniam, quis nostrud exercitation ullamco laboris
               nisi ut aliquip ex ea commodo consequat.
             </Card.Text>
+            {/* Add the RatingStars component here. Dahyun */}
+            <strong>Reviews:</strong>
+            <div className="d-flex justify-content-center mb-2">
+              <RatingStars value={4} size={24} isHalf />
+            </div>
             <Button variant="primary">View Profile</Button>
           </Card.Body>
         </Card>
@@ -120,6 +133,11 @@ const ProfileInfoCard: React.FC = () => (
               enim ad minim veniam, quis nostrud exercitation ullamco laboris
               nisi ut aliquip ex ea commodo consequat.
             </Card.Text>
+            {/* Add the RatingStars component here. Dahyun */}
+            <strong>Reviews:</strong>
+            <div className="d-flex justify-content-center mb-2">
+              <RatingStars value={4.5} size={24} isHalf />
+            </div>
             <Button variant="primary">View Profile</Button>
           </Card.Body>
         </Card>
@@ -159,6 +177,11 @@ const ProfileInfoCard: React.FC = () => (
               enim ad minim veniam, quis nostrud exercitation ullamco laboris
               nisi ut aliquip ex ea commodo consequat.
             </Card.Text>
+            {/* Add the RatingStars component here. Dahyun */}
+            <strong>Reviews:</strong>
+            <div className="d-flex justify-content-center mb-2">
+              <RatingStars value={3.5} size={24} isHalf />
+            </div>
             <Button variant="primary">View Profile</Button>
           </Card.Body>
         </Card>
