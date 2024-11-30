@@ -1,94 +1,32 @@
 'use client';
 
-import React from 'react';
-import { Container, Col, Card, Button, Row } from 'react-bootstrap';
+import { JamInformation } from '@prisma/client';
+import { Button, Card, ListGroup } from 'react-bootstrap';
 
-const JamInfoCard: React.FC = () => (
-  <Container>
-    <Row className="g-5">
-      <Col className="py-4" style={{ fontFamily: 'Arial' }}>
-        <Card
-          style={{ backgroundColor: '#ECDFCC', height: '100%' }}
-          className="hover-card d-flex flex-column justify-content-between"
-        >
-          <Card.Img
-            variant="top"
-            src="/images/concert.jpg"
-            style={{
-              height: '200px',
-              objectFit: 'cover',
-            }}
-          />
-          <Card.Body className="d-flex flex-column justify-content-between">
-            <div>
-              <Card.Title><strong>JAM NAME</strong></Card.Title>
-              <p><strong>Jam Date & Time | Location</strong></p>
-            </div>
-            <Card.Text>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-              labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
-            </Card.Text>
-            <Button variant="primary">Attend Jam</Button>
-          </Card.Body>
-        </Card>
-      </Col>
-      <Col className="py-4" style={{ fontFamily: 'Arial' }}>
-        <Card
-          style={{ backgroundColor: '#ECDFCC', height: '100%' }}
-          className="hover-card d-flex flex-column justify-content-between"
-        >
-          <Card.Img
-            variant="top"
-            src="/images/jam-session.jpg"
-            style={{
-              height: '200px',
-              objectFit: 'cover',
-            }}
-          />
-          <Card.Body className="d-flex flex-column justify-content-between">
-            <div>
-              <Card.Title><strong>JAM NAME</strong></Card.Title>
-              <p><strong>Jam Date & Time | Location</strong></p>
-            </div>
-            <Card.Text>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-              labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
-            </Card.Text>
-            <Button variant="primary">Attend Jam</Button>
-          </Card.Body>
-        </Card>
-      </Col>
-      <Col className="py-4" style={{ fontFamily: 'Arial' }}>
-        <Card
-          style={{ backgroundColor: '#ECDFCC', height: '100%' }}
-          className="hover-card d-flex flex-column justify-content-between"
-        >
-          <Card.Img
-            variant="top"
-            src="/images/concert.jpg"
-            style={{
-              height: '200px',
-              objectFit: 'cover',
-            }}
-          />
-          <Card.Body className="d-flex flex-column justify-content-between">
-            <div>
-              <Card.Title><strong>JAM NAME</strong></Card.Title>
-              <p><strong>Jam Date & Time | Location</strong></p>
-            </div>
-            <Card.Text>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-              labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
-            </Card.Text>
-            <Button variant="primary">Attend Jam</Button>
-          </Card.Body>
-        </Card>
-      </Col>
-    </Row>
-  </Container>
+/* Renders a single Jam Info Card. See /search/jam-search/page.tsx. */
+const JamInfoCard = ({ Jam }: { Jam: JamInformation }) => (
+  <Card>
+    <Card.Img
+      variant="top"
+      src={Jam.image}
+      style={{
+        height: '200px',
+        objectFit: 'cover',
+      }}
+    />
+    <Card.Body className="d-flex flex-column justify-content-between">
+      <Card.Title><strong>{Jam.jamName}</strong></Card.Title>
+      <Card.Text>{Jam.description}</Card.Text>
+      <ListGroup className="list-group-flush">
+        <ListGroup.Item>{new Date(Jam.date).toLocaleString()}</ListGroup.Item>
+        <ListGroup.Item>{Jam.location}</ListGroup.Item>
+        <ListGroup.Item>{Jam.genre}</ListGroup.Item>
+        <ListGroup.Item>{Jam.instruments}</ListGroup.Item>
+        <ListGroup.Item>{Jam.experience}</ListGroup.Item>
+      </ListGroup>
+      <Button variant="primary">Attend Jam</Button>
+    </Card.Body>
+  </Card>
 );
 
 export default JamInfoCard;

@@ -16,7 +16,8 @@
       "date": "2024-12-01T18:00:00Z",
       "instruments": "Saxophone, Piano, Bass",
       "experience": "beginner",
-      "description": "A casual jam session for jazz enthusiasts."
+      "description": "A casual jam session for jazz enthusiasts.",
+      "owner": "john@foo.com"
     },
     {
       "id": 2,
@@ -28,7 +29,8 @@
       "date": "2024-11-25T19:30:00Z",
       "instruments": "Violin, Cello, Flute",
       "experience": "professional",
-      "description": "An advanced jam session for classical musicians."
+      "description": "An advanced jam session for classical musicians.",
+      "owner": "john@foo.com"
     }
   ],
 

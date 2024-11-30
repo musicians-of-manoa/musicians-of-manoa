@@ -12,6 +12,7 @@ import { AddJamInfoSchema } from '@/lib/validationSchemas';
 import { Experience } from '@prisma/client';
 
 const onSubmit = async (data: {
+  owner: string;
   jamName: string;
   image: string;
   organizer: string;
@@ -52,7 +53,7 @@ const JamInfoForm: React.FC = () => {
   return (
     <Container className="py-3">
       <Row className="justify-content-center">
-        <Col xs={8}>
+        <Col xs={10}>
           <Col className="text-center">
             <h2>Jam Information</h2>
           </Col>

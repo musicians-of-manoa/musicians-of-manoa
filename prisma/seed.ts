@@ -1,4 +1,4 @@
-import { PrismaClient, Role } from '@prisma/client';
+import { Experience, PrismaClient, Role } from '@prisma/client';
 import { hash } from 'bcrypt';
 import * as config from '../config/settings.development.json';
 
@@ -25,7 +25,6 @@ async function main() {
     // console.log(`  Created user: ${user.email} with role: ${user.role}`);
   });
 
-  /*
   // Seed JamInformation
   config.defaultJamInformation.forEach(async (jam) => {
     console.log(`  Adding JamInformation: ${jam.jamName}`);
@@ -45,8 +44,9 @@ async function main() {
         description: jam.description,
       },
     });
-  }); */
+  });
 
+  /**
   // Seed Musical Goals
   config.defaultMusicalGoals.forEach(async (musicalGoal) => {
     console.log(`  Adding Musical Goals: ${musicalGoal.goal}`);
@@ -79,7 +79,7 @@ async function main() {
         description: profile.description,
       },
     });
-  });
+  }); */
 
   /**
   config.defaultData.forEach(async (data, index) => {
