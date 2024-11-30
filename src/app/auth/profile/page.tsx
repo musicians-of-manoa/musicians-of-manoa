@@ -1,6 +1,6 @@
-// import { getServerSession } from 'next-auth';
-// import { loggedInProtectedPage } from '@/lib/page-protection';
-// import { authOptions } from '@/app/api/auth/[...nextauth]/route';
+import { getServerSession } from 'next-auth';
+import { loggedInProtectedPage } from '@/lib/page-protection';
+import { authOptions } from '@/app/api/auth/[...nextauth]/route';
 import ProfileCard from '@/components/ProfileCard';
 import { Container } from 'react-bootstrap';
 import { Profile } from '@prisma/client';
@@ -8,12 +8,13 @@ import { Profile } from '@prisma/client';
 /** Render a profile for the logged in user */
 const ProfilePage = async () => {
   // Protect the page, only logged in users can access it.
-  // const session = await getServerSession(authOptions);
-  // loggedInProtectedPage(
-  // session as {
-  // user: { email: string; id: string; randomKey: string };
-  // } | null,
-  // );
+  const session = await getServerSession(authOptions);
+  loggedInProtectedPage(
+    session as {
+      user: { email: string; id: string; randomKey: string };
+    } | null,
+  );
+
   // Mocked profile data (replace with actual data fetching logic if needed)
   const profile: Profile = {
     id: 1,

@@ -43,10 +43,14 @@ const ProfileInfoCard: React.FC = () => (
               nisi ut aliquip ex ea commodo consequat.
             </Card.Text>
             {/* Add the RatingStars component here. Dahyun */}
-            <strong>Reviews:</strong>
-            <div className="d-flex justify-content-center mb-2">
-              <RatingStars value={3.5} size={24} isHalf />
-            </div>
+            <Card className="mb-3">
+              <Container>
+                <strong>Reviews:</strong>
+                <div className="d-flex justify-content-center mb-2">
+                  <RatingStars value={3.5} size={24} isHalf />
+                </div>
+              </Container>
+            </Card>
             <Button href="/profile-detail" variant="primary">
               View Profile
             </Button>
@@ -90,10 +94,14 @@ const ProfileInfoCard: React.FC = () => (
               nisi ut aliquip ex ea commodo consequat.
             </Card.Text>
             {/* Add the RatingStars component here. Dahyun */}
-            <strong>Reviews:</strong>
-            <div className="d-flex justify-content-center mb-2">
-              <RatingStars value={4} size={24} isHalf />
-            </div>
+            <Card className="mb-3">
+              <Container>
+                <strong>Reviews:</strong>
+                <div className="d-flex justify-content-center mb-2">
+                  <RatingStars value={4} size={24} isHalf />
+                </div>
+              </Container>
+            </Card>
             <Button variant="primary">View Profile</Button>
           </Card.Body>
         </Card>
@@ -134,10 +142,14 @@ const ProfileInfoCard: React.FC = () => (
               nisi ut aliquip ex ea commodo consequat.
             </Card.Text>
             {/* Add the RatingStars component here. Dahyun */}
-            <strong>Reviews:</strong>
-            <div className="d-flex justify-content-center mb-2">
-              <RatingStars value={4.5} size={24} isHalf />
-            </div>
+            <Card className="mb-3">
+              <Container>
+                <strong>Reviews:</strong>
+                <div className="d-flex justify-content-center mb-2">
+                  <RatingStars value={2.5} size={24} isHalf />
+                </div>
+              </Container>
+            </Card>
             <Button variant="primary">View Profile</Button>
           </Card.Body>
         </Card>
@@ -178,10 +190,14 @@ const ProfileInfoCard: React.FC = () => (
               nisi ut aliquip ex ea commodo consequat.
             </Card.Text>
             {/* Add the RatingStars component here. Dahyun */}
-            <strong>Reviews:</strong>
-            <div className="d-flex justify-content-center mb-2">
-              <RatingStars value={3.5} size={24} isHalf />
-            </div>
+            <Card className="mb-3">
+              <Container>
+                <strong>Reviews:</strong>
+                <div className="d-flex justify-content-center mb-2">
+                  <RatingStars value={3.5} size={24} isHalf />
+                </div>
+              </Container>
+            </Card>
             <Button variant="primary">View Profile</Button>
           </Card.Body>
         </Card>

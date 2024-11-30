@@ -1,7 +1,7 @@
 'use client';
 
 import { Profile } from '@prisma/client';
-import { Card, Button, Row, Col, Image } from 'react-bootstrap';
+import { Card, Button, Row, Col, Image, Container } from 'react-bootstrap';
 import RatingStars from './RatingStars';
 
 const ProfileCard = ({ profile }: { profile: Profile }) => (
@@ -31,8 +31,12 @@ const ProfileCard = ({ profile }: { profile: Profile }) => (
           />
         </Col>
         <Col>
-          <h3>Rating</h3>
-          <RatingStars value={profile.rating} size={32} isHalf />
+          <Card>
+            <Container>
+              <h3>Rating</h3>
+              <RatingStars value={profile.rating} size={32} isHalf />
+            </Container>
+          </Card>
         </Col>
         <Col>
           <Button variant="primary" size="lg">
