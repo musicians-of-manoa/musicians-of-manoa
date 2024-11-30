@@ -43,6 +43,19 @@ async function main() {
     });
   });
 
+  // Seed Musical Goals
+  config.defaultMusicalGoals.forEach(async (musicalGoal) => {
+    console.log(`  Adding Musical Goals: ${musicalGoal.goal}`);
+    await prisma.goals.upsert({
+      where: { id: musicalGoal.id },
+      update: {},
+      create: {
+        goal: musicalGoal.goal,
+        isEditing: musicalGoal.isEditing,
+      },
+    });
+  });
+
   /**
   config.defaultData.forEach(async (data, index) => {
     let condition: Condition = 'good';

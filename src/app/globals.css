@@ -87,10 +87,23 @@ main {
   color: #ffffff; /* Hover effect for dropdown links */
 }
 
+/*Jam Info Cards */
+.hover-card {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.hover-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Navbar Toggler Styles */
 .custom-toggler .navbar-toggler-icon {
   background-image: none; /* Remove the default icon */
   width: 30px;
-  height: 3px;
+  height: 4px;
   background-color: lightgreen; /* Custom color */
   border-radius: 2px;
   position: relative;
@@ -113,16 +126,4 @@ main {
 
 .custom-toggler .navbar-toggler-icon::after {
   top: 8px; /* Adjust top position for the last line */
-}
-
-/*Jam Info Cards */
-.hover-card {
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-}
-
-.hover-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }

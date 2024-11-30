@@ -29,6 +29,16 @@ export const EditJamInfoSchema = Yup.object({
   description: Yup.string().required(),
 });
 
+export const AddGoalSchema = Yup.object({
+  goal: Yup.string().required(),
+  isEditing: Yup.number().required(),
+});
+
+export const EditGoalSchema = Yup.object({
+  goal: Yup.string().required(),
+  isEditing: Yup.number().required(),
+});
+
 export const EditStuffSchema = Yup.object({
   id: Yup.number().required(),
   name: Yup.string().required(),

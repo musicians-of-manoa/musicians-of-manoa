@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "Goals" ADD COLUMN     "isEditing" INTEGER NOT NULL DEFAULT 0;
