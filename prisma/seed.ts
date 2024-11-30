@@ -1,4 +1,4 @@
-import { PrismaClient, Role, Experience } from '@prisma/client';
+import { PrismaClient, Role } from '@prisma/client';
 import { hash } from 'bcrypt';
 import * as config from '../config/settings.development.json';
 
@@ -25,13 +25,17 @@ async function main() {
     // console.log(`  Created user: ${user.email} with role: ${user.role}`);
   });
 
+  /*
   // Seed JamInformation
   config.defaultJamInformation.forEach(async (jam) => {
-    console.log(`  Adding JamInformation: ${jam.organizer}`);
+    console.log(`  Adding JamInformation: ${jam.jamName}`);
     await prisma.jamInformation.upsert({
       where: { id: jam.id },
       update: {},
       create: {
+        owner: jam.owner,
+        jamName: jam.jamName,
+        image: jam.image,
         organizer: jam.organizer,
         genre: jam.genre,
         location: jam.location,
@@ -41,7 +45,7 @@ async function main() {
         description: jam.description,
       },
     });
-  });
+  }); */
 
   /**
   config.defaultData.forEach(async (data, index) => {

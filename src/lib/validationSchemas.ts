@@ -7,19 +7,10 @@ export const AddStuffSchema = Yup.object({
   owner: Yup.string().required(),
 });
 
-export const JamInfoSchema = Yup.object({
-  name: Yup.string().required(),
-  organizer: Yup.string().required(),
-  genre: Yup.string().required(),
-  location: Yup.string().required(),
-  date: Yup.date().required(),
-  instruments: Yup.string().required(),
-  experience: Yup.string().oneOf(['novice', 'beginner', 'intermediate', 'professional']).required(),
-  description: Yup.string().required(),
-});
-
-export const EditJamInfoSchema = Yup.object({
-  name: Yup.string().required(),
+export const AddJamInfoSchema = Yup.object({
+  owner: Yup.string().required(),
+  jamName: Yup.string().required(),
+  image: Yup.string().required(),
   organizer: Yup.string().required(),
   genre: Yup.string().required(),
   location: Yup.string().required(),

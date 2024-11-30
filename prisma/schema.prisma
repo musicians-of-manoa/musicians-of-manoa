@@ -39,6 +39,9 @@ enum Experience {
 
 model JamInformation {
   id               Int       @id @default(autoincrement())
+  owner            String
+  jamName          String
+  image            String
   organizer        String
   genre            String
   location         String
