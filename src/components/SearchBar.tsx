@@ -1,24 +1,21 @@
 'use client';
 
 import React from 'react';
-import { Container, Col, Form } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import { Search } from 'react-bootstrap-icons';
 
 const SearchBar: React.FC = () => (
-  <Container style={{ backgroundColor: '#ECDFCC' }} className="rounded">
-    <Col className="text-center py-4" style={{ fontFamily: 'Arial' }}>
-      <Form>
-        <Form.Group className="d-flex">
-          <Form.Control
-            type="text"
-            className="rounded"
-            placeholder="Search..."
-            style={{ width: '1200px', height: '50px', marginRight: '10px' }}
-          />
-          <Search size="40px" style={{ paddingTop: '10px' }} />
-        </Form.Group>
-      </Form>
-    </Col>
+  <Container style={{ backgroundColor: '#ECDFCC', paddingTop: '10px', paddingBottom: '10px' }} className="rounded-pill">
+    <div className="search-wrapper">
+      <button type="submit" className="search-button">
+        <Search />
+      </button>
+      <input
+        type="search"
+        placeholder="Search..."
+        className="search-input"
+      />
+    </div>
   </Container>
 );
 

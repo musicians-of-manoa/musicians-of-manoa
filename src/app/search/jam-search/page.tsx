@@ -7,7 +7,6 @@ import { loggedInProtectedPage } from '@/lib/page-protection';
 import { JamInformation } from '@prisma/client';
 import { prisma } from '@/lib/prisma';
 
-/** Render a list of stuff for the logged in user. */
 const JamSearchPage = async () => {
   // Protect the page, only logged in users can access it.
   const session = await getServerSession(authOptions);
