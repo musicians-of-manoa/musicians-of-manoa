@@ -69,6 +69,7 @@ const JamInfoForm: React.FC = () => {
                       </Form.Label>
                       <input
                         type="text"
+                        placeholder="Jam Name"
                         {...register('jamName')}
                         className={`form-control ${errors.jamName ? 'is-invalid' : ''}`}
                       />
@@ -83,6 +84,7 @@ const JamInfoForm: React.FC = () => {
                       </Form.Label>
                       <input
                         type="text"
+                        placeholder="Jam Image"
                         {...register('image')}
                         className={`form-control ${errors.image ? 'is-invalid' : ''}`}
                       />
@@ -99,6 +101,7 @@ const JamInfoForm: React.FC = () => {
                       </Form.Label>
                       <input
                         type="text"
+                        placeholder="Jam Organizer"
                         {...register('organizer')}
                         className={`form-control ${errors.organizer ? 'is-invalid' : ''}`}
                       />
@@ -113,6 +116,7 @@ const JamInfoForm: React.FC = () => {
                       </Form.Label>
                       <input
                         type="text"
+                        placeholder="Jam Genre"
                         {...register('genre')}
                         className={`form-control ${errors.genre ? 'is-invalid' : ''}`}
                       />
@@ -129,6 +133,7 @@ const JamInfoForm: React.FC = () => {
                       </Form.Label>
                       <input
                         type="text"
+                        placeholder="Jam Location"
                         {...register('location')}
                         className={`form-control ${errors.location ? 'is-invalid' : ''}`}
                       />
@@ -159,6 +164,7 @@ const JamInfoForm: React.FC = () => {
                       </Form.Label>
                       <input
                         type="text"
+                        placeholder="Jam instrument(s)"
                         {...register('instruments')}
                         className={`form-control ${errors.instruments ? 'is-invalid' : ''}`}
                       />
