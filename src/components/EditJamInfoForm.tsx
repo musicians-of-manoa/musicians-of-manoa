@@ -9,7 +9,6 @@ import { EditJamInfoSchema } from '@/lib/validationSchemas';
 import { editJamInformation } from '@/lib/dbActions';
 
 const onSubmit = async (data: JamInformation) => {
-  // console.log(`onSubmit data: ${JSON.stringify(data, null, 2)}`);
   await editJamInformation(data);
   swal('Success', 'Your Jam has been updated', 'success', {
     timer: 2000,
@@ -33,11 +32,12 @@ const EditJamInfoForm = ({ jamInfo }: { jamInfo: JamInformation }) => {
       <Row className="justify-content-center">
         <Col xs={10}>
           <Col className="text-center py-3">
-            <h2>Jam Information</h2>
+            <h2>Edit Jam Information</h2>
           </Col>
           <Card style={{ backgroundColor: '#ECDFCC' }}>
             <Card.Body>
               <Form onSubmit={handleSubmit(onSubmit)}>
+                <input type="hidden" {...register('id')} value={jamInfo.id} />
                 <Row className={formPadding}>
                   <Col>
                     <Form.Group>
@@ -183,7 +183,7 @@ const EditJamInfoForm = ({ jamInfo }: { jamInfo: JamInformation }) => {
                     />
                     <div className="invalid-feedback">{errors.description?.message}</div>
                   </Form.Group>
-                  <input type="hidden" {...register('id')} value={jamInfo.id} />
+                  <input type="hidden" {...register('owner')} value={jamInfo.owner} />
                 </Row>
                 <Row className="pt-3">
                   <Col>
