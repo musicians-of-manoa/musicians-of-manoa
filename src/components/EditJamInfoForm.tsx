@@ -1,62 +1,75 @@
 'use client';
 
-import { useSession } from 'next-auth/react';
 import { Button, Card, Col, Container, Form, Row } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
 import swal from 'sweetalert';
-import { redirect } from 'next/navigation';
-import { addJamInformation } from '@/lib/dbActions';
-import LoadingSpinner from '@/components/LoadingSpinner';
+import { yupResolver } from '@hookform/resolvers/yup';
+import { JamInformation } from '@prisma/client';
 import { EditJamInfoSchema } from '@/lib/validationSchemas';
-import { Experience } from '@prisma/client';
+import { editJamInformation } from '@/lib/dbActions';
 
-const onSubmit = async (data: {
-  organizer: string;
-  genre: string;
-  location: string;
-  date: Date;
-  instruments: string;
-  experience: Experience;
-  description: string;
-}) => {
+const onSubmit = async (data: JamInformation) => {
   // console.log(`onSubmit data: ${JSON.stringify(data, null, 2)}`);
-  await addJamInformation(data);
-  swal('Success', 'Your item has been added', 'success', {
+  await editJamInformation(data);
+  swal('Success', 'Your Jam has been updated', 'success', {
     timer: 2000,
   });
 };
 
-const EditJamInfoForm: React.FC = () => {
+const EditJamInfoForm = ({ jamInfo }: { jamInfo: JamInformation }) => {
   const formPadding = 'py-2';
-  const { status } = useSession();
-  // console.log('AddStuffForm', status, session);
-  // const currentUser = session?.user?.email || '';
   const {
     register,
     handleSubmit,
-    // reset,
+    reset,
     formState: { errors },
-  } = useForm({
+  } = useForm<JamInformation>({
     resolver: yupResolver(EditJamInfoSchema),
   });
-  if (status === 'loading') {
-    return <LoadingSpinner />;
-  }
-  if (status === 'unauthenticated') {
-    redirect('/auth/signin');
-  }
+  // console.log(stuff);
 
   return (
-    <Container>
-      <Col className="text-center py-4" style={{ fontFamily: 'Arial' }}>
-        <h2><strong>Edit Jam Information</strong></h2>
-      </Col>
+    <Container className="py-3">
       <Row className="justify-content-center">
-        <Col sm={8}>
+        <Col xs={10}>
+          <Col className="text-center py-3">
+            <h2>Jam Information</h2>
+          </Col>
           <Card style={{ backgroundColor: '#ECDFCC' }}>
             <Card.Body>
               <Form onSubmit={handleSubmit(onSubmit)}>
+                <Row className={formPadding}>
+                  <Col>
+                    <Form.Group>
+                      <Form.Label>
+                        Jam Name
+                        <Form.Text style={{ color: 'red' }}> *</Form.Text>
+                      </Form.Label>
+                      <input
+                        type="text"
+                        defaultValue={jamInfo.jamName}
+                        {...register('jamName')}
+                        className={`form-control ${errors.jamName ? 'is-invalid' : ''}`}
+                      />
+                      <div className="invalid-feedback">{errors.jamName?.message}</div>
+                    </Form.Group>
+                  </Col>
+                  <Col>
+                    <Form.Group>
+                      <Form.Label>
+                        Image
+                        <Form.Text style={{ color: 'red' }}> *</Form.Text>
+                      </Form.Label>
+                      <input
+                        type="text"
+                        defaultValue={jamInfo.image}
+                        {...register('image')}
+                        className={`form-control ${errors.image ? 'is-invalid' : ''}`}
+                      />
+                      <div className="invalid-feedback">{errors.image?.message}</div>
+                    </Form.Group>
+                  </Col>
+                </Row>
                 <Row className={formPadding}>
                   <Col>
                     <Form.Group>
@@ -66,7 +79,7 @@ const EditJamInfoForm: React.FC = () => {
                       </Form.Label>
                       <input
                         type="text"
-                        placeholder="Your organization"
+                        defaultValue={jamInfo.organizer}
                         {...register('organizer')}
                         className={`form-control ${errors.organizer ? 'is-invalid' : ''}`}
                       />
@@ -81,7 +94,7 @@ const EditJamInfoForm: React.FC = () => {
                       </Form.Label>
                       <input
                         type="text"
-                        placeholder="Musical Genre (e.g. Classical)"
+                        defaultValue={jamInfo.genre}
                         {...register('genre')}
                         className={`form-control ${errors.genre ? 'is-invalid' : ''}`}
                       />
@@ -98,7 +111,7 @@ const EditJamInfoForm: React.FC = () => {
                       </Form.Label>
                       <input
                         type="text"
-                        placeholder="Your location"
+                        defaultValue={jamInfo.location}
                         {...register('location')}
                         className={`form-control ${errors.location ? 'is-invalid' : ''}`}
                       />
@@ -106,13 +119,14 @@ const EditJamInfoForm: React.FC = () => {
                     </Form.Group>
                   </Col>
                   <Col>
-                    <Form.Group controlId="formEnrolled">
+                    <Form.Group>
                       <Form.Label>
                         Date & Time
                         <Form.Text style={{ color: 'red' }}> *</Form.Text>
                       </Form.Label>
-                      <Form.Control
+                      <input
                         type="datetime-local"
+                        defaultValue={jamInfo.date ? jamInfo.date.toISOString().slice(0, 16) : undefined}
                         {...register('date')}
                         className={`form-control ${errors.date ? 'is-invalid' : ''}`}
                       />
@@ -129,7 +143,7 @@ const EditJamInfoForm: React.FC = () => {
                       </Form.Label>
                       <input
                         type="text"
-                        placeholder="Your instrument(s)"
+                        defaultValue={jamInfo.instruments}
                         {...register('instruments')}
                         className={`form-control ${errors.instruments ? 'is-invalid' : ''}`}
                       />
@@ -144,12 +158,13 @@ const EditJamInfoForm: React.FC = () => {
                       </Form.Label>
                       <Form.Select
                         {...register('experience')}
+                        defaultValue={jamInfo.experience}
                         className={`form-control ${errors.experience ? 'is-invalid' : ''}`}
                       >
                         <option value="novice">Novice</option>
                         <option value="beginner">Beginner</option>
                         <option value="intermediate">Intermediate</option>
-                        <option value="Professional">Professional</option>
+                        <option value="professional">Professional</option>
                       </Form.Select>
                       <div className="invalid-feedback">{errors.experience?.message}</div>
                     </Form.Group>
@@ -162,16 +177,26 @@ const EditJamInfoForm: React.FC = () => {
                       <Form.Text style={{ color: 'red' }}> *</Form.Text>
                     </Form.Label>
                     <textarea
-                      placeholder="Please enter a brief description about this event"
                       {...register('description')}
+                      defaultValue={jamInfo.description}
                       className={`form-control ${errors.description ? 'is-invalid' : ''}`}
                     />
                     <div className="invalid-feedback">{errors.description?.message}</div>
                   </Form.Group>
+                  <input type="hidden" {...register('id')} value={jamInfo.id} />
                 </Row>
-                <Button variant="primary" type="submit" style={{ marginTop: '20px' }}>
-                  Submit
-                </Button>
+                <Row className="pt-3">
+                  <Col>
+                    <Button type="submit" variant="primary">
+                      Submit
+                    </Button>
+                  </Col>
+                  <Col>
+                    <Button type="button" onClick={() => reset()} variant="warning" className="float-right">
+                      Reset
+                    </Button>
+                  </Col>
+                </Row>
               </Form>
             </Card.Body>
           </Card>
