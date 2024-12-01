@@ -30,10 +30,10 @@ model User {
 }
 
 enum Experience {
-  novice
-  beginner
-  intermediate
-  professional
+  Novice
+  Beginner
+  Intermediate
+  Professional
 }
 
 model JamInformation {

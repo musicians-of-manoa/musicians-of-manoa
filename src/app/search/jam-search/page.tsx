@@ -22,23 +22,27 @@ const JamSearchPage = async () => {
       owner,
     },
   });
-  console.log(Jams);
+  // console.log(Jams);
+  
   return (
     <main>
-      <Container id="jam-search" className="d-flex justify-content-center py-3">
-        <Row>
-          <Col>
-            <Col className="text-center py-4" style={{ fontFamily: 'Arial' }}>
-              <h2><strong>Search Jams</strong></h2>
-            </Col>
+      <Container id="jam-search" className="py-3">
+        {/* Row to align the search bar and header */}
+        <Row className="justify-content-center">
+          <Col xs={12} className="text-center py-4">
+            <h2><strong>Search Jams</strong></h2>
+          </Col>
+          <Col xs={12} className="text-center mb-4">
             <SearchBar />
           </Col>
         </Row>
       </Container>
-      <Container>
-        <Row>
+
+      <Container className="py-3">
+        {/* Row for displaying the JamInfoCard components, aligned to the left */}
+        <Row className="justify-content-start">
           {Jams.map((jam) => (
-            <Col key={jam.id}>
+            <Col key={jam.id} xs={12} sm={6} md={4} lg={3} className="mb-4">
               <JamInfoCard Jam={jam} />
             </Col>
           ))}

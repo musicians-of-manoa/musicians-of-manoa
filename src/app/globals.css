@@ -6,6 +6,7 @@
 
 html,
 body {
+  font-family: 'Trebuchet MS', sans-serif;
   --bs-light-rgb: 236, 236, 236;
   box-sizing: border-box;
   height: 100%; /* Ensures full height for flexbox layout */

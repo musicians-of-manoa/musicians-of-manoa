@@ -151,10 +151,10 @@ const JamInfoForm: React.FC = () => {
                         {...register('experience')}
                         className={`form-control ${errors.experience ? 'is-invalid' : ''}`}
                       >
-                        <option value="novice">Novice</option>
-                        <option value="beginner">Beginner</option>
-                        <option value="intermediate">Intermediate</option>
-                        <option value="professional">Professional</option>
+                        <option value="Novice">Novice</option>
+                        <option value="Beginner">Beginner</option>
+                        <option value="Intermediate">Intermediate</option>
+                        <option value="Professional">Professional</option>
                       </Form.Select>
                       <div className="invalid-feedback">{errors.experience?.message}</div>
                     </Form.Group>
