@@ -7,7 +7,7 @@
   "defaultJamInformation": [
     {
       "id": 1,
-      "jamName": "Jam Out to Awesome Music!",
+      "jamName": "Coffee and Jams",
       "image": "https://raw.githubusercontent.com/musicians-of-manoa/musicians-of-manoa/refs/heads/main/public/images/jam-session.jpg",
       "name": "Music Club",
       "organizer": "Local Music Club",
@@ -16,7 +16,7 @@
       "date": "2024-12-01T18:00:00Z",
       "instruments": "Saxophone, Piano, Bass",
       "experience": "beginner",
-      "description": "A casual jam session for jazz enthusiasts.",
+      "description": "A casual jam session for jazz enthusiasts. Enjoy a warm cup of coffee while jamming out to your favorite jazz tunes, from smooth ballads to upbeat improvisations.",
       "owner": "john@foo.com"
     },
     {
@@ -29,7 +29,7 @@
       "date": "2024-11-25T19:30:00Z",
       "instruments": "Violin, Cello, Flute",
       "experience": "professional",
-      "description": "An advanced jam session for classical musicians.",
+      "description": "An advanced jam session for classical musicians. Participants will have the opportunity to engage in deep musical discussions, fine-tune their technique, and push the boundaries of their craft in a structured yet creative setting.",
       "owner": "john@foo.com"
     }
   ],

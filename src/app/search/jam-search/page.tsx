@@ -23,7 +23,7 @@ const JamSearchPage = async () => {
     },
   });
   // console.log(Jams);
-  
+
   return (
     <main>
       <Container id="jam-search" className="py-3">
@@ -42,7 +42,7 @@ const JamSearchPage = async () => {
         {/* Row for displaying the JamInfoCard components, aligned to the left */}
         <Row className="justify-content-start">
           {Jams.map((jam) => (
-            <Col key={jam.id} xs={12} sm={6} md={4} lg={3} className="mb-4">
+            <Col key={jam.id} xs={12} sm={6} md={4} lg={4} className="mb-4">
               <JamInfoCard Jam={jam} />
             </Col>
           ))}
