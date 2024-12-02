@@ -57,7 +57,7 @@ const PersonalProfile: React.FC = () => {
             {/* User's Profile Picture */}
             <Col md={4}>
               <Card.Img
-                src="/images/jams-search-photo.jpg"
+                src="/neutral_profile_icon.png"
                 alt="Profile Image"
                 style={{
                   height: '200px',
@@ -65,6 +65,7 @@ const PersonalProfile: React.FC = () => {
                   objectFit: 'cover',
                   borderRadius: '50%',
                   marginTop: '15px',
+                  marginLeft: '15px',
                 }}
               />
             </Col>

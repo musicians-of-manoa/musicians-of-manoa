@@ -107,7 +107,12 @@ const ProfileInfoCard: React.FC = () => (
                 </div>
               </Container>
             </Card>
-            <Button variant="primary">View Profile</Button>
+            <Button
+              href="/search/profile-search/profile-detail"
+              variant="primary"
+            >
+              View Profile
+            </Button>
           </Card.Body>
         </Card>
       </Col>
@@ -155,7 +160,12 @@ const ProfileInfoCard: React.FC = () => (
                 </div>
               </Container>
             </Card>
-            <Button variant="primary">View Profile</Button>
+            <Button
+              href="/search/profile-search/profile-detail"
+              variant="primary"
+            >
+              View Profile
+            </Button>
           </Card.Body>
         </Card>
       </Col>
@@ -203,7 +213,12 @@ const ProfileInfoCard: React.FC = () => (
                 </div>
               </Container>
             </Card>
-            <Button variant="primary">View Profile</Button>
+            <Button
+              href="/search/profile-search/profile-detail"
+              variant="primary"
+            >
+              View Profile
+            </Button>
           </Card.Body>
         </Card>
       </Col>
