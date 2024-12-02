@@ -79,6 +79,18 @@ const ProfileCard = ({ profile }: { profile: Profile }) => (
         <Card.Title>Description</Card.Title>
         <Card.Text>{profile.description}</Card.Text>
       </Card>
+      {/** Soundcloud embedding code for later
+      <Card>
+        <iframe
+          width="100%"
+          height="300"
+          scrolling="no"
+          frameBorder="no"
+          allow="autoplay"
+          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1863037101&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+        />
+      </Card>
+      */}
     </Card.Body>
   </Card>
 );
