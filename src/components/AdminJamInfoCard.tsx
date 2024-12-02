@@ -4,7 +4,7 @@ import { JamInformation } from '@prisma/client';
 import { Button, Card, ListGroup } from 'react-bootstrap';
 
 /* Renders a single Jam Info Card. See /search/jam-search/page.tsx. */
-const JamInfoCard = ({ Jam }: { Jam: JamInformation }) => (
+const AdminJamInfoCard = ({ Jam }: { Jam: JamInformation }) => (
   <Card className="d-flex flex-column" style={{ height: '100%' }}>
     <Card.Img
       variant="top"
@@ -43,9 +43,9 @@ const JamInfoCard = ({ Jam }: { Jam: JamInformation }) => (
       </ListGroup>
     </Card.Body>
     <Card.Footer style={{ backgroundColor: '#ECDFCC' }}>
-      <Button variant="dark" className="w-100">Attend Jam</Button>
+      <Button href={`/edit-jam-information/${Jam.id}`} className="w-100" variant="danger">Edit</Button>
     </Card.Footer>
   </Card>
 );
 
-export default JamInfoCard;
+export default AdminJamInfoCard;

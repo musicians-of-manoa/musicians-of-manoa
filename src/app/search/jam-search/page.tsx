@@ -6,8 +6,18 @@ import authOptions from '@/lib/authOptions';
 import { loggedInProtectedPage } from '@/lib/page-protection';
 import { JamInformation } from '@prisma/client';
 import { prisma } from '@/lib/prisma';
+// import SearchJams from './SearchJams';
 
-const JamSearchPage = async () => {
+const JamSearchPage = async ({
+  searchParams = { query: '' },
+}: {
+  // eslint-disable-next-line react/require-default-props
+  searchParams?: {
+    query?: string;
+  };
+}) => {
+  const query = searchParams?.query || '';
+  console.log('query', query);
   // Protect the page, only logged in users can access it.
   const session = await getServerSession(authOptions);
   loggedInProtectedPage(
@@ -34,6 +44,10 @@ const JamSearchPage = async () => {
           <Col xs={12} className="text-center mb-4">
             <SearchBar />
           </Col>
+          {/*
+          <Col xs={12} className="text-center mb-4">
+            <SearchJams />
+          </Col> */}
         </Row>
       </Container>
 
