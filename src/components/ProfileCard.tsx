@@ -48,23 +48,30 @@ const ProfileCard = ({ profile }: { profile: Profile }) => (
         {profile.lastName}
       </Card.Subtitle>
     </Card.Header>
-    <Card.Body>
-      <Card>
+    <Card.Body style={{
+      backgroundColor: '#ECDFCC',
+      width: '100%', // Retain full width
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'space-between',
+    }}
+    >
+      <Card style={{ padding: '1rem' }}>
         <Card.Title>Musical Goals</Card.Title>
         <Card.Text>{profile.musicalGoals}</Card.Text>
       </Card>
-      <Card>
+      <Card style={{ padding: '1rem' }}>
         <Card.Title>Musical Tastes</Card.Title>
         <Card.Text>{profile.musicalTastes}</Card.Text>
       </Card>
-      <Card>
+      <Card style={{ padding: '1rem' }}>
         <Card.Title>Instruments & Experience Level</Card.Title>
         <Card.Text>
           {profile.instruments}
           {profile.experience}
         </Card.Text>
       </Card>
-      <Card>
+      <Card style={{ padding: '1rem' }}>
         <Card.Title>Description</Card.Title>
         <Card.Text>{profile.description}</Card.Text>
       </Card>

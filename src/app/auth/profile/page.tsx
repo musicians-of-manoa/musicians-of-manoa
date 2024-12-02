@@ -31,11 +31,9 @@ const ProfilePage = async () => {
 
   return (
     <main>
-      <Container>
+      <Container style={{ paddingTop: '2rem' }}>
         <h1>Profile</h1>
-        <div
-          style={{ display: 'flex', justifyContent: 'center', padding: '20px' }}
-        >
+        <div>
           <ProfileCard profile={profile} />
         </div>
       </Container>
