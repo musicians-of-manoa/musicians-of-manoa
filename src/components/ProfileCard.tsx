@@ -38,8 +38,8 @@ const ProfileCard = ({ profile }: { profile: Profile }) => (
             </Container>
           </Card>
         </Col>
-        <Col>
-          <Button variant="primary" size="lg">
+        <Col className="text-end">
+          <Button variant="primary" size="lg" href="">
             Edit
           </Button>
         </Col>
@@ -52,13 +52,14 @@ const ProfileCard = ({ profile }: { profile: Profile }) => (
         {profile.lastName}
       </Card.Subtitle>
     </Card.Header>
-    <Card.Body style={{
-      backgroundColor: '#ECDFCC',
-      width: '100%', // Retain full width
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'space-between',
-    }}
+    <Card.Body
+      style={{
+        backgroundColor: '#ECDFCC',
+        width: '100%', // Retain full width
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+      }}
     >
       <Card style={{ padding: '1rem' }}>
         <Card.Title>Musical Goals</Card.Title>

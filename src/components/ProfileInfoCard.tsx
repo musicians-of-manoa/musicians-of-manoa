@@ -3,6 +3,7 @@
 import React from 'react';
 import { Container, Col, Card, Button, Row } from 'react-bootstrap';
 import RatingStars from '@/components/RatingStars'; // import the RatingStars component. Dahyun
+// import Link from 'next/link'; // import the Link component from react-router-dom. Dahyun
 
 const ProfileInfoCard: React.FC = () => (
   <Container>
@@ -51,7 +52,11 @@ const ProfileInfoCard: React.FC = () => (
                 </div>
               </Container>
             </Card>
-            <Button href="/profile-detail" variant="primary">
+
+            <Button
+              href="/search/profile-search/profile-detail"
+              variant="primary"
+            >
               View Profile
             </Button>
           </Card.Body>
@@ -102,7 +107,12 @@ const ProfileInfoCard: React.FC = () => (
                 </div>
               </Container>
             </Card>
-            <Button variant="primary">View Profile</Button>
+            <Button
+              href="/search/profile-search/profile-detail"
+              variant="primary"
+            >
+              View Profile
+            </Button>
           </Card.Body>
         </Card>
       </Col>
@@ -150,7 +160,12 @@ const ProfileInfoCard: React.FC = () => (
                 </div>
               </Container>
             </Card>
-            <Button variant="primary">View Profile</Button>
+            <Button
+              href="/search/profile-search/profile-detail"
+              variant="primary"
+            >
+              View Profile
+            </Button>
           </Card.Body>
         </Card>
       </Col>
@@ -198,7 +213,12 @@ const ProfileInfoCard: React.FC = () => (
                 </div>
               </Container>
             </Card>
-            <Button variant="primary">View Profile</Button>
+            <Button
+              href="/search/profile-search/profile-detail"
+              variant="primary"
+            >
+              View Profile
+            </Button>
           </Card.Body>
         </Card>
       </Col>
