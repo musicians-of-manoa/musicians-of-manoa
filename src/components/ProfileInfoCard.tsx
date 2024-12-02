@@ -53,7 +53,10 @@ const ProfileInfoCard: React.FC = () => (
               </Container>
             </Card>
 
-            <Button href="/profile-detail" variant="primary">
+            <Button
+              href="/search/profile-search/profile-detail"
+              variant="primary"
+            >
               View Profile
             </Button>
           </Card.Body>

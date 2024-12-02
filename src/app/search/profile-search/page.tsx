@@ -9,7 +9,9 @@ const ProfileSearchPage = async () => (
       <Row>
         <Col>
           <Col className="text-center py-4" style={{ fontFamily: 'Arial' }}>
-            <h2><strong>Search Profiles</strong></h2>
+            <h2>
+              <strong>Search Profiles</strong>
+            </h2>
           </Col>
           <SearchBar />
         </Col>

@@ -58,3 +58,11 @@ export interface Profile {
   experience: string;
   description: string;
 }
+
+// Provide Sample Data for User Reviews Page
+export interface Review {
+  id: number;
+  rating: number;
+  comment: string;
+  userId: number;
+}
