@@ -2,7 +2,7 @@
 
 import { hash } from 'bcrypt';
 import { redirect } from 'next/navigation';
-import { Experience } from '@prisma/client';
+import { Experience, JamInformation } from '@prisma/client';
 import { prisma } from './prisma';
 /**
  * Adds a new jam information entry to the database.
@@ -30,6 +30,39 @@ export async function addJamInformation(jamInfo: {
 
   // Insert into the database
   await prisma.jamInformation.create({
+    data: {
+      owner: jamInfo.owner,
+      jamName: jamInfo.jamName,
+      image: jamInfo.image,
+      organizer: jamInfo.organizer,
+      genre: jamInfo.genre,
+      location: jamInfo.location,
+      date: parsedDate,
+      instruments: jamInfo.instruments,
+      experience: jamInfo.experience,
+      description: jamInfo.description,
+    },
+  });
+  // After adding, redirect to the jam information list page
+  redirect('/search/jam-search');
+}
+
+/**
+ * Edits a jam information entry.
+ * @param jamInfo, an object containing the required fields fields: organizer, genre,
+ * location, date, instruments, experience, and description.
+ */
+export async function editJamInformation(jamInfo: JamInformation) {
+  // Ensure the `date` field is converted to a JavaScript Date object
+  const parsedDate = new Date(jamInfo.date);
+
+  if (Number.isNaN(parsedDate.getTime())) {
+    throw new Error('Invalid date format.');
+  }
+
+  // Insert into the database
+  await prisma.jamInformation.update({
+    where: { id: jamInfo.id },
     data: {
       owner: jamInfo.owner,
       jamName: jamInfo.jamName,
