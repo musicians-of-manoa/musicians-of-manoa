@@ -1,7 +1,8 @@
 {
   "defaultAccounts": [
     { "email": "admin@foo.com", "password": "changeme", "role": "ADMIN" },
-    { "email": "john@foo.com", "password": "changeme" }
+    { "email": "john@foo.com", "password": "changeme" },
+    { "email": "jane@foo.com", "password": "changeme" }
   ],
 
   "defaultJamInformation": [
@@ -47,31 +48,31 @@
   ],
 
   "defaultProfiles": [
-    {
-      "id": 1,
-      "firstName": "John",
-      "lastName": "Doe",
-      "image": "/images/jams-search-photo.jpg",
-      "username": "johndoe",
-      "rating": 4.5,
-      "musicalGoals": "Gain experience playing in different genres",
-      "musicalTastes": "Jazz, Classical",
-      "instruments": "Saxophone, Piano",
-      "experience": "beginner",
-      "description": "I'm a beginner saxophonist looking to gain experience playing in different genres."
-    },
-    {
-      "id": 2,
-      "firstName": "Jane",
-      "lastName": "Smith",
-      "image": "...",
-      "username": "janesmith",
-      "rating": 4.0,
-      "musicalGoals": "Socialize with other musicians",
-      "musicalTastes": "Rock, Pop",
-      "instruments": "Guitar, Drums",
-      "experience": "intermediate",
-      "description": "I'm an intermediate guitarist looking to socialize with other musicians."
-    }
-  ]
+  {
+    "userEmail": "john@foo.com",
+    "firstName": "John",
+    "lastName": "Doe",
+    "username": "johndoe",
+    "image": "/images/jams-search-photo.jpg",
+    "rating": 4.5,
+    "musicalGoals": "Gain experience playing in different genres",
+    "musicalTastes": "Jazz, Classical",
+    "instruments": "Saxophone, Piano",
+    "experience": "beginner",
+    "description": "I'm a beginner saxophonist looking to gain experience playing in different genres."
+  },
+  {
+    "userEmail": "jane@foo.com",
+    "firstName": "Jane",
+    "lastName": "Smith",
+    "username": "janesmith",
+    "image": "...",
+    "rating": 4.0,
+    "musicalGoals": "Socialize with other musicians",
+    "musicalTastes": "Rock, Pop",
+    "instruments": "Guitar, Drums",
+    "experience": "intermediate",
+    "description": "I'm an intermediate guitarist looking to socialize with other musicians."
+  }
+]
 }
