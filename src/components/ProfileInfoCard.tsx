@@ -3,6 +3,7 @@
 import React from 'react';
 import { Container, Col, Card, Button, Row } from 'react-bootstrap';
 import RatingStars from '@/components/RatingStars'; // import the RatingStars component. Dahyun
+// import Link from 'next/link'; // import the Link component from react-router-dom. Dahyun
 
 const ProfileInfoCard: React.FC = () => (
   <Container>
@@ -51,6 +52,7 @@ const ProfileInfoCard: React.FC = () => (
                 </div>
               </Container>
             </Card>
+
             <Button href="/profile-detail" variant="primary">
               View Profile
             </Button>

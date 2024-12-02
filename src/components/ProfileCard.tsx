@@ -38,8 +38,8 @@ const ProfileCard = ({ profile }: { profile: Profile }) => (
             </Container>
           </Card>
         </Col>
-        <Col>
-          <Button variant="primary" size="lg">
+        <Col className="text-end">
+          <Button variant="primary" size="lg" href="">
             Edit
           </Button>
         </Col>
@@ -52,23 +52,23 @@ const ProfileCard = ({ profile }: { profile: Profile }) => (
         {profile.lastName}
       </Card.Subtitle>
     </Card.Header>
-    <Card.Body>
-      <Card>
+    <Card.Body className="d-flex flex-column justify-content-between">
+      <Card style={{ paddingLeft: '10px' }}>
         <Card.Title>Musical Goals</Card.Title>
         <Card.Text>{profile.musicalGoals}</Card.Text>
       </Card>
-      <Card>
+      <Card style={{ paddingLeft: '10px' }}>
         <Card.Title>Musical Tastes</Card.Title>
         <Card.Text>{profile.musicalTastes}</Card.Text>
       </Card>
-      <Card>
+      <Card style={{ paddingLeft: '10px' }}>
         <Card.Title>Instruments & Experience Level</Card.Title>
         <Card.Text>
           {profile.instruments}
           {profile.experience}
         </Card.Text>
       </Card>
-      <Card>
+      <Card style={{ paddingLeft: '10px' }}>
         <Card.Title>Description</Card.Title>
         <Card.Text>{profile.description}</Card.Text>
       </Card>

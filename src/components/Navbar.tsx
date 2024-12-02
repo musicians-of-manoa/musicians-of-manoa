@@ -15,6 +15,7 @@ import {
   Search,
   MusicNoteBeamed,
   CardList,
+  Collection,
 } from 'react-bootstrap-icons';
 
 const NavBar: React.FC = () => {
@@ -67,6 +68,15 @@ const NavBar: React.FC = () => {
                   >
                     Search
                     <Search className="ms-2" />
+                  </Nav.Link>,
+                  <Nav.Link
+                    id="review-nav"
+                    href="/review"
+                    key="review"
+                    active={pathName === '/review'}
+                  >
+                    Review
+                    <Collection className="ms-2" />
                   </Nav.Link>,
                 ]
               : ''}
