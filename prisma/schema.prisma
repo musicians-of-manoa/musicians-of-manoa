@@ -23,10 +23,11 @@ enum Role {
 }
 
 model User {
-  id       Int    @id @default(autoincrement())
-  email    String @unique
+  id       Int      @id @default(autoincrement())
+  email    String   @unique
   password String
-  role     Role   @default(USER)
+  role     Role     @default(USER)
+  Profile  Profile?
 }
 
 enum Experience {
@@ -37,43 +38,44 @@ enum Experience {
 }
 
 model JamInformation {
-  id               Int       @id @default(autoincrement())
-  owner            String
-  jamName          String
-  image            String
-  organizer        String
-  genre            String
-  location         String
-  date             DateTime
-  instruments      String
-  experience       Experience
-  description      String
+  id          Int        @id @default(autoincrement())
+  owner       String
+  jamName     String
+  image       String
+  organizer   String
+  genre       String
+  location    String
+  date        DateTime
+  instruments String
+  experience  Experience
+  description String
 }
 
 model Goals {
-  id        Int     @id @default(autoincrement())
+  id        Int    @id @default(autoincrement())
   goal      String
-  isEditing Int     @default(0)
+  isEditing Int    @default(0)
 }
 
 model Profile {
-  id Int @id @default(autoincrement())
-  firstName String
-  lastName String
-  username String
-  image String
-  rating Int
-  musicalGoals String
-  musicalTastes String
-  instruments String
-  experience Experience
-  description String
- }
-
-model Review {
-  id            Int       @id @default(autoincrement())
+  id            Int        @id @default(autoincrement())
+  userId        Int        @unique
+  user          User       @relation(fields: [userId], references: [id])
+  firstName     String
+  lastName      String
+  username      String     @unique
+  image         String?
   rating        Int
-  comment       String
-  userID        Int
+  musicalGoals  String?
+  musicalTastes String?
+  instruments   String?
+  experience    Experience
+  description   String?
 }
 
+model Review {
+  id      Int    @id @default(autoincrement())
+  rating  Int
+  comment String
+  userID  Int
+}
