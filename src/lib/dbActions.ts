@@ -66,6 +66,7 @@ export async function deleteStuff(id: number) {
  * Creates a new musical goal entry in the database.
  * @param editGoal, an object containing the required fields fields: goal, isEditing
  */
+/**
 export async function createGoal(goal: {
   goal: string;
   isEditing: number;
@@ -79,12 +80,13 @@ export async function createGoal(goal: {
   });
   // After adding, redirect to the list page
   redirect('/admin/edit/goals');
-}
+} */
 
 /**
  * Edits an existing musical goal entry in the database.
  * @param editGoal, an object containing the required fields fields: goal, isEditing
  */
+/**
 export async function editGoal(goal: {
   id: number;
   goal: string;
@@ -100,17 +102,18 @@ export async function editGoal(goal: {
   });
   // After updating, redirect to the list page
   redirect('/admin/edit/goals');
-}
+} */
 
 /**
  * Grabs all existing musical goal entries in the database.
  * @param editGoal, an object containing the required fields fields: goal, isEditing
  */
+/**
 export async function getGoals() {
   // Grab all goals from the database
   const goals = await prisma.goals.findMany();
   return goals;
-}
+} */
 
 /**
  * Creates a new user in the database.

@@ -12,6 +12,7 @@ import { AddJamInfoSchema } from '@/lib/validationSchemas';
 import { Experience } from '@prisma/client';
 
 const onSubmit = async (data: {
+  owner: string;
   jamName: string;
   image: string;
   organizer: string;
@@ -30,7 +31,7 @@ const onSubmit = async (data: {
 };
 
 const JamInfoForm: React.FC = () => {
-  // const formPadding = 'py-2';
+  const formPadding = 'py-2';
   const { data: session, status } = useSession();
   // console.log('JamInfoForm', status, session);
   const currentUser = session?.user?.email || '';
@@ -52,19 +53,23 @@ const JamInfoForm: React.FC = () => {
   return (
     <Container className="py-3">
       <Row className="justify-content-center">
-        <Col xs={8}>
-          <Col className="text-center">
+        <Col xs={10}>
+          <Col className="text-center py-3">
             <h2>Jam Information</h2>
           </Col>
-          <Card>
+          <Card style={{ backgroundColor: '#ECDFCC' }}>
             <Card.Body>
               <Form onSubmit={handleSubmit(onSubmit)}>
-                <Row>
+                <Row className={formPadding}>
                   <Col>
                     <Form.Group>
-                      <Form.Label>Jam Name</Form.Label>
+                      <Form.Label>
+                        Jam Name
+                        <Form.Text style={{ color: 'red' }}> *</Form.Text>
+                      </Form.Label>
                       <input
                         type="text"
+                        placeholder="Jam Name"
                         {...register('jamName')}
                         className={`form-control ${errors.jamName ? 'is-invalid' : ''}`}
                       />
@@ -73,9 +78,13 @@ const JamInfoForm: React.FC = () => {
                   </Col>
                   <Col>
                     <Form.Group>
-                      <Form.Label>Image</Form.Label>
+                      <Form.Label>
+                        Image
+                        <Form.Text style={{ color: 'red' }}> *</Form.Text>
+                      </Form.Label>
                       <input
                         type="text"
+                        placeholder="Jam Image"
                         {...register('image')}
                         className={`form-control ${errors.image ? 'is-invalid' : ''}`}
                       />
@@ -83,12 +92,16 @@ const JamInfoForm: React.FC = () => {
                     </Form.Group>
                   </Col>
                 </Row>
-                <Row>
+                <Row className={formPadding}>
                   <Col>
                     <Form.Group>
-                      <Form.Label>Jam Organizer</Form.Label>
+                      <Form.Label>
+                        Jam Organizer
+                        <Form.Text style={{ color: 'red' }}> *</Form.Text>
+                      </Form.Label>
                       <input
                         type="text"
+                        placeholder="Jam Organizer"
                         {...register('organizer')}
                         className={`form-control ${errors.organizer ? 'is-invalid' : ''}`}
                       />
@@ -97,9 +110,13 @@ const JamInfoForm: React.FC = () => {
                   </Col>
                   <Col>
                     <Form.Group>
-                      <Form.Label>Genre</Form.Label>
+                      <Form.Label>
+                        Genre
+                        <Form.Text style={{ color: 'red' }}> *</Form.Text>
+                      </Form.Label>
                       <input
                         type="text"
+                        placeholder="Jam Genre"
                         {...register('genre')}
                         className={`form-control ${errors.genre ? 'is-invalid' : ''}`}
                       />
@@ -107,12 +124,16 @@ const JamInfoForm: React.FC = () => {
                     </Form.Group>
                   </Col>
                 </Row>
-                <Row>
+                <Row className={formPadding}>
                   <Col>
                     <Form.Group>
-                      <Form.Label>Location</Form.Label>
+                      <Form.Label>
+                        Location
+                        <Form.Text style={{ color: 'red' }}> *</Form.Text>
+                      </Form.Label>
                       <input
                         type="text"
+                        placeholder="Jam Location"
                         {...register('location')}
                         className={`form-control ${errors.location ? 'is-invalid' : ''}`}
                       />
@@ -121,7 +142,10 @@ const JamInfoForm: React.FC = () => {
                   </Col>
                   <Col>
                     <Form.Group>
-                      <Form.Label>Date & Time</Form.Label>
+                      <Form.Label>
+                        Date & Time
+                        <Form.Text style={{ color: 'red' }}> *</Form.Text>
+                      </Form.Label>
                       <input
                         type="datetime-local"
                         {...register('date')}
@@ -131,12 +155,16 @@ const JamInfoForm: React.FC = () => {
                     </Form.Group>
                   </Col>
                 </Row>
-                <Row>
+                <Row className={formPadding}>
                   <Col>
                     <Form.Group>
-                      <Form.Label>Instrument(s)</Form.Label>
+                      <Form.Label>
+                        Instrument(s)
+                        <Form.Text style={{ color: 'red' }}> *</Form.Text>
+                      </Form.Label>
                       <input
                         type="text"
+                        placeholder="Jam instrument(s)"
                         {...register('instruments')}
                         className={`form-control ${errors.instruments ? 'is-invalid' : ''}`}
                       />
@@ -145,7 +173,10 @@ const JamInfoForm: React.FC = () => {
                   </Col>
                   <Col>
                     <Form.Group>
-                      <Form.Label>Experience Level</Form.Label>
+                      <Form.Label>
+                        Experience Level
+                        <Form.Text style={{ color: 'red' }}> *</Form.Text>
+                      </Form.Label>
                       <Form.Select
                         {...register('experience')}
                         className={`form-control ${errors.experience ? 'is-invalid' : ''}`}
@@ -159,10 +190,11 @@ const JamInfoForm: React.FC = () => {
                     </Form.Group>
                   </Col>
                 </Row>
-                <Row>
+                <Row className={formPadding}>
                   <Form.Group>
                     <Form.Label>
                       Description
+                      <Form.Text style={{ color: 'red' }}> *</Form.Text>
                     </Form.Label>
                     <textarea
                       placeholder="Please enter a brief description about this event"
