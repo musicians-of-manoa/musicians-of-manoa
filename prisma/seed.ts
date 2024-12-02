@@ -46,7 +46,6 @@ async function main() {
     });
   });
 
-  /**
   // Seed Musical Goals
   config.defaultMusicalGoals.forEach(async (musicalGoal) => {
     console.log(`  Adding Musical Goals: ${musicalGoal.goal}`);
@@ -63,10 +62,23 @@ async function main() {
   // Seed Profile
   config.defaultProfiles.forEach(async (profile) => {
     console.log(`  Adding Profile: ${profile.username}`);
+
+    // Find the user by email
+    const user = await prisma.user.findUnique({
+      where: { email: profile.userEmail }, // Use userEmail from the seed data
+    });
+
+    if (!user) {
+      console.error(`No user found for profile with email: ${profile.userEmail}`);
+      return;
+    }
+
+    // Create or update the profile linked to the user
     await prisma.profile.upsert({
-      where: { id: profile.id },
+      where: { userId: user.id },
       update: {},
       create: {
+        userId: user.id, // Link using the user's ID
         username: profile.username,
         firstName: profile.firstName,
         lastName: profile.lastName,
@@ -79,31 +91,7 @@ async function main() {
         description: profile.description,
       },
     });
-  }); */
-
-  /**
-  config.defaultData.forEach(async (data, index) => {
-    let condition: Condition = 'good';
-    if (data.condition === 'poor') {
-      condition = 'poor';
-    } else if (data.condition === 'excellent') {
-      condition = 'excellent';
-    } else {
-      condition = 'fair';
-    }
-    console.log(`  Adding stuff: ${data.name} (${data.owner})`);
-    await prisma.stuff.upsert({
-      where: { id: index + 1 },
-      update: {},
-      create: {
-        name: data.name,
-        quantity: data.quantity,
-        owner: data.owner,
-        condition,
-      },
-    });
   });
-  */
 }
 main()
   .then(() => prisma.$disconnect())
