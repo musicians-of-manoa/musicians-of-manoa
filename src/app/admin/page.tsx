@@ -46,38 +46,38 @@ const AdminPage = async () => {
         <hr />
 
         {/* Users Table */}
-        <h2>List of Users</h2>
-        <Table striped bordered hover className="mb-4">
-          <thead>
-            <tr>
-              <th>Email</th>
-              <th>Role</th>
-              <th>Edit User</th>
-            </tr>
-          </thead>
-          <tbody>
-            {users.map((user) => (
-              <tr key={user.id}>
-                <td>{user.email}</td>
-                <td>{user.role}</td>
-                <td>
-                  <Button
-                    href={`/admin/edit/user/${user.id}`}
-                    variant="secondary"
-                    size="sm"
-                  >
-                    Edit
-                  </Button>
-                </td>
+          <h2>List of Users</h2>
+          <Table striped bordered hover className="mb-4">
+            <thead>
+              <tr>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Edit User</th>
               </tr>
-            ))}
-          </tbody>
-        </Table>
+            </thead>
+            <tbody>
+              {users.map((user) => (
+                <tr key={user.id}>
+                  <td>{user.email}</td>
+                  <td>{user.role}</td>
+                  <td>
+                    <Button
+                      href={`/admin/edit/user/${user.id}`}
+                      variant="secondary"
+                      size="sm"
+                    >
+                      Edit
+                    </Button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </Table>
         <hr />
 
         {/* List of Jams */}
         {/* Row for displaying the JamInfoCard components, aligned to the left */}
-        <h2>Edit Jams (Admin)</h2>
+        <h2>Edit Jams</h2>
         <Row className="justify-content-start">
           {Jams.map((jam) => (
             <Col key={jam.id} xs={12} sm={6} md={4} lg={4} className="mb-4">

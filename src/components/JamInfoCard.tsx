@@ -5,7 +5,7 @@ import { Button, Card, ListGroup } from 'react-bootstrap';
 
 /* Renders a single Jam Info Card. See /search/jam-search/page.tsx. */
 const JamInfoCard = ({ Jam }: { Jam: JamInformation }) => (
-  <Card className="d-flex flex-column" style={{ height: '100%' }}>
+  <Card className="d-flex flex-column hover-card" style={{ height: '100%' }}>
     <Card.Img
       variant="top"
       src={Jam.image}
