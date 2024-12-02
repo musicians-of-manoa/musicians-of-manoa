@@ -70,3 +70,10 @@ model Profile {
   description String
  }
 
+model Review {
+  id            Int       @id @default(autoincrement())
+  rating        Int
+  comment       String
+  userID        Int
+}
+
