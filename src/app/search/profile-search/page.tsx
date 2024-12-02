@@ -5,14 +5,14 @@ import ProfileInfoCard from '@/components/ProfileInfoCard';
 /** Render a list of stuff for the logged in user. */
 const ProfileSearchPage = async () => (
   <main>
-    <Container id="jam-search" className="d-flex justify-content-center py-3">
+    <Container id="profile-search" className="py-3">
       <Row>
-        <Col>
-          <Col className="text-center py-4" style={{ fontFamily: 'Arial' }}>
+          <Col xs={12} className="text-center py-4">
             <h2><strong>Search Profiles</strong></h2>
           </Col>
-          <SearchBar />
-        </Col>
+        <Col xs={12} className="text-center mb-4">
+            <SearchBar />
+          </Col>
       </Row>
     </Container>
     <Container>
