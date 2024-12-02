@@ -15,7 +15,6 @@ import {
   Search,
   MusicNoteBeamed,
   CardList,
-  Collection,
 } from 'react-bootstrap-icons';
 
 const NavBar: React.FC = () => {
