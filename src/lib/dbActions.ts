@@ -4,13 +4,15 @@ import { hash } from 'bcrypt';
 import { redirect } from 'next/navigation';
 import { Experience } from '@prisma/client';
 import { prisma } from './prisma';
-
 /**
  * Adds a new jam information entry to the database.
  * @param jamInfo, an object containing the required fields fields: organizer, genre,
  * location, date, instruments, experience, and description.
  */
 export async function addJamInformation(jamInfo: {
+  owner: string;
+  jamName: string;
+  image: string;
   organizer: string;
   genre: string;
   location: string;
@@ -29,6 +31,9 @@ export async function addJamInformation(jamInfo: {
   // Insert into the database
   await prisma.jamInformation.create({
     data: {
+      owner: jamInfo.owner,
+      jamName: jamInfo.jamName,
+      image: jamInfo.image,
       organizer: jamInfo.organizer,
       genre: jamInfo.genre,
       location: jamInfo.location,
@@ -38,48 +43,8 @@ export async function addJamInformation(jamInfo: {
       description: jamInfo.description,
     },
   });
-
   // After adding, redirect to the jam information list page
-  redirect('/jam-information');
-}
-
-/**
- * Edits an existing jam information entry in the database.
- * @param editJamInfo, an object containing the required fields fields: organizer, genre,
- * location, date, instruments, experience, and description.
- */
-export async function editJamInformation(jamInfo: {
-  id: number;
-  organizer: string;
-  genre: string;
-  location: string;
-  date: Date; // Includes date & time
-  instruments: string;
-  experience: Experience;
-  description: string;
-}) {
-  // Ensure the `date` field is converted to a JavaScript Date object
-  const parsedDate = new Date(jamInfo.date);
-
-  if (Number.isNaN(parsedDate.getTime())) {
-    throw new Error('Invalid date format.');
-  }
-
-  // Update the database
-  await prisma.jamInformation.update({
-    where: { id: jamInfo.id },
-    data: {
-      organizer: jamInfo.organizer,
-      genre: jamInfo.genre,
-      location: jamInfo.location,
-      date: parsedDate,
-      instruments: jamInfo.instruments,
-      experience: jamInfo.experience,
-      description: jamInfo.description,
-    },
-  });
-  // After updating, redirect to the list page
-  redirect('/jam-information');
+  redirect('/search/jam-search');
 }
 
 /**

@@ -7,6 +7,8 @@
   "defaultJamInformation": [
     {
       "id": 1,
+      "jamName": "Jam Out to Awesome Music!",
+      "image": "https://raw.githubusercontent.com/musicians-of-manoa/musicians-of-manoa/refs/heads/main/public/images/jam-session.jpg",
       "name": "Music Club",
       "organizer": "Local Music Club",
       "genre": "Jazz",
@@ -18,7 +20,8 @@
     },
     {
       "id": 2,
-      "name": "Camp Rock",
+      "jamName": "Camp Rock",
+      "image": "https://raw.githubusercontent.com/musicians-of-manoa/musicians-of-manoa/refs/heads/main/public/images/concert.jpg",
       "organizer": "University Band",
       "genre": "Classical",
       "location": "Concert Hall",
