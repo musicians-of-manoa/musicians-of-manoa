@@ -55,7 +55,7 @@ const ProfilePage = async () => {
           <h1>No Profile Found</h1>
           <p>
             You don&apos;t have a profile yet.
-            <a href="/auth/create-profile">Create Profile</a>
+            <a href="/auth/signup">Create Profile</a>
           </p>
         </Container>
       </main>
