@@ -48,11 +48,11 @@
 
   "defaultProfiles": [
     {
-      "id": 1,
+      "userEmail": "john@foo.com",
       "firstName": "John",
       "lastName": "Doe",
-      "image": "/images/jams-search-photo.jpg",
       "username": "johndoe",
+      "image": "/images/jams-search-photo.jpg",
       "rating": 4.5,
       "musicalGoals": "Gain experience playing in different genres",
       "musicalTastes": "Jazz, Classical",
@@ -61,11 +61,11 @@
       "description": "I'm a beginner saxophonist looking to gain experience playing in different genres."
     },
     {
-      "id": 2,
+      "userEmail": "jane@foo.com",
       "firstName": "Jane",
       "lastName": "Smith",
-      "image": "...",
       "username": "janesmith",
+      "image": "...",
       "rating": 4.0,
       "musicalGoals": "Socialize with other musicians",
       "musicalTastes": "Rock, Pop",
