@@ -81,25 +81,9 @@ export async function editJamInformation(jamInfo: JamInformation) {
 }
 
 /**
- * Deletes an existing stuff from the database.
- * @param id, the id of the stuff to delete.
- */
-/**
-export async function deleteStuff(id: number) {
-  // console.log(`deleteStuff id: ${id}`);
-  await prisma.stuff.delete({
-    where: { id },
-  });
-  // After deleting, redirect to the list page
-  redirect('/list');
-}
-*/
-
-/**
  * Creates a new musical goal entry in the database.
  * @param editGoal, an object containing the required fields fields: goal, isEditing
  */
-/**
 export async function createGoal(goal: {
   goal: string;
   isEditing: number;
@@ -113,13 +97,13 @@ export async function createGoal(goal: {
   });
   // After adding, redirect to the list page
   redirect('/admin/edit/goals');
-} */
+}
 
 /**
  * Edits an existing musical goal entry in the database.
  * @param editGoal, an object containing the required fields fields: goal, isEditing
  */
-/**
+
 export async function editGoal(goal: {
   id: number;
   goal: string;
@@ -135,18 +119,17 @@ export async function editGoal(goal: {
   });
   // After updating, redirect to the list page
   redirect('/admin/edit/goals');
-} */
+}
 
 /**
  * Grabs all existing musical goal entries in the database.
  * @param editGoal, an object containing the required fields fields: goal, isEditing
  */
-/**
 export async function getGoals() {
   // Grab all goals from the database
   const goals = await prisma.goals.findMany();
   return goals;
-} */
+}
 
 /**
  * Creates a new user in the database.
@@ -178,12 +161,12 @@ export async function changePassword(credentials: { email: string; password: str
   });
 }
 
-export async function addReview(review: { rating: number; comment: string; userId: number }) {
+export async function addReview(review: { rating: number; comment: string; userID: number }) {
   await prisma.review.create({
     data: {
       rating: review.rating,
       comment: review.comment,
-      userId: review.userId,
+      userID: review.userID,
     },
   });
   redirect('/profile');
