@@ -1,4 +1,4 @@
-name: ci-nextjs-application-template
+name: ci-musicians-of-manoa
 on:
   push:
     branches: [main, master]
