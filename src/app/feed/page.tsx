@@ -17,12 +17,8 @@ const FeedPage = async () => {
     } | null,
   );
 
-  const owner = session?.user!.email ? session.user.email : '';
-  const Jams: JamInformation[] = await prisma.jamInformation.findMany({
-    where: {
-      owner,
-    },
-  });
+  // Fetch jams from database
+  const Jams: JamInformation[] = await prisma.jamInformation.findMany({});
 
   // Sort jams by date in descending order
   const sortedJams = Jams.sort((a, b) => a.date.getTime() - b.date.getTime());

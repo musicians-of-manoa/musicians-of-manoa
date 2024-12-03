@@ -25,12 +25,13 @@ const JamSearchPage = async ({
       user: { email: string; id: string; randomKey: string };
     } | null,
   );
-  const owner = session?.user!.email ? session.user.email : '';
-  const Jams: JamInformation[] = await prisma.jamInformation.findMany({
+  // Fetch jams from database
+  const Jams: JamInformation[] = await prisma.jamInformation.findMany({});
+  /* const Jams: JamInformation[] = await prisma.jamInformation.findMany({
     where: {
       owner,
     },
-  });
+  }); */
   // console.log(Jams);
 
   return (

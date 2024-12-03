@@ -44,6 +44,45 @@
       "experience": "intermediate",
       "description": "A lively outdoor jam session for rock enthusiasts. Bring your energy, your instrument, and your best riffs to jam under the stars!",
       "owner": "worldmusic@foo.com"
+    },
+    {
+      "id": 4,
+      "jamName": "Acoustic Bliss",
+      "image": "https://images.stockcake.com/public/4/f/5/4f51165a-84a6-4a4b-afa2-acb854bac1aa_large/intimate-acoustic-session-stockcake.jpg",
+      "organizer": "Acoustic Vibes Club",
+      "genre": "Folk",
+      "location": "Riverside Cafe",
+      "date": "2025-05-23T03:00:00Z",
+      "instruments": "Acoustic Guitar, Mandolin, Harmonica",
+      "experience": "beginner",
+      "description": "A relaxed acoustic jam session by the river. Perfect for beginners or anyone who loves the sound of folk music.",
+      "owner": "acousticvibes@yahoo.com"
+    },
+    {
+      "id": 5,
+      "jamName": "Shake It Off",
+      "image": "https://i2.pickpik.com/photos/128/841/210/dance-stage-music-entertainment-preview.jpg",
+      "organizer": "UH Manoa Dance Team",
+      "genre": "Hip Hop",
+      "location": "Campus Center",
+      "date": "2025-02-02T23:00:00Z",
+      "instruments": "Drums, Guitar",
+      "experience": "novice",
+      "description": "Need to relax during finals week? The UH Manoa Dance Team invites you to come join us for this jam session to shake off your nerves! Minimal musical or dancing experience is required.",
+      "owner": "john@foo.com"
+    },
+    {
+      "id": 6,
+      "jamName": "Pop Night",
+      "image": "https://i8.amplience.net/i/naras/RA_2022_In_Review_Pop_HeroCollage_1644x925-.jpg",
+      "organizer": "Young Stars Band",
+      "genre": "Pop",
+      "location": "Youth Center",
+      "date": "2024-12-05T18:30:00Z",
+      "instruments": "Keyboard, Vocals, Guitar",
+      "experience": "beginner",
+      "description": "A fun and energetic jam session for pop music fans of all ages and experience levels. Let’s create catchy tunes together!",
+      "owner": "popfan@foo.com"
     }
   ],
 
