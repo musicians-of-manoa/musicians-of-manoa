@@ -24,12 +24,15 @@ const FeedPage = async () => {
     },
   });
 
+  // Sort jams by date in descending order
+  const sortedJams = Jams.sort((a, b) => a.date.getTime() - b.date.getTime());
+
   return (
     <main>
       <Container className="mt-4">
         <h2 className="mb-4">Upcoming Jams</h2>
         <Row>
-          {Jams.map((jam) => (
+          {sortedJams.map((jam) => (
             <Col xs={12} key={jam.id} className="mb-4">
               <FeedList Jam={jam} />
             </Col>

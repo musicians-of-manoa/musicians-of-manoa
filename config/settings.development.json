@@ -31,6 +31,19 @@
       "experience": "professional",
       "description": "An advanced jam session for classical musicians. Participants will have the opportunity to engage in deep musical discussions, fine-tune their technique, and push the boundaries of their craft in a structured yet creative setting.",
       "owner": "john@foo.com"
+    },
+    {
+      "id": 3,
+      "jamName": "Rock the Park",
+      "image": "https://media.cntraveler.com/photos/5d9511fd6168d9000af15d12/16:9/w_2560,c_limit/redrocksampitheater-denver-2019-GettyImages-695093358.jpg",
+      "organizer": "Downtown Rockers",
+      "genre": "Rock",
+      "location": "City Park Amphitheater",
+      "date": "2024-12-08T16:00:00Z",
+      "instruments": "Electric Guitar, Drums, Bass",
+      "experience": "intermediate",
+      "description": "A lively outdoor jam session for rock enthusiasts. Bring your energy, your instrument, and your best riffs to jam under the stars!",
+      "owner": "worldmusic@foo.com"
     }
   ],
 
