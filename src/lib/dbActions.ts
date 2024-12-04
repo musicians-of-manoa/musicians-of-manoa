@@ -82,7 +82,7 @@ export async function editJamInformation(jamInfo: JamInformation) {
 
 /**
  * Creates a new musical goal entry in the database.
- * @param editGoal, an object containing the required fields fields: goal, isEditing
+ * @param createGoal, an object containing the required fields fields: goal, isEditing
  */
 export async function createGoal(goal: {
   goal: string;
