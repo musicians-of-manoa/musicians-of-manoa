@@ -38,52 +38,29 @@ const NavBar: React.FC = () => {
           className="custom-toggler"
         />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto justify-content-start">
-            {currentUser
-              ? [
-                  <Nav.Link
-                    id="feed-nav"
-                    href="/feed"
-                    key="feed"
-                    active={pathName === '/feed'}
-                  >
-                    Feed
-                    <CardList className="ms-2" />
-                  </Nav.Link>,
-                  <Nav.Link
-                    id="create-jam-nav"
-                    href="/jam-information"
-                    key="create-jam"
-                    active={pathName === '/jam-information'}
-                  >
-                    Create a Jam
-                    <MusicNoteBeamed className="ms-2" />
-                  </Nav.Link>,
-                  <Nav.Link
-                    id="search-nav"
-                    href="/search"
-                    key="search"
-                    active={pathName === '/search'}
-                  >
-                    Search
-                    <Search className="ms-2" />
-                  </Nav.Link>,
-                ]
-              : ''}
-            {currentUser && role === 'ADMIN' ? (
-              <Nav.Link
-                id="admin-stuff-nav"
-                href="/admin"
-                key="admin"
-                active={pathName === '/admin'}
-              >
-                Admin
-                <Person className="ms-2" />
-              </Nav.Link>
-            ) : (
-              ''
-            )}
-          </Nav>
+        <Nav className="me-auto">
+  <Nav.Link id="feed-nav" href="/feed" active={pathName === '/feed'}>
+    Feed
+    <CardList />
+  </Nav.Link>
+  <Nav.Link id="search-nav" href="/search" active={pathName === '/search'}>
+    Search
+    <Search />
+  </Nav.Link>
+  {currentUser ? (
+    <>
+      <Nav.Link id="create-jam-nav" href="/jam-information" active={pathName === '/jam-information'}>
+        Create a Jam
+        <MusicNoteBeamed />
+      </Nav.Link>
+      {role === 'ADMIN' && (
+        <Nav.Link id="admin-nav" href="/admin" active={pathName === '/admin'}>
+          Admin
+        </Nav.Link>
+      )}
+    </>
+  ) : null}
+        </Nav>
           <Nav>
             {session ? (
               <NavDropdown id="login-dropdown" title={currentUser}>
