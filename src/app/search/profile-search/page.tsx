@@ -15,14 +15,13 @@ const PROFILES_PER_PAGE = 4;
 const ProfileSearchPage = async ({ searchParams }: ProfilePageProps) => {
   const page = searchParams?.page ? parseInt(searchParams.page, 10) : 1;
 
-  // Calculate how many profiles to skip based on current page
   const skip = (page - 1) * PROFILES_PER_PAGE;
 
-  // Fetch profiles from DB
+  // Fetch profiles from DB, skip is how many profiles will be skipped in the db
   const profiles = await prisma.profile.findMany({
     skip,
     take: PROFILES_PER_PAGE,
-    orderBy: { id: 'asc' }, // Order by id for predictable results
+    orderBy: { id: 'asc' }, // Order by id
   });
 
   // Count total profiles to know if we have a next page
