@@ -5,6 +5,12 @@ test.use({
 });
 
 test('User Pages', async ({ page }) => {
+  // Debugging
+//  const cookies = await page.context().cookies();
+//  console.log('Cookies:', cookies);
+//  const localStorage = await page.evaluate(() => JSON.stringify(window.localStorage));
+//  console.log('Local Storage:', localStorage);
+
   // Home Page
   await page.goto('http://localhost:3000/');
   await expect(page.getByRole('link', { name: 'Musicians of Manoa Logo' })).toBeVisible();

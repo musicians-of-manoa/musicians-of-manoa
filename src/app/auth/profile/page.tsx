@@ -1,7 +1,7 @@
 import { getServerSession } from 'next-auth';
 import { loggedInProtectedPage } from '@/lib/page-protection';
 import { authOptions } from '@/app/api/auth/[...nextauth]/route';
-import ProfileCard from '@/components/ProfileCard';
+import ProfileCard from '@/components/MainUserProfile';
 import { Container } from 'react-bootstrap';
 import { prisma } from '@/lib/prisma';
 

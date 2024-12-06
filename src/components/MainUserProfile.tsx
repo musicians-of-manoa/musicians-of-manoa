@@ -4,7 +4,7 @@ import { Profile } from '@prisma/client';
 import { Card, Button, Row, Col, Image, Container } from 'react-bootstrap';
 import RatingStars from './RatingStars';
 
-const ProfileCard = ({ profile }: { profile: Profile }) => (
+const MainUserProfile = ({ profile }: { profile: Profile }) => (
   <Card
     style={{
       backgroundColor: '#ECDFCC',
@@ -84,4 +84,4 @@ const ProfileCard = ({ profile }: { profile: Profile }) => (
   </Card>
 );
 
-export default ProfileCard;
+export default MainUserProfile;
