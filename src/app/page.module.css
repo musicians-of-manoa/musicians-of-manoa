@@ -277,20 +277,19 @@
 }
 
 .customButton {
-  background: linear-gradient(to right, #00a37d, #1ba8a8);
+  background: linear-gradient(to right, #00a37d, #1ba8a8); /* Initial gradient */
   border: none;
   color: #fff;
   font-family: 'Poppins', sans-serif;
   font-weight: lighter;
-  padding: 0.90rem 4rem; /* Add more padding for a rounded feel NEED TO ADJUST PADDING over 4rem = overlap */
-  border-radius: 50px; /* Makes the button elliptical */
-  transition: all 0.3s ease-in-out; /* Smooth hover effect */
+  padding: 0.90rem 4rem; /* Button padding */
+  border-radius: 50px; /* Elliptical shape */
+  transition: background-color 0.5s ease, background 0.5s ease; /* Smooth transition for gradient */
 }
 
-/* Hover effect with gradient fill */
+/* Hover effect with a new gradient */
 .customButton:hover {
-  background: linear-gradient(to right,#8e3de4, #5290fa); /* Change gradient on hover */
-  color: #fff; /* Ensure text remains white on hover */
+  background: linear-gradient(to right, #8e3de4, #5290fa); /* Hover gradient */
 }
 
 .buttonGroup {
