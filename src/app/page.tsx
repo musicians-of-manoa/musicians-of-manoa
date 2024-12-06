@@ -19,16 +19,13 @@ const Home = () => (
             className="d-flex flex-column justify-content-center align-items-start ps-5"
           >
             <h1 className={`${styles.catchphrase} ${styles.leftContent}`}>
-              Find some
-              <br />
+              Find
+              local
               musicians
-              <br />
-              to jam
-              <br />
-              with!
+              and events to jam at
             </h1>
             <p className={styles.subCatchphrase}>
-              Connect with other local musicians!
+              Connect with other local musicians, or find out about events near you.
             </p>
             <section className={`${styles.buttonGroup} mt-4`}>
               <Button

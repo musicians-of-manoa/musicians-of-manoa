@@ -77,6 +77,8 @@ main {
 
 .navbar .nav-link {
   color: #f2f5f8; /* Link text color */
+  font-size: 1.14rem; /* Adjust this value to make the text larger */
+  font-weight: normal; /* Optional: Makes the text bold */
 }
 
 .navbar .nav-link:hover {

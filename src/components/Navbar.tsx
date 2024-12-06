@@ -28,7 +28,7 @@ const NavBar: React.FC = () => {
       <Container>
         <Navbar.Brand href="/">
           <Image
-            src="/images/musicians-of-manoa-logo2-transparent.png"
+            src="/images/musicians-of-manoa-logo-transparent.png"
             alt="Musicians of Manoa Logo"
             height={80}
           />
@@ -41,17 +41,17 @@ const NavBar: React.FC = () => {
         <Nav className="me-auto">
   <Nav.Link id="feed-nav" href="/feed" active={pathName === '/feed'}>
     Feed
-    <CardList />
+    <CardList className="ms-2" />
   </Nav.Link>
   <Nav.Link id="search-nav" href="/search" active={pathName === '/search'}>
     Search
-    <Search />
+    <Search className="ms-2" />
   </Nav.Link>
   {currentUser ? (
     <>
       <Nav.Link id="create-jam-nav" href="/jam-information" active={pathName === '/jam-information'}>
         Create a Jam
-        <MusicNoteBeamed />
+        <MusicNoteBeamed className="ms-2" />
       </Nav.Link>
       {role === 'ADMIN' && (
         <Nav.Link id="admin-nav" href="/admin" active={pathName === '/admin'}>

@@ -233,10 +233,8 @@
 
 .catchphrase {
   color: #ffffff; /* White text on dark gradient */
-  font-size: 3.5rem;
+  font-size: 3.3rem;
   font-weight: bold;
-  font-family: 'Poppins', sans-serif; /* Use Poppins for consistency */
-  /* If needed, adjust spacing or line-height here */
 }
 
 .catchphrase span {
@@ -246,12 +244,13 @@
 
 /* Sub-catchphrase styles */
 .subCatchphrase {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   font-weight: 300;
   margin-top: 1rem;
   color: #cccccc; /* Slightly lighter gray for subtext */
   line-height: 1.5;
   padding-left: 4rem;
+  font-family: 'Poppins', sans-serif; /* Use Poppins for consistency */
 }
 
 /* Outer container with padding */
@@ -280,7 +279,6 @@
   background: linear-gradient(to right, #00a37d, #1ba8a8); /* Initial gradient */
   border: none;
   color: #fff;
-  font-family: 'Poppins', sans-serif;
   font-weight: lighter;
   padding: 0.90rem 4rem; /* Button padding */
   border-radius: 50px; /* Elliptical shape */
