@@ -6,15 +6,16 @@
 
 html,
 body {
-  font-family: 'Trebuchet MS', sans-serif;
-  --bs-light-rgb: 236, 236, 236;
-  box-sizing: border-box;
-  height: 100%; /* Ensures full height for flexbox layout */
-  padding: 0;
   margin: 0;
-  display: flex; /* Flexbox for vertical layout */
-  flex-direction: column;
+  padding: 0;
+  height: 100%;
+  /* MAIN GRADIENT BACKGROUND #b2d8c8 #024731 */
+  background: linear-gradient(to bottom, #60a789, #00693c, #024731);
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
 }
+
 body .navbar {
   --bs-navbar-active-color: var(--nat-navbar-highlight-text);
   --bs-navbar-brand-color: var(--nat-navbar-text-color);
@@ -57,14 +58,17 @@ main {
 
 /* Navbar Styles */
 .navbar {
-  background-color: #121214; /* Background color */
-  color: #f2f5f8; /* Text color */
+  background: transparent !important;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 10;
 }
 
 .navbar .navbar-brand {
-  color: #f2f5f8; /* Brand text color */
-  font-size: 1.5rem; /* Optional: Adjust font size */
-  font-weight: normal; /* Optional: Adjust font weight */
+  color: #f2f5f8;
+  font-size: 1.5rem;
+  font-weight: normal;
 }
 
 .navbar-brand:hover {
@@ -171,4 +175,11 @@ main {
 .search-button:hover {
   background-color: var(--secondary-color);
   transition: 0.5s;
+}
+
+/* Wrapper for layout */
+.wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }

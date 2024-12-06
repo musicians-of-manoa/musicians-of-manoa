@@ -24,11 +24,11 @@ const NavBar: React.FC = () => {
   const role = userWithRole?.randomKey;
   const pathName = usePathname();
   return (
-    <Navbar bg="black" expand="lg">
+    <Navbar expand="lg" style={{ backgroundColor: 'transparent' }}>
       <Container>
         <Navbar.Brand href="/">
           <Image
-            src="/images/musicians-of-manoa-logo.png"
+            src="/images/musicians-of-manoa-logo2-transparent.png"
             alt="Musicians of Manoa Logo"
             height={80}
           />
