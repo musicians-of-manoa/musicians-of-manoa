@@ -2,7 +2,9 @@
   "defaultAccounts": [
     { "email": "admin@foo.com", "password": "changeme", "role": "ADMIN" },
     { "email": "john@foo.com", "password": "changeme" },
-    { "email": "jane@foo.com", "password": "changeme" }
+    { "email": "stavvy@foo.com", "password": "changeme" },
+    { "email": "saquon@foo.com", "password": "changeme" },
+    { "email": "skrillex@foo.com", "password": "changeme" }
   ],
 
   "defaultJamInformation": [
@@ -118,13 +120,52 @@
       "firstName": "Jane",
       "lastName": "Smith",
       "username": "janesmith",
-      "image": "...",
+      "image": "/images/jams-search-photo.jpg",
       "rating": 4.0,
       "musicalGoals": "Socialize with other musicians",
       "musicalTastes": "Rock, Pop",
       "instruments": "Guitar, Drums",
       "experience": "intermediate",
       "description": "I'm an intermediate guitarist looking to socialize with other musicians."
+    },
+    {
+      "userEmail": "stavvy@foo.com",
+      "firstName": "Stavros",
+      "lastName": "Halkias",
+      "username": "stavvybaby",
+      "image": "/images/jams-search-photo.jpg",
+      "rating": 4.0,
+      "musicalGoals": "Have a good time with other musicians",
+      "musicalTastes": "Rock, Rap",
+      "instruments": "Drums, Vocals",
+      "experience": "intermediate",
+      "description": "Hit me up!"
+    },
+    {
+      "userEmail": "saquon@foo.com",
+      "firstName": "Saquon",
+      "lastName": "Barkley",
+      "username": "saquon",
+      "image": "/images/jams-search-photo.jpg",
+      "rating": 4.0,
+      "musicalGoals": "Eagles",
+      "musicalTastes": "Rap",
+      "instruments": "Drums",
+      "experience": "intermediate",
+      "description": "Go Eagles"
+    },
+    {
+      "userEmail": "skrillex@foo.com",
+      "firstName": "Sonny",
+      "lastName": "Moore",
+      "username": "skrillex",
+      "image": "/images/jams-search-photo.jpg",
+      "rating": 4.0,
+      "musicalGoals": "Make Bangers",
+      "musicalTastes": "EDM",
+      "instruments": "Ableton",
+      "experience": "intermediate",
+      "description": "Hi!"
     }
   ]
 }
