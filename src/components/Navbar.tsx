@@ -43,7 +43,7 @@ const NavBar: React.FC = () => {
     Feed
     <CardList />
   </Nav.Link>
-  <Nav.Link id="search-nav" href="/search/profile-search" active={pathName === '/search/profile-search'}>
+  <Nav.Link id="search-nav" href="/search" active={pathName === '/search'}>
     Search
     <Search />
   </Nav.Link>
