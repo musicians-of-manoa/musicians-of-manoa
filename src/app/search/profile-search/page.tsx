@@ -5,7 +5,7 @@ import ProfileInfoCard from '@/components/ProfileInfoCard';
 import Link from 'next/link';
 
 interface ProfilePageProps {
-  searchParams?: {
+  searchParams: {
     page?: string;
   };
 }
