@@ -284,12 +284,13 @@
   font-weight: lighter;
   padding: 0.90rem 4rem; /* Button padding */
   border-radius: 50px; /* Elliptical shape */
-  transition: background-color 0.5s ease, background 0.5s ease; /* Smooth transition for gradient */
+  transition: color .3s,background-color .3s; /* Smooth transition for gradient */
 }
 
 /* Hover effect with a new gradient */
 .customButton:hover {
   background: linear-gradient(to right, #8e3de4, #5290fa); /* Hover gradient */
+  transition: color .3s,background-color .3s;
 }
 
 .buttonGroup {
