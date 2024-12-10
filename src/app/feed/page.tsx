@@ -1,22 +1,20 @@
-// app/feed/page.tsx
-import React from 'react';
-import { getServerSession } from 'next-auth';
-import authOptions from '@/lib/authOptions';
-import { loggedInProtectedPage } from '@/lib/page-protection';
+import { prisma } from '@/lib/prisma'; // Import Prisma client
 import FeedList from '@/components/FeedList';
 
 const FeedPage = async () => {
-  // Protect the page, only logged-in users can access it.
-  const session = await getServerSession(authOptions);
-  loggedInProtectedPage(
-    session as {
-      user: { email: string; id: string; randomKey: string };
-    } | null,
-  );
+  // Fetch JamInformation from the database
+  const jams = await prisma.jamInformation.findMany({
+    orderBy: { date: 'asc' },
+  });
 
   return (
     <main>
-      <FeedList />
+      <h1 className="text-center mt-4">Upcoming Jams</h1>
+      <div className="container mt-3">
+        {jams.map((jam) => (
+          <FeedList key={jam.id} Jam={jam} />
+        ))}
+      </div>
     </main>
   );
 };

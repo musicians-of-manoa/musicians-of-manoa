@@ -10,11 +10,13 @@
 */
 -- AlterTable
 ALTER TABLE "JamInformation" ADD COLUMN     "image" TEXT NOT NULL,
-ADD COLUMN     "jamName" TEXT NOT NULL;
+ADD COLUMN     "jamName" TEXT NOT NULL,
+ADD COLUMN     "owner" TEXT NOT NULL;
 
 -- AlterTable
 ALTER TABLE "Profile" ADD COLUMN     "userId" INTEGER NOT NULL,
 ALTER COLUMN "image" DROP NOT NULL,
+ALTER COLUMN "rating" DROP NOT NULL,
 ALTER COLUMN "musicalGoals" DROP NOT NULL,
 ALTER COLUMN "musicalTastes" DROP NOT NULL,
 ALTER COLUMN "instruments" DROP NOT NULL,

@@ -21,6 +21,10 @@ const JamInfoCard = ({ Jam }: { Jam: JamInformation }) => (
     <Card.Body className="d-flex flex-column" style={{ flexGrow: 1 }}>
       <ListGroup className="list-group-flush">
         <ListGroup.Item>
+          <strong>Organizer:&nbsp;</strong>
+          {Jam.organizer}
+        </ListGroup.Item>
+        <ListGroup.Item>
           <strong>Date & Time:&nbsp;</strong>
           {new Date(Jam.date).toLocaleString()}
         </ListGroup.Item>
