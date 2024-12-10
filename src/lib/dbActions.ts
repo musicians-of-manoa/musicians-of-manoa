@@ -154,7 +154,7 @@ export async function createExperience(experience: {
 
 /**
  * Edits an existing musical experience entry in the database.
- * @param editExperienceLevel, an object containing the required fields fields: levle, description, isEditing
+ * @param editExperienceLevel, an object containing the required fields fields: id, level, description, isEditing
  */
 
 export async function editExperience(experience: {
@@ -184,6 +184,57 @@ export async function getExperiences() {
   // Grab all experiences from the database
   const experiences = await prisma.experiences.findMany();
   return experiences;
+}
+
+/**
+ * Creates a new musical experience entry in the database.
+ * @param createTaste, an object containing the required fields fields: genre, isEditing
+ */
+export async function createTaste(taste: {
+  genre: string;
+  isEditing: number;
+}) {
+  // Insert into the database
+  await prisma.tastes.create({
+    data: {
+      genre: taste.genre,
+      isEditing: taste.isEditing,
+    },
+  });
+  // After adding, redirect to the list page
+  redirect('/admin/edit/tastes');
+}
+
+/**
+ * Edits an existing musical experience entry in the database.
+ * @param editTaste, an object containing the required fields fields: id, genre, isEditing
+ */
+
+export async function editTaste(taste: {
+  id: number;
+  genre: string;
+  isEditing: number;
+}) {
+  // Update the database
+  await prisma.tastes.update({
+    where: { id: taste.id },
+    data: {
+      genre: taste.genre,
+      isEditing: taste.isEditing,
+    },
+  });
+  // After updating, redirect to the list page
+  redirect('/admin/edit/tastes');
+}
+
+/**
+ * Grabs all existing musical experience entries in the database.
+ * @param getTastes, an object containing the required fields fields: tastes
+ */
+export async function getTastes() {
+  // Grab all experiences from the database
+  const tastes = await prisma.tastes.findMany();
+  return tastes;
 }
 
 /**
