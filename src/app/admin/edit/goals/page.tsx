@@ -2,6 +2,7 @@ import { getServerSession } from 'next-auth';
 import authOptions from '@/lib/authOptions';
 import { adminProtectedPage } from '@/lib/page-protection';
 import EditGoalsForm from '@/components/EditGoalsForm';
+import { getGoals } from '@/lib/dbActions';
 
 const AdminPage = async () => {
   const session = await getServerSession(authOptions);
@@ -11,9 +12,11 @@ const AdminPage = async () => {
     } | null,
   );
 
+  const existingGoals = await getGoals();
+
   return (
     <main>
-      <EditGoalsForm />
+      <EditGoalsForm existingGoals={existingGoals} />
     </main>
   );
 };
