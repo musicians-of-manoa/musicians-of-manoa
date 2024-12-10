@@ -114,6 +114,21 @@ async function main() {
       });
     }),
   );
+
+  // Musical Tastes
+  await Promise.all(
+    config.defaultMusicalTastes.map(async (tastes) => {
+      console.log(`  Adding Musical Taste: ${tastes.genre}`);
+      await prisma.tastes.upsert({
+        where: { id: tastes.id },
+        update: {},
+        create: {
+          genre: tastes.genre,
+          isEditing: tastes.isEditing,
+        },
+      });
+    }),
+  );
 }
 
 main()

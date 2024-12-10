@@ -86,3 +86,9 @@ model Experiences {
   description   String
   isEditing     Int    @default(0)
 }
+
+model Tastes {
+  id            Int    @id @default(autoincrement())
+  genre         String
+  isEditing     Int    @default(0)
+}
