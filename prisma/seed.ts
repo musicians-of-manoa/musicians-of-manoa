@@ -37,7 +37,7 @@ async function main() {
       });
 
       if (!user) {
-        console.error(`No user found for profile with email: ${profile.userEmail}`);
+        console.error(`  No user found for profile with email: ${profile.userEmail}`);
         return;
       }
 
@@ -79,6 +79,37 @@ async function main() {
           instruments: jam.instruments,
           experience: jam.experience as Experience,
           description: jam.description,
+        },
+      });
+    }),
+  );
+
+  // Musical Goals
+  await Promise.all(
+    config.defaultMusicalGoals.map(async (musicalGoal) => {
+      console.log(`  Adding Musical Goal: ${musicalGoal.goal}`);
+      await prisma.goals.upsert({
+        where: { id: musicalGoal.id },
+        update: {},
+        create: {
+          goal: musicalGoal.goal,
+          isEditing: musicalGoal.isEditing,
+        },
+      });
+    }),
+  );
+
+  // Musical Experience Levels
+  await Promise.all(
+    config.defaultExperienceLevels.map(async (experience) => {
+      console.log(`  Adding Experience Level: ${experience.level}`);
+      await prisma.experiences.upsert({
+        where: { id: experience.id },
+        update: {},
+        create: {
+          level: experience.level,
+          description: experience.description,
+          isEditing: experience.isEditing,
         },
       });
     }),
