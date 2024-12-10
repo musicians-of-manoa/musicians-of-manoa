@@ -79,3 +79,16 @@ model Review {
   comment String
   userID  Int
 }
+
+model Experiences {
+  id            Int    @id @default(autoincrement())
+  level         String
+  description   String
+  isEditing     Int    @default(0)
+}
+
+model Tastes {
+  id            Int    @id @default(autoincrement())
+  genre         String
+  isEditing     Int    @default(0)
+}
