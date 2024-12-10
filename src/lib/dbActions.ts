@@ -132,6 +132,61 @@ export async function getGoals() {
 }
 
 /**
+ * Creates a new musical experience entry in the database.
+ * @param createExperienceLevel, an object containing the required fields fields: level, description, isEditing
+ */
+export async function createExperience(experience: {
+  level: string;
+  description: string;
+  isEditing: number;
+}) {
+  // Insert into the database
+  await prisma.experiences.create({
+    data: {
+      level: experience.level,
+      description: experience.description,
+      isEditing: experience.isEditing,
+    },
+  });
+  // After adding, redirect to the list page
+  redirect('/admin/edit/experience');
+}
+
+/**
+ * Edits an existing musical experience entry in the database.
+ * @param editExperienceLevel, an object containing the required fields fields: levle, description, isEditing
+ */
+
+export async function editExperience(experience: {
+  id: number;
+  level: string;
+  description: string;
+  isEditing: number;
+}) {
+  // Update the database
+  await prisma.experiences.update({
+    where: { id: experience.id },
+    data: {
+      level: experience.level,
+      description: experience.description,
+      isEditing: experience.isEditing,
+    },
+  });
+  // After updating, redirect to the list page
+  redirect('/admin/edit/experience');
+}
+
+/**
+ * Grabs all existing musical experience entries in the database.
+ * @param getExperienceLevel, an object containing the required fields fields: level, description, isEditing
+ */
+export async function getExperiences() {
+  // Grab all experiences from the database
+  const experiences = await prisma.experiences.findMany();
+  return experiences;
+}
+
+/**
  * Creates a new user in the database.
  * @param credentials, an object with the following properties: email, password.
  */
