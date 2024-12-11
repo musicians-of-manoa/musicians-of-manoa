@@ -1,6 +1,7 @@
 'use client'; // Ensure this is a Client Component
 
 import { JamInformation } from '@prisma/client';
+import swal from 'sweetalert';
 import { Button, Card, ListGroup } from 'react-bootstrap';
 import { useState } from 'react';
 import axios from 'axios';
@@ -27,44 +28,55 @@ const AttendedJamCard = ({ Jam }: { Jam: JamInformation }) => {
       setIsLoadingRemove(false);
     }
 
+    // Show success message
+    swal('Removed', 'You have successfully removed a Jam!', 'success', {
+        timer: 2000,
+      });
   };
 
   return (
-    <Card className="d-flex flex-column" style={{ height: '100%', backgroundColor: '#ECDFCC',
-      paddingTop: '20px',
-      paddingBottom: '20px',
-      paddingLeft: '30px', }}>
-      <Card.Title><strong>{Jam.jamName}</strong></Card.Title>
-      <Card.Text>{Jam.description}</Card.Text>
+    <Card
+      className="d-flex flex-column"
+      style={{
+        height: '100%',
+        padding: '20px',
+        borderRadius: '15px', // Add border radius for smooth corners
+        boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)', // Light shadow for card depth
+      }}
+    >
+      <Card.Title className="mb-3">
+        <strong>{Jam.jamName}</strong>
+      </Card.Title>
+      <Card.Text className="mb-4">{Jam.description}</Card.Text>
       <Card.Body className="d-flex flex-column" style={{ flexGrow: 1 }}>
         <ListGroup className="list-group-flush">
-          <ListGroup.Item>
+          <ListGroup.Item className="px-0">
             <strong>Organizer:&nbsp;</strong>
             {Jam.organizer}
           </ListGroup.Item>
-          <ListGroup.Item>
+          <ListGroup.Item className="px-0">
             <strong>Date & Time:&nbsp;</strong>
             {new Date(Jam.date).toLocaleString()}
           </ListGroup.Item>
-          <ListGroup.Item>
+          <ListGroup.Item className="px-0">
             <strong>Location:&nbsp;</strong>
             {Jam.location}
           </ListGroup.Item>
-          <ListGroup.Item>
+          <ListGroup.Item className="px-0">
             <strong>Genre:&nbsp;</strong>
             {Jam.genre}
           </ListGroup.Item>
-          <ListGroup.Item>
+          <ListGroup.Item className="px-0">
             <strong>Instruments:&nbsp;</strong>
             {Jam.instruments}
           </ListGroup.Item>
-          <ListGroup.Item>
+          <ListGroup.Item className="px-0">
             <strong>Experience:&nbsp;</strong>
             {Jam.experience}
           </ListGroup.Item>
         </ListGroup>
         <Button
-          className="remove-button"
+          className="mt-3"
           variant="danger"
           style={{
             borderRadius: '50px',
@@ -73,9 +85,8 @@ const AttendedJamCard = ({ Jam }: { Jam: JamInformation }) => {
             textAlign: 'center',
             width: '100%',
             maxWidth: '150px',
-            height: 'auto',
             padding: '10px',
-            marginLeft: '1rem',
+            margin: 'auto', // Center the button
           }}
           onClick={handleRemove}
           disabled={isLoadingRemove}

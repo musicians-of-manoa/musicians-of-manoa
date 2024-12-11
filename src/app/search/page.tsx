@@ -4,7 +4,7 @@ import SearchPage from '@/components/SearchPage';
 /** Render a list of stuff for the logged in user. */
 const Search = async () => (
   <main>
-    <Container id="search" className="d-flex justify-content-center py-3" style={{ color: 'white' }}>
+    <Container id="search" className="d-flex justify-content-center py-1" style={{ color: 'white' }}>
       <SearchPage />
     </Container>
   </main>

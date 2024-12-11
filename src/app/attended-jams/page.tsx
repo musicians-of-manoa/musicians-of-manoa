@@ -34,10 +34,10 @@ const AttendedJamsPage = async () => {
   return (
     <main>
       <Container id="attended-jams-list">
-        <Row className="mt-5 mb-2">
-          <Col>
-            <h1>
-              Your Attended Jams:
+        <Row className="mt-1 mb-2">
+          <Col className="text-center">
+            <h1 style={{color: 'white'}}>
+              Your Attending Jams:
               {' '}
               {attendedJams.length > 0
                 ? `${attendedJams.length} jam${attendedJams.length > 1 ? 's' : ''}`
@@ -46,7 +46,7 @@ const AttendedJamsPage = async () => {
           </Col>
         </Row>
         {attendedJams.map((attendedJam) => (
-          <Row key={attendedJam.jamId}>
+          <Row key={attendedJam.jamId} className="mb-4">
             <Col>
               <AttendedJamCard Jam={attendedJam.jam} />
             </Col>

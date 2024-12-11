@@ -5,8 +5,8 @@ import { Card, Col, Container, Row, Image } from 'react-bootstrap';
 
 const SearchPage: React.FC = () => (
   <Container>
-    <Col className="text-center py-4">
-      <h2>Search for...</h2>
+    <Col className="text-center">
+      <h1>Search for...</h1>
     </Col>
     <Row>
       <Col md={6}>
