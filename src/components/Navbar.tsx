@@ -54,7 +54,7 @@ const NavBar: React.FC = () => {
         Create a Jam
         <MusicNoteBeamed className="ms-2" />
       </Nav.Link>
-      <Nav.Link id="attending-jams-nav" href="/attended-jams" active={pathName === '/jam-information'}>
+      <Nav.Link id="attending-jams-nav" href="/attended-jams" active={pathName === '/attended-jams'}>
         Attending Jams
         <MusicNoteList className="ms-2" />
       </Nav.Link>
