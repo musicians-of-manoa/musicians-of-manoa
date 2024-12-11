@@ -87,6 +87,45 @@
       "experience": "beginner",
       "description": "A fun and energetic jam session for pop music fans of all ages and experience levels. Let’s create catchy tunes together!",
       "owner": "popfan@foo.com"
+    },
+    {
+      "id": 7,
+      "jamName": "Jazz on the Beach",
+      "image": "https://www.tahoelakeshorelodge.com/wp-content/uploads/2017/07/tahoe-beach-jazz.jpg",
+      "organizer": "Beachside Jazz Collective",
+      "genre": "Jazz",
+      "location": "Sunset Beach",
+      "date": "2025-01-12T17:00:00Z",
+      "instruments": "Trumpet, Saxophone, Bass",
+      "experience": "intermediate",
+      "description": "Join us for an evening of smooth jazz on the beach. Whether you’re jamming or just enjoying the music, it’s a perfect way to unwind with great tunes and a stunning view.",
+      "owner": "jazzlover@foo.com"
+    },
+    {
+      "id": 8,
+      "jamName": "Dance Party",
+      "image": "https://st2.depositphotos.com/1594308/12210/i/950/depositphotos_122108236-stock-photo-men-and-women-enjoying-dance.jpg",
+      "organizer": "Groove Society",
+      "genre": "Dance",
+      "location": "Dance Hall",
+      "date": "2025-03-15T22:00:00Z",
+      "instruments": "DJ Mixer, Speakers",
+      "experience": "novice",
+      "description": "Let’s get moving! A night of non-stop dancing and beats. Whether you’re a dancer or just love music, come enjoy the rhythm with us.",
+      "owner": "groove@foo.com"
+    },
+    {
+      "id": 9,
+      "jamName": "Electronic Beats",
+      "image": "https://www.electronicbeats.net/app/uploads/2012/05/electronic-beats-festival-video-review-2012.jpg",
+      "organizer": "Electric Vibes Collective",
+      "genre": "Electronic",
+      "location": "Tech Lab",
+      "date": "2025-04-02T20:00:00Z",
+      "instruments": "Synthesizer, Drum Machine, Laptop",
+      "experience": "professional",
+      "description": "A high-energy jam session for electronic music creators. Join us as we explore sound design, beat-making, and live performance with cutting-edge technology.",
+      "owner": "electricvibes@foo.com"
     }
   ],
 

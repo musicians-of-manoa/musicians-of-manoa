@@ -37,7 +37,7 @@ const AttendedJamsPage = async () => {
         <Row className="mt-1 mb-2">
           <Col className="text-center">
             <h1 style={{color: 'white'}}>
-              Your Attending Jams:
+              Attending Jams:
               {' '}
               {attendedJams.length > 0
                 ? `${attendedJams.length} jam${attendedJams.length > 1 ? 's' : ''}`
