@@ -143,9 +143,24 @@
 
   "defaultExperienceLevels": [
     { "id": 1, "level": "Beginner", "description": "< 1 year", "isEditing": 0 },
-    { "id": 2, "level": "Intermediate", "description": "1-3 years", "isEditing": 0 },
-    { "id": 3, "level": "Advanced", "description": "3-5 years", "isEditing": 0 },
-    { "id": 4, "level": "Professional", "description": "5+ years", "isEditing": 0 }
+    {
+      "id": 2,
+      "level": "Intermediate",
+      "description": "1-3 years",
+      "isEditing": 0
+    },
+    {
+      "id": 3,
+      "level": "Advanced",
+      "description": "3-5 years",
+      "isEditing": 0
+    },
+    {
+      "id": 4,
+      "level": "Professional",
+      "description": "5+ years",
+      "isEditing": 0
+    }
   ],
 
   "defaultMusicalTastes": [
@@ -169,7 +184,7 @@
       "rating": 4.5,
       "musicalGoals": "Gain experience playing in different genres",
       "musicalTastes": "Jazz, Classical",
-      "instruments": "Saxophone, Piano",
+      "instruments": "Saxophone, Piano, Vocals",
       "experience": "beginner",
       "description": "I'm a beginner saxophonist looking to gain experience playing in different genres."
     },
@@ -208,7 +223,7 @@
       "rating": 4.0,
       "musicalGoals": "Eagles",
       "musicalTastes": "Rap",
-      "instruments": "Drums",
+      "instruments": "Drums, Production",
       "experience": "intermediate",
       "description": "Go Eagles"
     },
@@ -221,9 +236,58 @@
       "rating": 4.0,
       "musicalGoals": "Make Bangers",
       "musicalTastes": "EDM",
-      "instruments": "Ableton",
+      "instruments": "Ableton, DJ",
       "experience": "intermediate",
       "description": "Hi!"
+    }
+  ],
+  "defaultReviews": [
+    {
+      "profileId": 4,
+      "reviews": [
+        {
+          "userId": 2,
+          "rating": 4.5,
+          "comment": "John is a great saxophonist!"
+        },
+        { "userId": 3, "rating": 4.0, "comment": "John is a great pianist!" }
+      ]
+    },
+    {
+      "profileId": 5,
+      "reviews": [
+        { "userId": 1, "rating": 4.0, "comment": "Jane is a great guitarist!" },
+        { "userId": 3, "rating": 4.5, "comment": "Jane is a great drummer!" }
+      ]
+    },
+    {
+      "profileId": 1,
+      "reviews": [
+        {
+          "userId": 1,
+          "rating": 4.0,
+          "comment": "Stavros is a great drummer!"
+        },
+        {
+          "userId": 2,
+          "rating": 4.5,
+          "comment": "Stavros is a great vocalist!"
+        }
+      ]
+    },
+    {
+      "profileId": 3,
+      "reviews": [
+        { "userId": 1, "rating": 4.0, "comment": "Saquon is a great drummer!" },
+        { "userId": 2, "rating": 4.5, "comment": "Saquon is a great producer!" }
+      ]
+    },
+    {
+      "profileId": 2,
+      "reviews": [
+        { "userId": 1, "rating": 4.0, "comment": "Sonny is a great producer!" },
+        { "userId": 2, "rating": 4.5, "comment": "Sonny is a great DJ!" }
+      ]
     }
   ]
 }

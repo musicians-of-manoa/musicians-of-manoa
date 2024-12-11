@@ -54,7 +54,7 @@ const ReviewFormBox: React.FC<ReviewFormProps> = ({ onSubmit }) => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (rating === 0) {
-      console.log('Please select a rating before submitting.');
+      console.log('Please select a rating before submitting.'); // eslint-disable-line no-console
       return;
     }
     onSubmit({ rating, comment });

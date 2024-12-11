@@ -28,7 +28,6 @@ model User {
   password String
   role     Role     @default(USER)
   Profile  Profile?
-
   AttendedJam AttendedJam[]
 }
 
@@ -87,13 +86,18 @@ model Profile {
   instruments   String?
   experience    Experience
   description   String?
+  reviews       Review[] // Relation to Review
 }
 
 model Review {
-  id      Int    @id @default(autoincrement())
-  rating  Int
-  comment String
-  userID  Int
+  id        Int      @id @default(autoincrement())
+  rating    Int      
+  comment   String
+  profile   Profile  @relation(fields: [profileId], references: [id]) // Relation to Profile
+  profileId Int
+  user      User     @relation(fields: [userId], references: [id]) // Relation to User
+  userId    Int
+  createdAt DateTime @default(now()) // Automatically set creation date
 }
 
 model Experiences {

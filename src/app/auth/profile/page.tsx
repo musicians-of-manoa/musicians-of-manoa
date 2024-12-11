@@ -9,7 +9,11 @@ import { prisma } from '@/lib/prisma';
 const ProfilePage = async () => {
   // Protect the page, only logged-in users can access it.
   const session = await getServerSession(authOptions);
-  loggedInProtectedPage(session);
+  loggedInProtectedPage(
+    session as {
+      user: { email: string; id: string; randomKey: string };
+    } | null,
+  );
 
   // Extract user ID from the session
   const userEmail = session?.user?.email;
