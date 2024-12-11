@@ -36,11 +36,11 @@ const JamSearchPage = async ({
 
   return (
     <main>
-      <Container id="jam-search" className="py-3">
+      <Container id="jam-search">
         {/* Row to align the search bar and header */}
         <Row className="justify-content-center">
-          <Col xs={12} className="text-center py-4" style={{ color: 'white' }}>
-            <h2><strong>Search Jams</strong></h2>
+          <Col xs={12} className="text-center py-1" style={{ color: 'white' }}>
+            <h1>Search Jams</h1>
           </Col>
           <Col xs={12} className="text-center mb-4">
             <SearchBar />
