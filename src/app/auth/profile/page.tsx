@@ -31,7 +31,7 @@ const ProfilePage = async () => {
   const user = await prisma.user.findUnique({
     where: { email: userEmail },
     include: {
-      profile: true, // Include the profile relation
+      Profile: true, // Include the profile relation
     },
   });
 
@@ -48,7 +48,7 @@ const ProfilePage = async () => {
   }
 
   // If the user does not have a profile, you might redirect them to create one
-  if (!user.profile) {
+  if (!user.Profile) {
     return (
       <main>
         <Container style={{ paddingTop: '2rem' }}>
@@ -68,7 +68,7 @@ const ProfilePage = async () => {
       <Container style={{ paddingTop: '2rem' }}>
         <h1>Profile</h1>
         <div>
-          <ProfileCard profile={user.profile} />
+          <ProfileCard profile={user.Profile} />
         </div>
       </Container>
     </main>
