@@ -1,7 +1,7 @@
 import { getServerSession } from 'next-auth';
 import { Container, Row, Col } from 'react-bootstrap';
 import { prisma } from '@/lib/prisma';
-import JamInfoCard from '@/components/JamInfoCard';
+import AttendedJamCard from '@/components/AttendedJamCard';
 
 const AttendedJamsPage = async () => {
   const session = await getServerSession();
@@ -13,7 +13,7 @@ const AttendedJamsPage = async () => {
     return <p>You must be logged in to view your attended jams.</p>;
   }
 
-  // Fetch attended jams from the database
+  // Fetch attended jams from the database (Server-side logic)
   let attendedJams: any[] = [];
   try {
     attendedJams = await prisma.attendedJam.findMany({
@@ -48,7 +48,7 @@ const AttendedJamsPage = async () => {
         {attendedJams.map((attendedJam) => (
           <Row key={attendedJam.jamId}>
             <Col>
-              <JamInfoCard Jam={attendedJam.jam} />
+              <AttendedJamCard Jam={attendedJam.jam} />
             </Col>
           </Row>
         ))}
