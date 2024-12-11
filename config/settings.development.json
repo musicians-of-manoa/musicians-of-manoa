@@ -102,6 +102,24 @@
     { "id": 5, "goal": "Improve sight-reading skills", "isEditing": 0 }
   ],
 
+  "defaultExperienceLevels": [
+    { "id": 1, "level": "Beginner", "description": "< 1 year", "isEditing": 0 },
+    { "id": 2, "level": "Intermediate", "description": "1-3 years", "isEditing": 0 },
+    { "id": 3, "level": "Advanced", "description": "3-5 years", "isEditing": 0 },
+    { "id": 4, "level": "Professional", "description": "5+ years", "isEditing": 0 }
+  ],
+
+  "defaultMusicalTastes": [
+    { "id": 1, "genre": "Jazz", "isEditing": 0 },
+    { "id": 2, "genre": "Classical", "isEditing": 0 },
+    { "id": 3, "genre": "Rock", "isEditing": 0 },
+    { "id": 4, "genre": "Pop", "isEditing": 0 },
+    { "id": 5, "genre": "Hip Hop", "isEditing": 0 },
+    { "id": 6, "genre": "R&B", "isEditing": 0 },
+    { "id": 7, "genre": "Electronic", "isEditing": 0 },
+    { "id": 8, "genre": "Reggage", "isEditing": 0 }
+  ],
+
   "defaultProfiles": [
     {
       "userEmail": "john@foo.com",

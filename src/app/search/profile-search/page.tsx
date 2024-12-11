@@ -35,9 +35,9 @@ const ProfileSearchPage = async ({ searchParams }: ProfilePageProps) => {
       <Container id="jam-search" className="d-flex justify-content-center py-3">
         <Row>
           <Col>
-            <Col className="text-center py-4" style={{ fontFamily: 'Arial' }}>
+            <Col className="text-center py-4">
               <h2>
-                <strong>Search Profiles</strong>
+                Search Profiles
               </h2>
             </Col>
             <SearchBar />

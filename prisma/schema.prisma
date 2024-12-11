@@ -86,3 +86,16 @@ model Review {
   userId    Int
   createdAt DateTime @default(now()) // Automatically set creation date
 }
+
+model Experiences {
+  id            Int    @id @default(autoincrement())
+  level         String
+  description   String
+  isEditing     Int    @default(0)
+}
+
+model Tastes {
+  id            Int    @id @default(autoincrement())
+  genre         String
+  isEditing     Int    @default(0)
+}
