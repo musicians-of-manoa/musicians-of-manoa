@@ -1,39 +1,59 @@
-'use client';
-
+import { getServerSession } from 'next-auth';
+import { Container, Row, Col } from 'react-bootstrap';
+import { prisma } from '@/lib/prisma';
 import JamInfoCard from '@/components/JamInfoCard';
-import { useEffect, useState } from 'react';
 
-const AttendedJamsPage = () => {
-  const [attendedJams, setAttendedJams] = useState<any[]>([]);
+const AttendedJamsPage = async () => {
+  const session = await getServerSession();
+  console.log('Session:', session); // Debug the session
+  const userEmail = session?.user?.email;
+  console.log('User Email:', userEmail); // Debug the user email
 
-  useEffect(() => {
-    // Fetch the list of attended jams from the API or context (use context if necessary)
-    async function fetchAttendedJams() {
-      try {
-        const response = await fetch('/api/jam/get-attended'); // Update with correct API endpoint
-        if (response.ok) {
-          const data = await response.json();
-          setAttendedJams(data); // Store fetched jams in state
-        }
-      } catch (error) {
-        console.error('Failed to fetch attended jams', error);
-      }
-    }
+  if (!userEmail) {
+    return <p>You must be logged in to view your attended jams.</p>;
+  }
 
-    fetchAttendedJams();
-  }, []);
+  // Fetch attended jams from the database
+  let attendedJams: any[] = [];
+  try {
+    attendedJams = await prisma.attendedJam.findMany({
+      where: {
+        user: {
+          email: userEmail, // Look for the user by email
+        },
+      },
+      include: {
+        jam: true, // Include jam data
+      },
+    });
+    console.log('Attended Jams:', attendedJams); // Debug the fetched data
+  } catch (error) {
+    console.error('Error fetching attended jams:', error);
+  }
 
   return (
-    <div>
-      <h1>Attended Jams</h1>
-      {attendedJams.length > 0 ? (
-        attendedJams.map((jam) => (
-          <JamInfoCard key={jam.id} Jam={jam} /> // Render JamInfoCard for each attended jam
-        ))
-      ) : (
-        <p>No jams attended yet.</p>
-      )}
-    </div>
+    <main>
+      <Container id="attended-jams-list">
+        <Row className="mt-5 mb-2">
+          <Col>
+            <h1>
+              Your Attended Jams:
+              {' '}
+              {attendedJams.length > 0
+                ? `${attendedJams.length} jam${attendedJams.length > 1 ? 's' : ''}`
+                : 'No attended jams yet.'}
+            </h1>
+          </Col>
+        </Row>
+        {attendedJams.map((attendedJam) => (
+          <Row key={attendedJam.jamId}>
+            <Col>
+              <JamInfoCard Jam={attendedJam.jam} />
+            </Col>
+          </Row>
+        ))}
+      </Container>
+    </main>
   );
 };
 

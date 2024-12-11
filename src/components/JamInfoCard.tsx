@@ -1,17 +1,41 @@
 'use client';
 
 import { JamInformation } from '@prisma/client';
-import { Button, Card, ListGroup } from 'react-bootstrap';
 import swal from 'sweetalert';
-import { useJamContext } from './JamsContext';
+import { Button, Card, ListGroup } from 'react-bootstrap';
+import { useRouter } from 'next/navigation';
 
 /* Renders a single Jam Info Card. See /search/jam-search/page.tsx. */
 const JamInfoCard = ({ Jam }: { Jam: JamInformation }) => {
-  const { addAttendedJam } = useJamContext(); // Get the addAttendedJam function from context
+  const router = useRouter();
 
-  const handleAttendJamClick = () => {
-    // Add the jam to savedJams through context
-    addAttendedJam(Jam); // Renamed `Jam` to `jam`
+  const handleAttendJam = async () => {
+    console.log('Attend Jam button clicked!'); // Debug log
+    console.log('Jam Data:', Jam);
+    console.log('Jam Prop:', Jam);
+    try {
+      const response = await fetch('/api/add-to-attended', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ jamId: Jam.id, jamData: Jam }),
+      });
+
+      const data = await response.json(); // Parse the response body
+
+      console.log('Response Status:', response.status);
+      console.log('Response Data:', data);
+
+      if (response.ok) {
+        console.log('Jam successfully attended:', data);
+        router.push('/attended-jams');
+      } else {
+        console.error('Error adding jam to attended list:', response.status, data);
+      }
+    } catch (error) {
+      console.error('Failed to attend jam', error);
+    }
 
     // Show success message
     swal('Success', 'You have successfully joined the jam!', 'success', {
@@ -68,7 +92,7 @@ const JamInfoCard = ({ Jam }: { Jam: JamInformation }) => {
         </ListGroup>
       </Card.Body>
       <Card.Footer style={{ backgroundColor: '#ECDFCC' }}>
-        <Button variant="dark" className="w-100" onClick={handleAttendJamClick}>
+        <Button variant="dark" className="w-100" onClick={handleAttendJam}>
           Attend Jam
         </Button>
       </Card.Footer>
