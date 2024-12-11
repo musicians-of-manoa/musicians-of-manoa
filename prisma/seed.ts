@@ -4,19 +4,31 @@ import * as config from '../config/settings.development.json';
 
 const prisma = new PrismaClient();
 
+interface Review {
+  userId: number; // Reviewer user ID
+  rating: number;
+  comment: string;
+  createdAt?: string; // Optional creation date
+}
+
+interface ReviewData {
+  profileId: number; // Profile ID being reviewed
+  reviews: Review[];
+}
+
 async function main() {
   console.log('Seeding the database');
 
   // Seed Users First
   const password = await hash('changeme', 10);
-  await Promise.all(
+  const users = await Promise.all(
     config.defaultAccounts.map(async (account) => {
       let role: Role = 'USER';
       if (account.role === 'ADMIN') {
         role = 'ADMIN';
       }
       console.log(`  Creating user: ${account.email} with role: ${role}`);
-      await prisma.user.upsert({
+      return prisma.user.upsert({
         where: { email: account.email },
         update: {},
         create: {
@@ -28,20 +40,21 @@ async function main() {
     }),
   );
 
-  // Seed Profiles Next, For Dependency Issues
-  await Promise.all(
+  // Log added users
+  console.log('Seeded Users:', users);
+
+  // Seed Profiles
+  const profiles = await Promise.all(
     config.defaultProfiles.map(async (profile) => {
       console.log(`  Adding Profile: ${profile.username}`);
-      const user = await prisma.user.findUnique({
-        where: { email: profile.userEmail }, // Ensure the User exists
-      });
+      const user = users.find((u) => u.email === profile.userEmail);
 
       if (!user) {
         console.error(`No user found for profile with email: ${profile.userEmail}`);
-        return;
+        return null;
       }
 
-      await prisma.profile.upsert({
+      return prisma.profile.upsert({
         where: { userId: user.id },
         update: {},
         create: {
@@ -61,7 +74,62 @@ async function main() {
     }),
   );
 
-  // Jam Information Seed Next!
+  // Null Filtered Profiles
+  const validProfiles = profiles.filter((p) => p !== null);
+  console.log('Valid Profiles:', validProfiles);
+
+  // Log added profiles
+  console.log('Seeded Profiles:', profiles);
+
+  // Seed Reviews
+  const defaultReviews: ReviewData[] = config.defaultReviews;
+  await Promise.all(
+    defaultReviews.map(async ({ profileId, reviews }: ReviewData) => {
+      const profile = profiles.find((p) => p?.id === profileId);
+
+      console.log(`Looking for profileId: ${profileId}`);
+      console.log(
+        'Available Profiles:',
+        profiles.map((p) => p?.id),
+      );
+
+      if (!profile) {
+        console.error(`No profile found for ID: ${profileId}`);
+        return;
+      }
+
+      console.log(`Adding Reviews for Profile ID: ${profileId}`);
+      await Promise.all(
+        reviews.map(async ({ rating, comment, userId, createdAt }: Review) => {
+          const reviewer = users.find((u) => u.id === userId);
+
+          // Log Added
+          console.log(`Looking for userId: ${userId}`);
+          console.log(
+            'Available Users:',
+            users.map((u) => u.id),
+          );
+
+          if (!reviewer) {
+            console.error(`No user found for reviewer ID: ${userId}`);
+            return;
+          }
+
+          await prisma.review.create({
+            data: {
+              rating,
+              comment,
+              profileId: profile.id,
+              userId: reviewer.id,
+              createdAt: createdAt ? new Date(createdAt) : undefined, // Use provided date or default
+            },
+          });
+        }),
+      );
+    }),
+  );
+
+  // Seed Jam Information
   await Promise.all(
     config.defaultJamInformation.map(async (jam) => {
       console.log(`  Adding JamInformation: ${jam.jamName}`);
@@ -83,6 +151,8 @@ async function main() {
       });
     }),
   );
+
+  console.log('Database seeding completed!');
 }
 
 main()

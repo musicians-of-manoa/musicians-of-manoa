@@ -2,6 +2,7 @@
   "defaultAccounts": [
     { "email": "admin@foo.com", "password": "changeme", "role": "ADMIN" },
     { "email": "john@foo.com", "password": "changeme" },
+    { "email": "jane@foo.com", "password": "changeme" },
     { "email": "stavvy@foo.com", "password": "changeme" },
     { "email": "saquon@foo.com", "password": "changeme" },
     { "email": "skrillex@foo.com", "password": "changeme" }
@@ -111,7 +112,7 @@
       "rating": 4.5,
       "musicalGoals": "Gain experience playing in different genres",
       "musicalTastes": "Jazz, Classical",
-      "instruments": "Saxophone, Piano",
+      "instruments": "Saxophone, Piano, Vocals",
       "experience": "beginner",
       "description": "I'm a beginner saxophonist looking to gain experience playing in different genres."
     },
@@ -150,7 +151,7 @@
       "rating": 4.0,
       "musicalGoals": "Eagles",
       "musicalTastes": "Rap",
-      "instruments": "Drums",
+      "instruments": "Drums, Production",
       "experience": "intermediate",
       "description": "Go Eagles"
     },
@@ -163,9 +164,58 @@
       "rating": 4.0,
       "musicalGoals": "Make Bangers",
       "musicalTastes": "EDM",
-      "instruments": "Ableton",
+      "instruments": "Ableton, DJ",
       "experience": "intermediate",
       "description": "Hi!"
+    }
+  ],
+  "defaultReviews": [
+    {
+      "profileId": 1,
+      "reviews": [
+        {
+          "userId": 2,
+          "rating": 4.5,
+          "comment": "John is a great saxophonist!"
+        },
+        { "userId": 3, "rating": 4.0, "comment": "John is a great pianist!" }
+      ]
+    },
+    {
+      "profileId": 2,
+      "reviews": [
+        { "userId": 1, "rating": 4.0, "comment": "Jane is a great guitarist!" },
+        { "userId": 3, "rating": 4.5, "comment": "Jane is a great drummer!" }
+      ]
+    },
+    {
+      "profileId": 3,
+      "reviews": [
+        {
+          "userId": 1,
+          "rating": 4.0,
+          "comment": "Stavros is a great drummer!"
+        },
+        {
+          "userId": 2,
+          "rating": 4.5,
+          "comment": "Stavros is a great vocalist!"
+        }
+      ]
+    },
+    {
+      "profileId": 4,
+      "reviews": [
+        { "userId": 1, "rating": 4.0, "comment": "Saquon is a great drummer!" },
+        { "userId": 2, "rating": 4.5, "comment": "Saquon is a great producer!" }
+      ]
+    },
+    {
+      "profileId": 5,
+      "reviews": [
+        { "userId": 1, "rating": 4.0, "comment": "Sonny is a great producer!" },
+        { "userId": 2, "rating": 4.5, "comment": "Sonny is a great DJ!" }
+      ]
     }
   ]
 }
