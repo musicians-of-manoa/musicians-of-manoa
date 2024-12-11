@@ -104,9 +104,24 @@
 
   "defaultExperienceLevels": [
     { "id": 1, "level": "Beginner", "description": "< 1 year", "isEditing": 0 },
-    { "id": 2, "level": "Intermediate", "description": "1-3 years", "isEditing": 0 },
-    { "id": 3, "level": "Advanced", "description": "3-5 years", "isEditing": 0 },
-    { "id": 4, "level": "Professional", "description": "5+ years", "isEditing": 0 }
+    {
+      "id": 2,
+      "level": "Intermediate",
+      "description": "1-3 years",
+      "isEditing": 0
+    },
+    {
+      "id": 3,
+      "level": "Advanced",
+      "description": "3-5 years",
+      "isEditing": 0
+    },
+    {
+      "id": 4,
+      "level": "Professional",
+      "description": "5+ years",
+      "isEditing": 0
+    }
   ],
 
   "defaultMusicalTastes": [
@@ -189,7 +204,7 @@
   ],
   "defaultReviews": [
     {
-      "profileId": 1,
+      "profileId": 4,
       "reviews": [
         {
           "userId": 2,
@@ -200,14 +215,14 @@
       ]
     },
     {
-      "profileId": 2,
+      "profileId": 5,
       "reviews": [
         { "userId": 1, "rating": 4.0, "comment": "Jane is a great guitarist!" },
         { "userId": 3, "rating": 4.5, "comment": "Jane is a great drummer!" }
       ]
     },
     {
-      "profileId": 3,
+      "profileId": 1,
       "reviews": [
         {
           "userId": 1,
@@ -222,14 +237,14 @@
       ]
     },
     {
-      "profileId": 4,
+      "profileId": 3,
       "reviews": [
         { "userId": 1, "rating": 4.0, "comment": "Saquon is a great drummer!" },
         { "userId": 2, "rating": 4.5, "comment": "Saquon is a great producer!" }
       ]
     },
     {
-      "profileId": 5,
+      "profileId": 2,
       "reviews": [
         { "userId": 1, "rating": 4.0, "comment": "Sonny is a great producer!" },
         { "userId": 2, "rating": 4.5, "comment": "Sonny is a great DJ!" }

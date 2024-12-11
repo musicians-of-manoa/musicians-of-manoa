@@ -68,7 +68,6 @@ const DiscoverMusiciansInfoCard = ({ profile }: ProfileInfoCardProps) => (
       <hr style={{ margin: '5px 0' }} />
       <div>
         <strong>Reviews:</strong>
-        <br />
         {profile.reviews.length > 0 ? (
           [
             ...new Map(

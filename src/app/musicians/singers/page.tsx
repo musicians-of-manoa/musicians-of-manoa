@@ -33,7 +33,7 @@ const SingersPage = async ({ searchParams }: CategoryPageProps) => {
           rating: true,
           comment: true,
           createdAt: true,
-          user: { select: { username: true } },
+          user: { select: { id: true } },
         },
       },
     },
