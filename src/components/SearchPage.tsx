@@ -6,7 +6,7 @@ import { Card, Col, Container, Row, Image } from 'react-bootstrap';
 const SearchPage: React.FC = () => (
   <Container>
     <Col className="text-center py-4">
-      <h2><strong>Search for... </strong></h2>
+      <h2>Search for...</h2>
     </Col>
     <Row>
       <Col md={6}>

@@ -54,7 +54,7 @@ const JamInfoForm: React.FC = () => {
     <Container className="py-3">
       <Row className="justify-content-center">
         <Col xs={10}>
-          <Col className="text-center py-3">
+          <Col className="text-center py-3" style={{ color: 'white' }}>
             <h2>Jam Information</h2>
           </Col>
           <Card style={{ backgroundColor: '#ECDFCC' }}>
@@ -220,6 +220,8 @@ const JamInfoForm: React.FC = () => {
               </Form>
             </Card.Body>
           </Card>
+          <br />
+          <br />
         </Col>
       </Row>
     </Container>
