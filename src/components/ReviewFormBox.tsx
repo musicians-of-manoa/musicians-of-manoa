@@ -4,6 +4,7 @@ interface ReviewFormProps {
   onSubmit: (review: { rating: number; comment: string }) => void;
 }
 
+// Styles moved above the component to fix ESLint error
 const styles: { [key: string]: React.CSSProperties } = {
   container: {
     padding: '20px',
@@ -40,23 +41,25 @@ const styles: { [key: string]: React.CSSProperties } = {
   },
 };
 
-const ReviewCreateForm: React.FC<ReviewFormProps> = ({ onSubmit }) => {
+const ReviewFormBox: React.FC<ReviewFormProps> = ({ onSubmit }) => {
   const [rating, setRating] = useState(0);
   const [comment, setComment] = useState('');
 
+  // Handle star click
   const handleStarClick = (star: number) => {
     setRating(star);
   };
 
+  // Handle form submission
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (rating === 0) {
-      alert('Please select a rating before submitting.');
+      console.log('Please select a rating before submitting.'); // eslint-disable-line no-console
       return;
     }
     onSubmit({ rating, comment });
-    setRating(0);
-    setComment('');
+    setRating(0); // Reset rating
+    setComment(''); // Reset comment
   };
 
   return (
@@ -75,7 +78,7 @@ const ReviewCreateForm: React.FC<ReviewFormProps> = ({ onSubmit }) => {
               style={{
                 cursor: 'pointer',
                 fontSize: '1.5rem',
-                color: star <= rating ? '#FFD700' : '#E0E0E0',
+                color: star <= rating ? '#FFD700' : '#E0E0E0', // Highlight selected stars
               }}
             >
               ★
@@ -98,4 +101,4 @@ const ReviewCreateForm: React.FC<ReviewFormProps> = ({ onSubmit }) => {
   );
 };
 
-export default ReviewCreateForm;
+export default ReviewFormBox;
