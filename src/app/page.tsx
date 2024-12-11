@@ -19,16 +19,13 @@ const Home = () => (
             className="d-flex flex-column justify-content-center align-items-start ps-5"
           >
             <h1 className={`${styles.catchphrase} ${styles.leftContent}`}>
-              Find some
-              <br />
+              Find
+              local
               musicians
-              <br />
-              to jam
-              <br />
-              with!
+              and events to jam at
             </h1>
             <p className={styles.subCatchphrase}>
-              Connect with other local musicians!
+              Connect with other local musicians, or find out about events near you.
             </p>
             <section className={`${styles.buttonGroup} mt-4`}>
               <Button
@@ -52,10 +49,10 @@ const Home = () => (
 
           {/* Right Side */}
           <Col xs={12} md={6} className="p-0">
-            <Carousel controls={false} indicators={false} interval={3000} fade>
+            <Carousel controls={false} indicators={false} interval={5000}>
               <Carousel.Item>
                 <Image
-                  src="/musicianBackMatch-1.png"
+                  src="/musicianBackMatch-1-transparent.png"
                   alt="Musician 1"
                   layout="responsive" // Ensures the image scales while maintaining its aspect ratio
                   width={1920} // Actual width of the image
@@ -64,7 +61,7 @@ const Home = () => (
               </Carousel.Item>
               <Carousel.Item>
                 <Image
-                  src="/musicianBackMatch-2.png"
+                  src="/musicianBackMatch-2-transparent.png"
                   alt="Musician 1"
                   layout="responsive" // Ensures the image scales while maintaining its aspect ratio
                   width={1920} // Actual width of the image
@@ -98,6 +95,11 @@ const Home = () => (
           <Col>
             <a href="/musicians/producers" className={styles.discoverButton}>
               <span className={styles.discoverText}>Producers</span>
+            </a>
+          </Col>
+          <Col>
+            <a href="/musicians/DJs" className={styles.discoverButton}>
+              <span className={styles.discoverText}>DJs</span>
             </a>
           </Col>
           {/* Add more buttons as needed */}

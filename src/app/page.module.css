@@ -232,10 +232,9 @@
 /* New stylings after default ones added here! */
 
 .catchphrase {
-  color: #0d0d0d; /* HEADER TEXT COLOR */
-  font-size: 3.5rem;
+  color: #ffffff; /* White text on dark gradient */
+  font-size: 3.3rem;
   font-weight: bold;
-  font-family: 'Arial', sans-serif;
 }
 
 .catchphrase span {
@@ -245,12 +244,13 @@
 
 /* Sub-catchphrase styles */
 .subCatchphrase {
-  font-size: 1.25rem; /* Smaller than the main catchphrase */
-  font-weight: 300;   /* Regular weight */
-  margin-top: 1rem;   /* Space between the main catchphrase and this text */
-  color: #0d0d0d;     /* Light green text (adjust as needed) */
-  line-height: 1.5;   /* Improve readability */
-  padding-left: 4rem; /* ALIGNS SUBCATCHPHRASE TO CATCHPHRASE */
+  font-size: 1.2rem;
+  font-weight: 300;
+  margin-top: 1rem;
+  color: #cccccc; /* Slightly lighter gray for subtext */
+  line-height: 1.5;
+  padding-left: 4rem;
+  font-family: 'Poppins', sans-serif; /* Use Poppins for consistency */
 }
 
 /* Outer container with padding */
@@ -276,12 +276,19 @@
 }
 
 .customButton {
-  background-color: #0033ff;
-  border-color: #0033ff;
+  background: linear-gradient(to right, #00a37d, #1ba8a8); /* Initial gradient */
+  border: none;
   color: #fff;
-  font-family: 'Arial', sans-serif;
-  font-weight: bold;
-  padding: 0.75rem 1.5rem;
+  font-weight: lighter;
+  padding: 0.90rem 4rem; /* Button padding */
+  border-radius: 50px; /* Elliptical shape */
+  transition: color .3s,background-color .3s; /* Smooth transition for gradient */
+}
+
+/* Hover effect with a new gradient */
+.customButton:hover {
+  background: linear-gradient(to right, #8e3de4, #5290fa); /* Hover gradient */
+  transition: color .3s,background-color .3s;
 }
 
 .buttonGroup {
@@ -294,13 +301,13 @@
 
 /* Top Section */
 .topSection {
-  background-color: #a6ff72; /* Green background for the top section */
+  background: transparent; /* Let the gradient show through */
 }
 
 /* Bottom Section */
 .bottomSection {
-  background-color: #ffffff; /* White background for the bottom section */
-  color: #000000;            /* Optional: Text color for contrast */
+  background: transparent; /* Let the gradient show through */
+  color: #ffffff; /* White text for contrast against dark gradient */
 }
 
 /* Discover Button Styles */
@@ -329,6 +336,10 @@
 
 .discoverButton[href*="producers"] {
   background-image: url('/producersDiscover.jpg'); /* Replace with actual image path */
+}
+
+.discoverButton[href*="DJs"] {
+  background-image: url('/djDiscover.jpg'); /* Replace with actual image path */
 }
 
 /* Text overlay */
