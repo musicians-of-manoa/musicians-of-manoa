@@ -3,6 +3,7 @@ import { Poppins } from 'next/font/google';
 import './globals.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from '@/components/Navbar';
+import { JamProvider } from '@/components/JamsContext';
 import Providers from './providers';
 
 // Load Poppins font with specific weights
@@ -25,10 +26,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={classString}>
-        <Providers>
-          <NavBar />
-          {children}
-        </Providers>
+        <JamProvider>
+          <Providers>
+            <NavBar />
+            {children}
+          </Providers>
+        </JamProvider>
       </body>
     </html>
   );
