@@ -76,6 +76,7 @@ export interface Profile {
 // Provide Sample Data for User Reviews Page
 export interface Review {
   id: number;
+  content: string;
   rating: number;
   comment: string;
   userId: number;
