@@ -2,8 +2,8 @@
 
 import { signIn } from 'next-auth/react';
 import { Button, Card, Col, Container, Form, Row } from 'react-bootstrap';
+import { FaEnvelope, FaLock } from 'react-icons/fa';
 
-/** The sign in page. */
 const SignIn = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -25,30 +25,63 @@ const SignIn = () => {
   };
 
   return (
-    <main>
-      <Container>
-        <Row className="justify-content-center">
-          <Col xs={5}>
-            <h1 className="text-center">Sign In</h1>
-            <Card>
-              <Card.Body>
+    <main style={{ minHeight: '100vh', background: 'linear-gradient(to bottom, #00a37d, #1ba8a8 !important' }}>
+      <Container className="d-flex align-items-center justify-content-center" style={{ minHeight: '70vh' }}>
+        <Row className="w-100 justify-content-center">
+          <Col xs={12} md={6} lg={4}>
+            <Card className="shadow">
+              <Card.Body className="p-4">
+                <h2 className="text-center mb-4" style={{ fontWeight: 'bold', color: '#333' }}>
+                  Sign In
+                </h2>
                 <Form method="post" onSubmit={handleSubmit}>
-                  <Form.Group controlId="formBasicEmail">
+                  <Form.Group controlId="formBasicEmail" className="mb-3">
                     <Form.Label>Email</Form.Label>
-                    <input name="email" type="text" className="form-control" />
+                    <div className="input-group">
+                      <span className="input-group-text">
+                        <FaEnvelope />
+                      </span>
+                      <input
+                        name="email"
+                        type="text"
+                        className="form-control"
+                        placeholder="Enter your email"
+                      />
+                    </div>
                   </Form.Group>
-                  <Form.Group>
+                  <Form.Group controlId="formBasicPassword" className="mb-3">
                     <Form.Label>Password</Form.Label>
-                    <input name="password" type="password" className="form-control" />
+                    <div className="input-group">
+                      <span className="input-group-text">
+                        <FaLock />
+                      </span>
+                      <input
+                        name="password"
+                        type="password"
+                        className="form-control"
+                        placeholder="Enter your password"
+                      />
+                    </div>
                   </Form.Group>
-                  <Button type="submit" className="mt-3">
-                    Signin
+                  <Button
+                    type="submit"
+                    className="w-100 mt-3"
+                    style={{
+                      backgroundColor: '#333',
+                      border: 'none',
+                    }}
+                  >
+                    Sign In
                   </Button>
                 </Form>
               </Card.Body>
-              <Card.Footer>
-                Don&apos;t have an account?
-                <a href="/auth/signup">Sign up</a>
+              <Card.Footer className="text-center">
+                <small>
+                  Don&apos;t have an account?{' '}
+                  <a href="/auth/signup" style={{ color: '#6a11cb' }}>
+                    Sign up
+                  </a>
+                </small>
               </Card.Footer>
             </Card>
           </Col>

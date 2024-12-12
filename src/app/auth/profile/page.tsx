@@ -66,7 +66,7 @@ const ProfilePage = async () => {
   return (
     <main>
       <Container style={{ paddingTop: '2rem' }}>
-        <h1>Profile</h1>
+        <h1 style={{ color: 'white '}}>Profile</h1>
         <div>
           <ProfileCard profile={user.Profile} />
         </div>

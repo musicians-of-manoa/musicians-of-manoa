@@ -9,7 +9,7 @@ const SearchPage: React.FC = () => (
       <h1>Search for...</h1>
     </Col>
     <Row>
-      <Col md={6}>
+      <Col md={6} className='py-5'>
         <a href="search/profile-search" className="hover-card" style={{ textDecoration: 'none' }}>
           <Card className="text-white hover-card">
             <div
@@ -58,7 +58,7 @@ const SearchPage: React.FC = () => (
           </Card>
         </a>
       </Col>
-      <Col md={6}>
+      <Col md={6} className='py-5'>
         <a href="search/jam-search" style={{ textDecoration: 'none' }}>
           <Card className="text-white hover-card">
             <div
