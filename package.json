@@ -37,6 +37,7 @@
   },
   "devDependencies": {
     "@playwright/test": "^1.48.2",
+    "@types/axios": "^0.9.36",
     "@types/bcrypt": "^5.0.2",
     "@types/node": "^22.5.4",
     "@types/react": "^18",
