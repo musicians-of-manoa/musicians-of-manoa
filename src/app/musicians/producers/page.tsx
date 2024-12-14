@@ -28,13 +28,6 @@ const ProducersPage = async ({ searchParams }: CategoryPageProps) => {
       reviews: {
         take: 2,
         orderBy: { createdAt: 'desc' },
-        select: {
-          id: true,
-          rating: true,
-          comment: true,
-          createdAt: true,
-          user: { select: { username: true } },
-        },
       },
     },
   });

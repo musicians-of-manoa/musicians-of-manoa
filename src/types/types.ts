@@ -3,7 +3,7 @@ export interface Review {
   rating: number;
   comment: string;
   createdAt: Date;
-  user: { username: string };
+  userId: number;
 }
 
 export interface ProfileWithReviews {

@@ -28,6 +28,8 @@ const SingersPage = async ({ searchParams }: CategoryPageProps) => {
       reviews: {
         take: 2,
         orderBy: { createdAt: 'desc' },
+<<<<<<< HEAD
+=======
         select: {
           id: true,
           rating: true,
@@ -35,6 +37,7 @@ const SingersPage = async ({ searchParams }: CategoryPageProps) => {
           createdAt: true,
           user: { select: { id: true } },
         },
+>>>>>>> main
       },
     },
   });

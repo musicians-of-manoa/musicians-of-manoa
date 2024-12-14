@@ -84,10 +84,7 @@ export async function editJamInformation(jamInfo: JamInformation) {
  * Creates a new musical goal entry in the database.
  * @param createGoal, an object containing the required fields fields: goal, isEditing
  */
-export async function createGoal(goal: {
-  goal: string;
-  isEditing: number;
-}) {
+export async function createGoal(goal: { goal: string; isEditing: number }) {
   // Insert into the database
   await prisma.goals.create({
     data: {
@@ -104,11 +101,7 @@ export async function createGoal(goal: {
  * @param editGoal, an object containing the required fields fields: goal, isEditing
  */
 
-export async function editGoal(goal: {
-  id: number;
-  goal: string;
-  isEditing: number;
-}) {
+export async function editGoal(goal: { id: number; goal: string; isEditing: number }) {
   // Update the database
   await prisma.goals.update({
     where: { id: goal.id },
@@ -135,11 +128,7 @@ export async function getGoals() {
  * Creates a new musical experience entry in the database.
  * @param createExperienceLevel, an object containing the required fields fields: level, description, isEditing
  */
-export async function createExperience(experience: {
-  level: string;
-  description: string;
-  isEditing: number;
-}) {
+export async function createExperience(experience: { level: string; description: string; isEditing: number }) {
   // Insert into the database
   await prisma.experiences.create({
     data: {
@@ -190,10 +179,7 @@ export async function getExperiences() {
  * Creates a new musical experience entry in the database.
  * @param createTaste, an object containing the required fields fields: genre, isEditing
  */
-export async function createTaste(taste: {
-  genre: string;
-  isEditing: number;
-}) {
+export async function createTaste(taste: { genre: string; isEditing: number }) {
   // Insert into the database
   await prisma.tastes.create({
     data: {
@@ -210,11 +196,7 @@ export async function createTaste(taste: {
  * @param editTaste, an object containing the required fields fields: id, genre, isEditing
  */
 
-export async function editTaste(taste: {
-  id: number;
-  genre: string;
-  isEditing: number;
-}) {
+export async function editTaste(taste: { id: number; genre: string; isEditing: number }) {
   // Update the database
   await prisma.tastes.update({
     where: { id: taste.id },
@@ -267,12 +249,13 @@ export async function changePassword(credentials: { email: string; password: str
   });
 }
 
-export async function addReview(review: { rating: number; comment: string; userID: number }) {
+export async function addReview(review: { profileId: number; rating: number; comment: string; userId: number }) {
   await prisma.review.create({
     data: {
+      profileId: review.profileId,
       rating: review.rating,
       comment: review.comment,
-      userID: review.userID,
+      userId: review.userId,
     },
   });
   redirect('/profile');
