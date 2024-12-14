@@ -27,9 +27,8 @@ model User {
   email    String   @unique
   password String
   role     Role     @default(USER)
-  username String   @default("")
-  Profile  Profile? 
-  reviews  Review[] // Relation to Review
+  Profile  Profile?
+  AttendedJam AttendedJam[]
 }
 
 enum Experience {
@@ -51,7 +50,21 @@ model JamInformation {
   instruments String
   experience  Experience
   description String
+
+  AttendedJam AttendedJam[]
 }
+
+model AttendedJam {
+  id        Int      @id @default(autoincrement())
+  userId    Int
+  jamId     Int
+  user      User     @relation(fields: [userId], references: [id])
+  jam       JamInformation @relation(fields: [jamId], references: [id])
+  createdAt DateTime @default(now())
+
+  @@unique([userId, jamId]) // Ensure a user can only attend a jam once
+}
+
 
 model Goals {
   id        Int    @id @default(autoincrement())

@@ -32,16 +32,19 @@ const ProfileSearchPage = async ({ searchParams }: ProfilePageProps) => {
 
   return (
     <main>
-      <Container id="jam-search" className="d-flex justify-content-center py-3">
-        <Row>
-          <Col>
-            <Col className="text-center py-4">
-              <h2>
-                Search Profiles
-              </h2>
-            </Col>
+      <Container id="jam-search">
+        {/* Row to align the search bar and header */}
+        <Row className="justify-content-center">
+          <Col xs={12} className="text-center py-1" style={{ color: 'white' }}>
+            <h1>Search Profiles</h1>
+          </Col>
+          <Col xs={12} className="text-center mb-4">
             <SearchBar />
           </Col>
+          {/*
+          <Col xs={12} className="text-center mb-4">
+            <SearchJams />
+          </Col> */}
         </Row>
       </Container>
       <Container>

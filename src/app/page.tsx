@@ -73,9 +73,9 @@ const Home = () => (
     </section>
 
     {/* Bottom Section */}
-    <section className={styles.bottomSection}>
+    <section style={{ backgroundImage: 'linear-gradient(to top, #06402B, #005034) !important' }}>
       <Container className="py-5">
-        <h2 className="text-center mb-5">Discover Musicians</h2>
+        <h2 className="text-center mb-5" style={{ color: 'white' }}>Discover Musicians</h2>
         <Row xs={1} sm={2} md={3} lg={4} className="g-4">
           {/* Singer Button */}
           <Col>

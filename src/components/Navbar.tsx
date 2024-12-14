@@ -15,6 +15,7 @@ import {
   Search,
   MusicNoteBeamed,
   CardList,
+  MusicNoteList,
 } from 'react-bootstrap-icons';
 
 const NavBar: React.FC = () => {
@@ -24,7 +25,12 @@ const NavBar: React.FC = () => {
   const role = userWithRole?.randomKey;
   const pathName = usePathname();
   return (
-    <Navbar expand="lg" style={{ backgroundColor: 'transparent' }}>
+    <Navbar
+      expand="lg"
+      style={{
+        background: '#06402B !important',
+      }}
+    >
       <Container>
         <Navbar.Brand href="/">
           <Image
@@ -52,6 +58,10 @@ const NavBar: React.FC = () => {
       <Nav.Link id="create-jam-nav" href="/jam-information" active={pathName === '/jam-information'}>
         Create a Jam
         <MusicNoteBeamed className="ms-2" />
+      </Nav.Link>
+      <Nav.Link id="attending-jams-nav" href="/attended-jams" active={pathName === '/attended-jams'}>
+        Attending Jams
+        <MusicNoteList className="ms-2" />
       </Nav.Link>
       {role === 'ADMIN' && (
         <Nav.Link id="admin-nav" href="/admin" active={pathName === '/admin'}>
