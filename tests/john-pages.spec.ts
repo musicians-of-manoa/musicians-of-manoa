@@ -22,10 +22,12 @@ test('User Pages', async ({ page }) => {
 
   // Check user pages
   await page.getByRole('link', { name: 'Feed' }).click();
+  await page.waitForLoadState('networkidle');
   await expect(page.getByRole('heading', { name: 'Upcoming Jams' })).toBeVisible();
   await page.getByRole('link', { name: 'Create a Jam' }).click();
   await expect(page.getByRole('heading', { name: 'Jam Information' })).toBeVisible();
   await page.getByRole('link', { name: 'Attending Jams' }).click();
+  await page.waitForLoadState('networkidle');
   await expect(page.getByRole('heading', { name: 'Attending Jams: No attended jams yet.' })).toBeVisible();
 
   // Check search pages
