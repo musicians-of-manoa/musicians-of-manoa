@@ -69,7 +69,11 @@ const DiscoverMusiciansInfoCard = ({ profile }: ProfileInfoCardProps) => (
       <div>
         <strong>Reviews:</strong>
         {profile.reviews.length > 0 ? (
-          profile.reviews.map((review) => (
+          [
+            ...new Map(
+              profile.reviews.map((review) => [review.comment, review]),
+            ).values(),
+          ].map((review) => (
             <div
               key={review.id}
               style={{
