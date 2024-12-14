@@ -27,7 +27,6 @@ model User {
   email    String   @unique
   password String
   role     Role     @default(USER)
-  username String   @default("")
   Profile  Profile? 
   reviews  Review[] // Relation to Review
 }

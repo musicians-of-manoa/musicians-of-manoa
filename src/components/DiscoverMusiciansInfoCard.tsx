@@ -66,7 +66,7 @@ const DiscoverMusiciansInfoCard = ({ profile }: ProfileInfoCardProps) => (
         {profile.description ?? 'No description provided.'}
       </Card.Text>
       <hr style={{ margin: '5px 0' }} />
-      <Card.Text>
+      <div>
         <strong>Reviews:</strong>
         {profile.reviews.length > 0 ? (
           profile.reviews.map((review) => (
@@ -95,7 +95,7 @@ const DiscoverMusiciansInfoCard = ({ profile }: ProfileInfoCardProps) => (
         ) : (
           <strong>No reviews yet.</strong>
         )}
-      </Card.Text>
+      </div>
     </Card.Body>
   </Card>
 );
