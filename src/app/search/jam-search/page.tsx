@@ -1,69 +1,41 @@
-import { Col, Container, Row } from 'react-bootstrap';
-import SearchBar from '@/components/SearchBar';
-import JamInfoCard from '@/components/JamInfoCard';
 import { getServerSession } from 'next-auth';
-import authOptions from '@/lib/authOptions';
 import { loggedInProtectedPage } from '@/lib/page-protection';
-import { JamInformation } from '@prisma/client';
-import { prisma } from '@/lib/prisma';
-// import SearchJams from './SearchJams';
+import authOptions from '@/lib/authOptions';
+import { JamInformation, PrismaClient } from '@prisma/client';
+import JamSearchPage from '@/components/JamSearchPage';
 
-const JamSearchPage = async ({
-  searchParams = { query: '' },
-}: {
-  // eslint-disable-next-line react/require-default-props
-  searchParams?: {
-    query?: string;
-  };
-}) => {
-  const query = searchParams?.query || '';
-  console.log('query', query);
-  // Protect the page, only logged in users can access it.
+const prisma = new PrismaClient();
+
+const AllJamSearchPage = async () => {
   const session = await getServerSession(authOptions);
   loggedInProtectedPage(
     session as {
       user: { email: string; id: string; randomKey: string };
     } | null,
   );
-  // Fetch jams from database
-  const Jams: JamInformation[] = await prisma.jamInformation.findMany({});
-  /* const Jams: JamInformation[] = await prisma.jamInformation.findMany({
-    where: {
-      owner,
+
+  // Fetch all sessions from the database
+  const Jams: JamInformation[] = (await prisma.jamInformation.findMany({
+    select: {
+      id: true,
+      owner: true,
+      jamName: true,
+      image: true,
+      organizer: true,
+      genre: true,
+      location: true,
+      date: true,
+      instruments: true,
+      experience: true,
+      description: true,
     },
-  }); */
-  // console.log(Jams);
+  }));
 
   return (
     <main>
-      <Container id="jam-search">
-        {/* Row to align the search bar and header */}
-        <Row className="justify-content-center">
-          <Col xs={12} className="text-center py-1" style={{ color: 'white' }}>
-            <h1>Search Jams</h1>
-          </Col>
-          <Col xs={12} className="text-center mb-4">
-            <SearchBar />
-          </Col>
-          {/*
-          <Col xs={12} className="text-center mb-4">
-            <SearchJams />
-          </Col> */}
-        </Row>
-      </Container>
-
-      <Container className="py-3">
-        {/* Row for displaying the JamInfoCard components, aligned to the left */}
-        <Row className="justify-content-start">
-          {Jams.map((jam) => (
-            <Col key={jam.id} xs={12} sm={6} md={4} lg={4} className="mb-4">
-              <JamInfoCard Jam={jam} />
-            </Col>
-          ))}
-        </Row>
-      </Container>
+      <JamSearchPage jams={Jams} />
     </main>
   );
 };
 
-export default JamSearchPage;
+export default AllJamSearchPage;
