@@ -36,7 +36,7 @@ const ProfileSearchPage = async ({ searchParams }: ProfilePageProps) => {
         {/* Row to align the search bar and header */}
         <Row className="justify-content-center">
           <Col xs={12} className="text-center py-1" style={{ color: 'white' }}>
-            <h1>Search Profiles</h1>
+            <h1 className="py-3">Search Profiles</h1>
           </Col>
           <Col xs={12} className="text-center mb-4">
             <SearchBar />
