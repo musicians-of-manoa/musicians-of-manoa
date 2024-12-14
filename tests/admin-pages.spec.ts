@@ -11,6 +11,7 @@ test('Admin Pages', async ({ page }) => {
   await expect(page.getByRole('link', { name: 'Feed' })).toBeVisible();
   await expect(page.getByRole('link', { name: 'Create a Jam' })).toBeVisible();
   await expect(page.getByRole('link', { name: 'Search' })).toBeVisible();
+  await expect(page.getByRole('link', { name: 'Attending Jams' })).toBeVisible();
   await expect(page.getByRole('link', { name: 'Admin' })).toBeVisible();
   await expect(page.getByRole('button', { name: 'admin@foo.com' })).toBeVisible();
 
@@ -21,6 +22,8 @@ test('Admin Pages', async ({ page }) => {
   await expect(page.getByRole('heading', { name: 'Jam Information' })).toBeVisible();
   await page.getByRole('link', { name: 'Search' }).click();
   await expect(page.getByRole('heading', { name: 'Search for...' })).toBeVisible();
+  await page.getByRole('link', { name: 'Attending Jams' }).click();
+  await expect(page.getByRole('heading', { name: 'Attending Jams: No attended jams yet.' })).toBeVisible();
 
   // Check admin-only pages
   await page.getByRole('link', { name: 'Admin' }).click();

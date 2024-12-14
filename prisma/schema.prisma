@@ -23,12 +23,13 @@ enum Role {
 }
 
 model User {
-  id       Int      @id @default(autoincrement())
-  email    String   @unique
-  password String
-  role     Role     @default(USER)
-  Profile  Profile?
+  id          Int           @id @default(autoincrement())
+  email       String        @unique
+  password    String
+  role        Role          @default(USER)
+  Profile     Profile?
   AttendedJam AttendedJam[]
+  Review      Review[]
 }
 
 enum Experience {
@@ -55,16 +56,15 @@ model JamInformation {
 }
 
 model AttendedJam {
-  id        Int      @id @default(autoincrement())
+  id        Int            @id @default(autoincrement())
   userId    Int
   jamId     Int
-  user      User     @relation(fields: [userId], references: [id])
+  user      User           @relation(fields: [userId], references: [id])
   jam       JamInformation @relation(fields: [jamId], references: [id])
-  createdAt DateTime @default(now())
+  createdAt DateTime       @default(now())
 
   @@unique([userId, jamId]) // Ensure a user can only attend a jam once
 }
-
 
 model Goals {
   id        Int    @id @default(autoincrement())
@@ -91,7 +91,7 @@ model Profile {
 
 model Review {
   id        Int      @id @default(autoincrement())
-  rating    Int      
+  rating    Int
   comment   String
   profile   Profile  @relation(fields: [profileId], references: [id]) // Relation to Profile
   profileId Int
@@ -101,14 +101,14 @@ model Review {
 }
 
 model Experiences {
-  id            Int    @id @default(autoincrement())
-  level         String
-  description   String
-  isEditing     Int    @default(0)
+  id          Int    @id @default(autoincrement())
+  level       String
+  description String
+  isEditing   Int    @default(0)
 }
 
 model Tastes {
-  id            Int    @id @default(autoincrement())
-  genre         String
-  isEditing     Int    @default(0)
+  id        Int    @id @default(autoincrement())
+  genre     String
+  isEditing Int    @default(0)
 }
