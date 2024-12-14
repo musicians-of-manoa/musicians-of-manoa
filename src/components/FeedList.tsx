@@ -11,7 +11,9 @@ const FeedList = ({ Jam }: { Jam: JamInformation }) => (
         <Col xs={12} sm={4} md={3} className="pe-md-2">
           <strong>{Jam.jamName}</strong>
           <small className="text-muted d-block mb-1">
-            Date: {new Date(Jam.date).toLocaleDateString()}
+            Date:
+            {' '}
+            {new Date(Jam.date).toLocaleDateString()}
           </small>
           <Badge bg="info" className="mt-1">
             {Jam.experience.charAt(0).toUpperCase() + Jam.experience.slice(1)}
@@ -21,16 +23,24 @@ const FeedList = ({ Jam }: { Jam: JamInformation }) => (
         {/* Right Section: Content */}
         <Col xs={12} sm={6} md={8} className="ps-md-2">
           <Card.Text>
-            <strong>Location:</strong> {Jam.location}
+            <strong>Location:</strong>
+            {' '}
+            {Jam.location}
             <br />
-            <strong>Instruments:</strong> {Jam.instruments}
+            <strong>Instruments:</strong>
+            {' '}
+            {Jam.instruments}
             <br />
-            <strong>Genre:</strong> {Jam.genre}
+            <strong>Genre:</strong>
+            {' '}
+            {Jam.genre}
             <br />
             {Jam.description}
           </Card.Text>
           <small className="text-muted d-block">
-            Organized by {Jam.organizer}
+            Organized by
+            {' '}
+            {Jam.organizer}
           </small>
         </Col>
       </Row>

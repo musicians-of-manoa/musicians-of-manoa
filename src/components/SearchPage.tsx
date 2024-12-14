@@ -6,10 +6,10 @@ import { Card, Col, Container, Row, Image } from 'react-bootstrap';
 const SearchPage: React.FC = () => (
   <Container>
     <Col className="text-center">
-      <h1>Search for...</h1>
+      <h1 className="py-3">Search for...</h1>
     </Col>
     <Row>
-      <Col md={6} className='py-5'>
+      <Col md={6} className="py-3">
         <a href="search/profile-search" className="hover-card" style={{ textDecoration: 'none' }}>
           <Card className="text-white hover-card">
             <div
@@ -58,7 +58,7 @@ const SearchPage: React.FC = () => (
           </Card>
         </a>
       </Col>
-      <Col md={6} className='py-5'>
+      <Col md={6} className="py-3">
         <a href="search/jam-search" style={{ textDecoration: 'none' }}>
           <Card className="text-white hover-card">
             <div

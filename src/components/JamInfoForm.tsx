@@ -55,7 +55,7 @@ const JamInfoForm: React.FC = () => {
       <Row className="justify-content-center">
         <Col xs={10}>
           <Col className="text-center" style={{ color: 'white' }}>
-            <h1>Jam Information</h1>
+            <h1 className="py-3">Jam Information</h1>
           </Col>
           <Card style={{ backgroundColor: '#ECDFCC' }}>
             <Card.Body>

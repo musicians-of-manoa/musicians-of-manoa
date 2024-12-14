@@ -33,10 +33,10 @@ const AttendedJamsPage = async () => {
 
   return (
     <main>
-      <Container id="attended-jams-list">
+      <Container id="attended-jams-list" className="py-3">
         <Row className="mt-1 mb-2">
           <Col className="text-center">
-            <h1 style={{color: 'white'}}>
+            <h1 style={{ color: 'white' }}>
               Attending Jams:
               {' '}
               {attendedJams.length > 0

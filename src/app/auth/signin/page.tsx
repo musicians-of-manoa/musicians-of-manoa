@@ -77,7 +77,8 @@ const SignIn = () => {
               </Card.Body>
               <Card.Footer className="text-center">
                 <small>
-                  Don&apos;t have an account?{' '}
+                  Don&apos;t have an account?
+                  {' '}
                   <a href="/auth/signup" style={{ color: '#6a11cb' }}>
                     Sign up
                   </a>

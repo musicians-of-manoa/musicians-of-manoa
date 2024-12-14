@@ -1,4 +1,4 @@
-'use client'; // Ensure this is a Client Component
+'use client';
 
 import { JamInformation } from '@prisma/client';
 import swal from 'sweetalert';
@@ -30,8 +30,8 @@ const AttendedJamCard = ({ Jam }: { Jam: JamInformation }) => {
 
     // Show success message
     swal('Removed', 'You have successfully removed a Jam!', 'success', {
-        timer: 2000,
-      });
+      timer: 2000,
+    });
   };
 
   return (

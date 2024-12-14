@@ -9,7 +9,7 @@ const FeedPage = async () => {
 
   return (
     <main>
-      <h1 className="text-center mt-1" style={{ color: 'white' }}>Upcoming Jams</h1>
+      <h1 className="text-center mt-1 py-3" style={{ color: 'white' }}>Upcoming Jams</h1>
       <div className="container mt-3">
         {jams.map((jam) => (
           <FeedList key={jam.id} Jam={jam} />

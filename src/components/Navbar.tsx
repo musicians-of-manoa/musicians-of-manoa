@@ -25,7 +25,8 @@ const NavBar: React.FC = () => {
   const role = userWithRole?.randomKey;
   const pathName = usePathname();
   return (
-    <Navbar expand="lg"
+    <Navbar
+      expand="lg"
       style={{
         background: '#06402B !important',
       }}
