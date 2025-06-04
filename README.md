@@ -1,3 +1,91 @@
-[![ci-nextjs-application-template](https://github.com/ics-software-engineering/nextjs-application-template/actions/workflows/ci.yml/badge.svg)](https://github.com/ics-software-engineering/nextjs-application-template/actions/workflows/ci.yml)
+<h1> MUSICIANS OF MANOA 🎵 </h1>
+<h3> Connect with UH Manoa Students on Shared Musical Interests and Compatibilities! </h3>
+<p> Many UH students have musical talents, but there is no easy way for them to find others with similar tastes and compatible musical abilities. The Campus Jam application allows students to login and create a profile indicating their musical tastes, their musical capabilities, and their musical goals (from occasional, informal jam sessions to performing bands). </p>
 
-For details, please see http://ics-software-engineering.github.io/nextjs-application-template/.
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+    </li>
+    <li>
+      <a href="#technologies-used">Technologies Used</a></li>
+    </li>
+    <li>
+      <a href="#website-guide">Website Guide</a>
+    </li>
+    <li>
+      <a href="#next-steps">Next Steps</a>
+    </li>
+    <li>
+      <a href="#development-team">Development Team</a>
+    </li>
+  </ol>
+</details>
+
+## Getting Started
+
+Deployed on Vercel:
+<a href="https://musicians-of-manoa.vercel.app/" width="250px">Click here to Jam!</a>
+
+For more information, visit our webpage: 
+<a href="https://musicians-of-manoa.github.io/" width="250px"> Here </a>
+
+## Technologies Used
+
+React, Node.js, PostgreSQL, Prisma,
+TypeScript, JavaScript, CSS, HTML,
+Vercel
+
+## Website Guide
+<p> Landing Page </p>
+<img src="./client/src/assets/login-pg.png"> 
+
+<p> Sign In / Sign Up </p>
+<img src="./client/src/assets/signup-pg.png"> 
+
+<p> View / Edit Profile </p>
+<img src="./client/src/assets/createAI.png"/> 
+
+<p> Upcoming Jams </p>
+<img src="./client/src/assets/collections-pg.png">
+
+<p> Search Page </p>
+<img src="./client/src/assets/collections-pg.png">
+
+<p> Profile Search Page </p>
+<img src="./client/src/assets/collections-pg.png">
+
+<p> Jam Search Page </p>
+<img src="./client/src/assets/collections-pg.png">
+
+<p> Attending Jams Page </p>
+<img src="./client/src/assets/collections-pg.png">
+
+<p> Jam Information </p>
+<img src="./client/src/assets/collections-pg.png">
+
+<p> Edit Musical Goals / Tastes / Experience Pages </p>
+<img src="./client/src/assets/collections-pg.png">
+
+<p> Admin Dashboard </p>
+<img src="./client/src/assets/collections-pg.png">
+
+## Next Steps
+
+<ul>
+ <li> Support the organization of jam sessions. Provide information on scheduled jam sessions, including location, time, musical type, desired capabilities, and organizer contact information. </li>
+ <li> Support a network of “who’s played with who” </li>
+ <li> Support reviews of musicians </li>
+</ul>
+
+## Development Team
+
+<ul>
+  <li> Dominic Deuz </li>
+  <li> Josh Hicks </li>
+  <li> Christian Iha </li>
+  <li> Dahyun Kwon </li>
+  <li> Samantha Limon </li>
+</ul>
