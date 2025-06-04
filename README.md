@@ -40,37 +40,40 @@ Vercel
 
 ## Website Guide
 <p> Landing Page </p>
-<img src="./client/src/assets/login-pg.png"> 
+<img src="https://musicians-of-manoa.github.io/img/landing-1.png"> 
+<img src="https://musicians-of-manoa.github.io/img/landing-2.png">
 
 <p> Sign In / Sign Up </p>
-<img src="./client/src/assets/signup-pg.png"> 
+<img src="https://musicians-of-manoa.github.io/img/signin.png"> 
 
 <p> View / Edit Profile </p>
-<img src="./client/src/assets/createAI.png"/> 
+<img src="https://musicians-of-manoa.github.io/img/view-profile.png"/> 
 
 <p> Upcoming Jams </p>
-<img src="./client/src/assets/collections-pg.png">
+<img src="https://musicians-of-manoa.github.io/img/upcoming-jams.png">
 
 <p> Search Page </p>
-<img src="./client/src/assets/collections-pg.png">
+<img src="https://musicians-of-manoa.github.io/img/search.png">
 
 <p> Profile Search Page </p>
-<img src="./client/src/assets/collections-pg.png">
+<img src="https://musicians-of-manoa.github.io/img/search-profiles.png">
 
 <p> Jam Search Page </p>
-<img src="./client/src/assets/collections-pg.png">
+<img src="https://musicians-of-manoa.github.io/img/search-jams.png">
 
 <p> Attending Jams Page </p>
-<img src="./client/src/assets/collections-pg.png">
+<img src="https://musicians-of-manoa.github.io/img/attending-jams.png">
 
 <p> Jam Information </p>
-<img src="./client/src/assets/collections-pg.png">
+<img src="https://musicians-of-manoa.github.io/img/jam-information.png">
 
 <p> Edit Musical Goals / Tastes / Experience Pages </p>
-<img src="./client/src/assets/collections-pg.png">
+<img src="https://musicians-of-manoa.github.io/img/editGoal.png">
+<img src="https://musicians-of-manoa.github.io/img/editTaste.png">
+<img src="https://musicians-of-manoa.github.io/img/editExperience.png">
 
 <p> Admin Dashboard </p>
-<img src="./client/src/assets/collections-pg.png">
+<img src="https://musicians-of-manoa.github.io/img/admin-dashboard.png">
 
 ## Next Steps
 
